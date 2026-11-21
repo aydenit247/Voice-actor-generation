@@ -41,14 +41,17 @@ and open http://localhost:3000.
    - **Emotion:** pick from the list or type anything, like "drunk", "betrayed", or "trying not to laugh".
    - **Energy 1–5** and **Pace**.
    - **Director's note:** free text, like "voice cracks on 'dumb'" or "like he just realized he burned the map".
-   - **Add pauses, laughs, breaths…:** edit what the voice reads and insert cues like `[pause]`, `<laugh>` or `<sigh>`.
-     The game still matches the recording to the original line.
+   - **What the voice says:** always visible and editable. Respell words, cut or add words, insert cues like `[pause]`,
+     `<laugh>` or actions like `*gasp*`. The game still shows and matches the original line.
    - **Show what gets sent:** the exact instructions Gemini receives.
-3. **Generate** makes a take. **New take** makes another. ▶ plays a take, ★ picks the one you want, and **Approve** marks
+3. **Pronunciations (left panel):** a list of words and how to say them ("Lykor → Lie-kor"). Every line's spoken text is
+   respelled automatically, and each line shows "Spoken as: …" when a fix applies. Orange entries are guesses to check.
+   Shared through Sync like the rest of the settings.
+4. **Generate** makes a take. **New take** makes another. ▶ plays a take, ★ picks the one you want, and **Approve** marks
    the line as final.
-4. **Generate missing** makes one take for every line in the current view that doesn't have one yet. Filter to one
+5. **Generate missing** makes one take for every line in the current view that doesn't have one yet. Filter to one
    character or scene first. **Stop** pauses it.
-5. **Export approved** downloads a zip containing:
+6. **Export approved** downloads a zip containing:
    - the chosen take of every approved line (WAV)
    - `manifest.json`
    - `voice_lines_snippet.gd` for the game

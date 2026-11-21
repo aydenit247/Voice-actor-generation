@@ -1,6 +1,6 @@
 // Saving for the Trio studio. Audio takes go in IndexedDB (too big for localStorage);
 // directions, cast edits and picked takes go in localStorage and can be exported as one settings file.
-import type { CastMember, Pace, Variant } from "../data/trio/cast";
+import type { CastMember, Pace, Pronunciation, Variant } from "../data/trio/cast";
 
 export interface LineDirection {
   emotion?: string;        // e.g. "angry", or anything typed
@@ -39,7 +39,8 @@ export interface Settings {
   model: string;
   globalNote: string;                          // unused since the house style (kept for old settings files)
   houseStyle?: string;                         // style note for every line; undefined = HOUSE_STYLE default
-  metaUpdatedAt?: number;                      // last change to cast / variants / style (for syncing)
+  pronunciations?: Pronunciation[];            // undefined = PRONUNCIATIONS defaults
+  metaUpdatedAt?: number;                      // last change to cast / variants / style / pronunciations (for syncing)
 }
 
 const LS_KEY = "trio-voice-studio";

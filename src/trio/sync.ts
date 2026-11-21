@@ -58,7 +58,7 @@ export async function testConfig(c: SyncConfig) {
 
 const b64ToUtf8 = (b: string) => new TextDecoder().decode(Uint8Array.from(atob(b.replace(/\n/g, "")), (c) => c.charCodeAt(0)));
 
-type Meta = Pick<Settings, "cast" | "variants" | "houseStyle" | "metaUpdatedAt">;
+type Meta = Pick<Settings, "cast" | "variants" | "houseStyle" | "pronunciations" | "metaUpdatedAt">;
 interface SharedDirections extends Meta { lines: Record<string, LineDirection>; savedAt: number; savedBy: string }
 type SharedTake = Omit<Take, "audioBase64"> & { path: string };
 
@@ -87,7 +87,7 @@ function mergeLines(local: Record<string, LineDirection>, remote: Record<string,
 export function mergeSettings(cur: Settings, incoming: Settings): Settings {
   const lines = mergeLines(cur.lines, incoming.lines);
   const curMetaNewer = (cur.metaUpdatedAt || 0) > (incoming.metaUpdatedAt || 0);
-  return curMetaNewer ? { ...incoming, lines, cast: cur.cast, variants: cur.variants, houseStyle: cur.houseStyle, metaUpdatedAt: cur.metaUpdatedAt }
+  return curMetaNewer ? { ...incoming, lines, cast: cur.cast, variants: cur.variants, houseStyle: cur.houseStyle, pronunciations: cur.pronunciations, metaUpdatedAt: cur.metaUpdatedAt }
     : { ...incoming, lines };
 }
 
@@ -109,7 +109,7 @@ export async function syncNow(c: SyncConfig, settings: Settings, takes: Take[], 
   const lines = mergeLines(settings.lines, remote?.lines || {});
   const remoteMetaNewer = remote && (remote.metaUpdatedAt || 0) > (settings.metaUpdatedAt || 0);
   const merged: Settings = remoteMetaNewer
-    ? { ...settings, lines, cast: remote!.cast || {}, variants: remote!.variants || {}, houseStyle: remote!.houseStyle, metaUpdatedAt: remote!.metaUpdatedAt }
+    ? { ...settings, lines, cast: remote!.cast || {}, variants: remote!.variants || {}, houseStyle: remote!.houseStyle, pronunciations: remote!.pronunciations, metaUpdatedAt: remote!.metaUpdatedAt }
     : { ...settings, lines };
   const changedLines = Object.keys(lines).filter((id) => JSON.stringify(lines[id]) !== JSON.stringify(settings.lines[id])).length;
 
@@ -140,7 +140,7 @@ export async function syncNow(c: SyncConfig, settings: Settings, takes: Take[], 
   }
 
   const shared_dirs: SharedDirections = {
-    cast: merged.cast, variants: merged.variants, houseStyle: merged.houseStyle, metaUpdatedAt: merged.metaUpdatedAt,
+    cast: merged.cast, variants: merged.variants, houseStyle: merged.houseStyle, pronunciations: merged.pronunciations, metaUpdatedAt: merged.metaUpdatedAt,
     lines, savedAt: Date.now(), savedBy: c.name,
   };
   const dirsChanged = !remote || JSON.stringify({ ...remote, savedAt: 0, savedBy: "" }) !== JSON.stringify({ ...shared_dirs, savedAt: 0, savedBy: "" });

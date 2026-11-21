@@ -7,12 +7,13 @@ import {
 import linesJson from "../data/trio/lines.json";
 import defaultsJson from "../data/trio/lineDirections.json";
 import {
-  ACTIONS, CAST, EMOTIONS, GEMINI_VOICES, HOUSE_STYLE, INLINE_CUES, INTENSITY_LABELS, PACES, type CastMember, type Pace, type Variant,
+  ACTIONS, CAST, EMOTIONS, GEMINI_VOICES, HOUSE_STYLE, INLINE_CUES, INTENSITY_LABELS, PACES, PRONUNCIATIONS,
+  type CastMember, type Pace, type Pronunciation, type Variant,
 } from "../data/trio/cast";
 import {
   allTakes, clearTakes, deleteTake, loadSettings, putTake, saveSettings, type LineDirection, type Settings, type Take,
 } from "./store";
-import { buildDirection, performanceText, slug, variantFor, voicing, type TrioLine } from "./direction";
+import { buildDirection, pronunciationsIn, slug, spokenText, variantFor, voicing, type TrioLine } from "./direction";
 import { fetchGameLines, similarity } from "./extract";
 import SyncPanel from "./SyncPanel";
 import { friendlyError, loadSyncConfig, mergeSettings, syncNow, type SyncConfig } from "./sync";
@@ -168,6 +169,9 @@ export default function ScriptStudio() {
     return m;
   }, [settings.cast, settings.variants]);
   const houseStyle = settings.houseStyle ?? HOUSE_STYLE;
+  const prons = settings.pronunciations ?? PRONUNCIATIONS;
+  const setProns = (list: Pronunciation[] | undefined) => setSettings((s) => ({ ...s, pronunciations: list, metaUpdatedAt: Date.now() }));
+  const [pronOpen, setPronOpen] = useState(false);
   const SCENES = useMemo(() => Array.from(new Set(LINES.map((l) => l.scene))), [LINES]);
   const lineIds = useMemo(() => new Set(LINES.map((l) => l.id)), [LINES]);
   // Takes / directions for lines that are no longer in the game (reworded or deleted)
@@ -225,7 +229,7 @@ export default function ScriptStudio() {
     const c = cast[l.who] || cast.narrator;
     const d = dirOf(l.id);
     const prompt = buildDirection(l, c, d, houseStyle, castNames);
-    const text = performanceText(l, d);
+    const text = spokenText(l, d, prons);
     const voice = voicing(l, c, d).voice;
     setBusy((b) => ({ ...b, [l.id]: true }));
     try {
@@ -254,7 +258,7 @@ export default function ScriptStudio() {
     } finally {
       setBusy((b) => ({ ...b, [l.id]: false }));
     }
-  }, [cast, castNames, houseStyle, dirOf, settings.model, takesBy, me]);
+  }, [cast, castNames, houseStyle, dirOf, settings.model, takesBy, me, prons]);
 
   const generateMissing = async () => {
     const todo = filtered.filter((l) => !takesBy[l.id]?.length);
@@ -480,6 +484,40 @@ export default function ScriptStudio() {
               </div>
             );
           })}
+          <div className="rounded border border-stone-800 bg-stone-900/70">
+            <button className="flex w-full items-center px-3 py-2 text-left" onClick={() => setPronOpen((o) => !o)}>
+              <span className="flex-1">
+                <span className="font-semibold text-stone-100">Pronunciations</span>
+                <span className="block text-xs text-stone-400">
+                  {prons.length} words{prons.some((p) => p.check) && ` · ${prons.filter((p) => p.check).length} to check`}
+                </span>
+              </span>
+              {pronOpen ? <ChevronDown size={16} /> : <ChevronRight size={16} />}
+            </button>
+            {pronOpen && (
+              <div className="space-y-1 border-t border-stone-800 px-2 py-2">
+                <p className="px-1 pb-1 text-[11px] text-stone-400">
+                  Spell it how it should <b>sound</b>. The voice reads the right column in every line; the game keeps the real words.
+                  Orange = my guess, please check.
+                </p>
+                {prons.map((p, i) => (
+                  <div key={i} className="grid grid-cols-[1fr_auto_1fr_14px_14px] items-center gap-1">
+                    <input className={`w-full min-w-0 rounded bg-stone-950 px-1.5 py-1 text-xs ${p.check ? "text-amber-300" : "text-stone-200"}`} value={p.word}
+                      onChange={(e) => setProns(prons.map((x, j) => (j === i ? { ...x, word: e.target.value } : x)))} />
+                    <span className="text-stone-600">→</span>
+                    <input className={`w-full min-w-0 rounded bg-stone-950 px-1.5 py-1 text-xs ${p.check ? "text-amber-300" : "text-stone-200"}`} value={p.say}
+                      onChange={(e) => setProns(prons.map((x, j) => (j === i ? { ...x, say: e.target.value, check: false } : x)))} />
+                    {p.check ? <button title="Looks right" className="text-amber-400 hover:text-emerald-400" onClick={() => setProns(prons.map((x, j) => (j === i ? { ...x, check: false } : x)))}><Check size={13} /></button> : <span />}
+                    <button title="Remove" className="text-stone-600 hover:text-red-400" onClick={() => setProns(prons.filter((_, j) => j !== i))}><Trash2 size={12} /></button>
+                  </div>
+                ))}
+                <div className="flex gap-3 px-1 pt-1">
+                  <button className="text-xs text-sky-400 underline" onClick={() => setProns([...prons, { word: "", say: "" }])}>+ Add word</button>
+                  {settings.pronunciations && <button className="text-xs text-stone-500 underline" onClick={() => setProns(undefined)}>Reset to my list</button>}
+                </div>
+              </div>
+            )}
+          </div>
           <Label text="Style for every line">
             <textarea className="h-36 w-full rounded bg-stone-900 px-2 py-1 text-xs text-stone-200"
               value={houseStyle} onChange={(e) => setSettings((s) => ({ ...s, houseStyle: e.target.value, metaUpdatedAt: Date.now() }))} />
@@ -529,7 +567,7 @@ export default function ScriptStudio() {
                 {pageLines.map((l) => (
                   <LineCard key={l.id} l={l} c={cast[l.who] || cast.narrator} d={dirOf(l.id)} takes={takesBy[l.id] || []}
                     busy={!!busy[l.id]} playing={playing} castNames={castNames} houseStyle={houseStyle}
-                    suggested={!!LINE_DEFAULTS[l.id] && !settings.lines[l.id]}
+                    suggested={!!LINE_DEFAULTS[l.id] && !settings.lines[l.id]} prons={prons}
                     onChange={(p) => setLine(l.id, p)} onGenerate={() => generate(l)} onPlay={play} onDelete={removeTake} />
                 ))}
                 {!pageLines.length && <p className="py-10 text-center text-stone-500">No lines match.</p>}
@@ -560,11 +598,11 @@ function Label({ text, children }: { text: string; children: React.ReactNode }) 
 // ---------- one line ----------
 function LineCard(props: {
   l: TrioLine; c: CastMember; d: LineDirection; takes: Take[]; busy: boolean; playing: string | null;
-  castNames: Record<string, string>; houseStyle: string; suggested?: boolean;
+  castNames: Record<string, string>; houseStyle: string; suggested?: boolean; prons: Pronunciation[];
   onChange: (p: Partial<LineDirection>) => void; onGenerate: () => void; onPlay: (t: Take) => void; onDelete: (t: Take) => void;
 }) {
   const { l, c, d, takes, busy, playing, onChange } = props;
-  const [showPerf, setShowPerf] = useState(!!d.performance);
+  const [showCues, setShowCues] = useState(false);
   const [showPrompt, setShowPrompt] = useState(false);
   const perfRef = useRef<HTMLTextAreaElement | null>(null);
   const chosen = takes.find((t) => t.id === d.chosenTake) || takes[takes.length - 1];
@@ -641,33 +679,48 @@ function LineCard(props: {
         </Label>
       </div>
 
-      <div className="mt-2 flex flex-wrap items-center gap-3 text-xs">
-        <button className="text-stone-400 underline hover:text-white" onClick={() => setShowPerf((s) => !s)}>
-          {showPerf ? "Hide" : "Add pauses, laughs, breaths…"}
-        </button>
-        <button className="text-stone-500 underline hover:text-white" onClick={() => setShowPrompt((s) => !s)}>
-          {showPrompt ? "Hide" : "Show"} what gets sent
-        </button>
+      <div className="mt-2 rounded bg-stone-950/70 p-2">
+        <div className="mb-1 flex items-center gap-2 text-xs">
+          <span className="font-semibold text-stone-300">What the voice says</span>
+          <span className="text-stone-500">edit freely: respell words, add pauses. The game still shows the original line.</span>
+          {d.performance && <button className="ml-auto text-stone-400 underline" onClick={() => onChange({ performance: undefined })}>reset to game line</button>}
+        </div>
+        <textarea ref={perfRef} rows={2} className="w-full rounded bg-stone-950 px-2 py-1 text-stone-100" value={d.performance || l.line}
+          onChange={(e) => onChange({ performance: e.target.value === l.line ? undefined : e.target.value })} />
+        {(() => {
+          const said = spokenText(l, d, props.prons);
+          const found = pronunciationsIn(d.performance || l.line, props.prons);
+          return found.length > 0 && (
+            <p className="mt-1 text-xs text-sky-300">
+              Spoken as: <span className="text-sky-100">{said}</span>
+              <span className="ml-2 text-stone-500">({found.map((p) => `${p.word} → ${p.say}`).join(", ")})</span>
+            </p>
+          );
+        })()}
+        <div className="mt-1 flex flex-wrap items-center gap-3 text-xs">
+          <button className="text-stone-400 underline hover:text-white" onClick={() => setShowCues((x) => !x)}>
+            {showCues ? "Hide" : "Add"} actions, pauses, laughs…
+          </button>
+          <button className="text-stone-500 underline hover:text-white" onClick={() => setShowPrompt((x) => !x)}>
+            {showPrompt ? "Hide" : "Show"} everything that gets sent
+          </button>
+        </div>
       </div>
-      {showPerf && (
-        <div className="mt-2 rounded bg-stone-950/70 p-2">
-          <p className="mb-1 text-xs text-stone-400">Performance text: what the voice actually reads. Cues are acted, not said. The game still matches by the original line.</p>
-          <textarea ref={perfRef} className="h-16 w-full rounded bg-stone-950 px-2 py-1 text-stone-200" value={d.performance || l.line}
-            onChange={(e) => onChange({ performance: e.target.value === l.line ? undefined : e.target.value })} />
-          <div className="mt-1 flex flex-wrap gap-1">
+      {showCues && (
+        <div className="mt-1 rounded bg-stone-950/70 p-2">
+          <div className="flex flex-wrap gap-1">
             <span className="mr-1 self-center text-[11px] text-stone-500">Actions:</span>
             {ACTIONS.map((a) => <button key={a} className="rounded bg-amber-900/40 px-2 py-0.5 text-xs text-amber-200 hover:bg-amber-900/70" onClick={() => insertCue(a)}>{a}</button>)}
           </div>
           <div className="mt-1 flex flex-wrap gap-1">
             <span className="mr-1 self-center text-[11px] text-stone-500">Cues:</span>
             {INLINE_CUES.map((cue) => <button key={cue} className="rounded bg-stone-800 px-2 py-0.5 font-mono text-xs text-stone-300 hover:bg-stone-700" onClick={() => insertCue(cue)}>{cue}</button>)}
-            {d.performance && <button className="ml-auto text-xs text-stone-400 underline" onClick={() => onChange({ performance: undefined })}>reset to game line</button>}
           </div>
         </div>
       )}
       {showPrompt && (
         <pre className="mt-2 whitespace-pre-wrap rounded bg-black/50 p-2 text-[11px] text-stone-400">
-          {buildDirection(l, c, d, props.houseStyle, props.castNames)}{"\n\n"}Text: {performanceText(l, d)}{"\n"}Voice: {vo.voice}
+          {buildDirection(l, c, d, props.houseStyle, props.castNames)}{"\n\n"}Text: {spokenText(l, d, props.prons)}{"\n"}Voice: {vo.voice}
         </pre>
       )}
 

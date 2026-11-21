@@ -1,5 +1,5 @@
 // Turns a character's settings + a line's direction into the acting instructions sent to Gemini.
-import { INTENSITY_LABELS, type CastMember, type Pace, type Variant } from "../data/trio/cast";
+import { INTENSITY_LABELS, type CastMember, type Pace, type Pronunciation, type Variant } from "../data/trio/cast";
 import type { LineDirection } from "./store";
 
 export interface TrioLine {
@@ -31,8 +31,30 @@ export function voicing(l: TrioLine, c: CastMember, d: LineDirection): Voicing {
   };
 }
 
+// What the line says before pronunciation fixes: the line's own edited text, or the game line
 export function performanceText(l: TrioLine, d: LineDirection) {
   return (d.performance && d.performance.trim()) || l.line;
+}
+
+const esc = (s: string) => s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+// Swap words for their respellings (whole words, any capitalization; ALL-CAPS words stay loud)
+export function applyPronunciations(text: string, list: Pronunciation[]) {
+  let out = text;
+  for (const p of list) {
+    if (!p.word.trim() || !p.say.trim() || p.word === p.say) continue;
+    const re = new RegExp(`(^|[^A-Za-z0-9'])(${esc(p.word.trim())})(?![A-Za-z0-9])`, "gi");
+    out = out.replace(re, (_, pre: string, w: string) =>
+      pre + (w.length > 1 && w === w.toUpperCase() && /[A-Z]/.test(w) && p.word !== p.word.toUpperCase() ? p.say.toUpperCase()
+        : /^[A-Z]/.test(w) && !/^[A-Z]/.test(p.word) ? p.say[0].toUpperCase() + p.say.slice(1) : p.say));
+  }
+  return out;
+}
+export function pronunciationsIn(text: string, list: Pronunciation[]) {
+  return list.filter((p) => p.word.trim() && new RegExp(`(^|[^A-Za-z0-9'])${esc(p.word.trim())}(?![A-Za-z0-9])`, "i").test(text));
+}
+// The exact text sent to the voice
+export function spokenText(l: TrioLine, d: LineDirection, list: Pronunciation[]) {
+  return applyPronunciations(performanceText(l, d), list);
 }
 
 const end = (s: string) => (/[.!?]$/.test(s.trim()) ? s.trim() : s.trim() + ".");
@@ -54,7 +76,7 @@ export function buildDirection(l: TrioLine, c: CastMember, d: LineDirection, hou
     `Scene: ${l.scene}.`,
     d.note && d.note.trim() ? `Director's note: ${end(d.note)}` : "",
     houseStyle.trim() ? end(houseStyle) : "",
-    `Say the line exactly as written, slang and misspellings included.`,
+    `Say the line exactly as written, slang and misspellings included. Some words are spelled out phonetically on purpose: say them exactly as spelled.`,
   ];
   return parts.filter(Boolean).join(" ");
 }

@@ -166,3 +166,40 @@ export const INLINE_CUES = ["[pause]", "[long pause]", "<breath>", "<sigh>", "<g
 
 // Actions written the way the game scripts write them. Acted out, not read.
 export const ACTIONS = ["*gasp*", "*hic*", "*sobbing*", "*laughs*", "*burps*", "*coughs*", "*wheezes*", "*sniffs*", "*groans*", "*clears throat*", "*ba dum tss*"];
+
+// Pronunciations: words the voice should say a certain way. The word is swapped for "say" in what the voice reads
+// (whole words only, any capitalization). The game still matches the original line. "check" = Claude's guess, Ebain to confirm.
+export interface Pronunciation { word: string; say: string; check?: boolean }
+export const PRONUNCIATIONS: Pronunciation[] = [
+  // Names
+  { word: "Lykor", say: "Lie-kor", check: true },
+  { word: "Xylo", say: "Zy-lo", check: true },
+  { word: "Caelid", say: "Kay-lid", check: true },
+  { word: "Dulbers", say: "Dull-burrs" },
+  { word: "Dulbmeethus", say: "Dull-b-mee-thus", check: true },
+  { word: "Metocin", say: "Meh-toe-sin", check: true },
+  { word: "Mattias", say: "Muh-tie-us", check: true },
+  { word: "Deloye", say: "Deh-loy", check: true },
+  { word: "Bogdrinker", say: "Bog-drinker" },
+  { word: "Diddy Chud", say: "Diddy Chud" },
+  // Items
+  { word: "metocy", say: "meh-toe-see", check: true },
+  { word: "midtocy", say: "mid-toe-see", check: true },
+  { word: "beezy", say: "bee-zee" },
+  // Slang
+  { word: "aight", say: "ite" },
+  { word: "looksmaxxin", say: "looks-maxin" },
+  { word: "deadahh", say: "dead-ahh" },
+  { word: "allat", say: "all-at" },
+  { word: "OD", say: "oh-dee" },
+  { word: "HIMMMM", say: "HIMMMMM" },
+  { word: "shi", say: "shih", check: true },
+  { word: "shiiiiii", say: "shiiiiih", check: true },
+  { word: "Balright", say: "Bal-right", check: true },
+  // Abbreviations (otherwise they get spelled out letter by letter)
+  { word: "ts", say: "this", check: true },
+  { word: "mf", say: "motherfucker", check: true },
+  { word: "ngl", say: "not gonna lie", check: true },
+  { word: "fw", say: "fuck with", check: true },
+  { word: "6-7", say: "six seven" },
+];
