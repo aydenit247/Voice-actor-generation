@@ -1,0 +1,1392 @@
+{
+ "caelidnightthenightbeforethegreatestquestoftheirlives": {
+  "emotion": "hushed wonder",
+  "intensity": 2,
+  "note": "Open the game softly, like the first line of a nature documentary. Let 'Night.' land on its own."
+ },
+ "thequestforthemetocy": {
+  "emotion": "reverent",
+  "intensity": 2,
+  "note": "Almost a whisper of awe on 'metocy', as if naming something sacred."
+ },
+ "datmetocygonbegahtomorrowontheabsolute": {
+  "emotion": "hyped",
+  "intensity": 4,
+  "note": "Grinning, rubbing his hands together. Drag out 'gah'. Totally sure of himself."
+ },
+ "onmydragonmamaitis": {
+  "emotion": "solemn",
+  "intensity": 2,
+  "note": "Deadpan dragon oath, dead serious, like swearing on a holy relic."
+ },
+ "manitsaboutcoldasamotherfuckerwecouldgetthefiregoingthough": {
+  "emotion": "annoyed",
+  "intensity": 3,
+  "note": "Shivering and grumbling, teeth chattering a little on 'cold'. Then a lazy idea on the second sentence."
+ },
+ "aightbetbutdonttouchmybagthough": {
+  "emotion": "casual",
+  "intensity": 3,
+  "note": "Agreeable, then quickly protective on 'don't touch my bag'. A little too quick."
+ },
+ "whywoulditouchyobagmud": {
+  "emotion": "offended",
+  "intensity": 4,
+  "note": "Insulted that anyone would suspect him. Overacted innocence."
+ },
+ "alrightwherethefuckissomefirestarterimtrynagetthisbitchgoing": {
+  "emotion": "grumbling",
+  "intensity": 3,
+  "note": "Muttering to himself while searching, frustrated."
+ },
+ "manfuckthisjitlykorheprobablygotsomegasfirestarterinhisbag": {
+  "emotion": "scheming",
+  "intensity": 3,
+  "note": "Sly, conspiratorial muttering. A dumb idea forming."
+ },
+ "wasdtowalketointeractgetthefiregoing": {
+  "emotion": "gentle",
+  "intensity": 1,
+  "note": "A soft, friendly aside, like a narrator giving a helpful tip. Plain and quick."
+ },
+ "skorngotimportantlookingpaper": {
+  "emotion": "matter-of-fact",
+  "intensity": 2,
+  "note": "Calmly noting the find, with the faintest hint that this matters."
+ },
+ "itreadsmmcskorncannotread": {
+  "emotion": "amused",
+  "intensity": 2,
+  "note": "Read the strange word as mysterious glitchy mumbling, then a dry, gentle punchline on '(Skorn cannot read)'."
+ },
+ "bunchofsquigglyasslinesyeahthatsfirestarter": {
+  "emotion": "proud",
+  "intensity": 3,
+  "note": "Totally confident in his terrible logic. Pleased with himself."
+ },
+ "damnyoustartedthatupquickgoodshitdude": {
+  "emotion": "impressed",
+  "intensity": 3,
+  "note": "Genuinely impressed, chill and friendly. No idea what just happened."
+ },
+ "yeahijustusedthepaperthatwasinyourbagidontknowwhyyousaidicou_0579": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Proud, casual, oblivious. He thinks he's being helpful."
+ },
+ "sayyousweartotheabsolute": {
+  "emotion": "suspicious",
+  "intensity": 3,
+  "note": "Slowing down, a creeping dread in his voice. Dead serious."
+ },
+ "whatwhatareyoutalkingaboutmud": {
+  "emotion": "confused",
+  "intensity": 3,
+  "note": "Completely lost. Innocent dumb confusion."
+ },
+ "brothatwasthemaptothemetocytheonlymap": {
+  "emotion": "shocked",
+  "intensity": 5,
+  "note": "Full panic scream. Voice cracks on 'ONLY MAP'."
+ },
+ "onmydragonmamaiseenthisinavisionijustaintthinkitdbethisdumb": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Starts mystical and grand, then flat disappointment on 'this dumb'. Comedy is in the drop."
+ },
+ "thenwhythefuckyouleaveitinabagbagsisforfirestarter": {
+  "emotion": "angry",
+  "intensity": 5,
+  "note": "Yelling, defensive, absolutely sure he's right. Orc logic."
+ },
+ "bagsisformapsskorn": {
+  "emotion": "furious",
+  "intensity": 5,
+  "note": "Yelling back, exasperated, voice a little high."
+ },
+ "notnomore": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Short, flat, petty. A mic drop."
+ },
+ "chillthemgoblinsupnorthknoweveryroadincaelidwejustaskthem": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "The calm one in the room. Chill and reassuring."
+ },
+ "betweleaveatsunriseandnobodytouchnothing": {
+  "emotion": "stern",
+  "intensity": 3,
+  "note": "Taking charge, firm. Big emphasis on 'NOTHING'."
+ },
+ "explorethecampqswitcheswhoyoucontroltabopensyourinventory": {
+  "emotion": "gentle",
+  "intensity": 1,
+  "note": "A soft, friendly aside, like a narrator giving a helpful tip. Plain and quick."
+ },
+ "cantstartafirewithnothingneedsomefirestarter": {
+  "emotion": "grumbling",
+  "intensity": 2,
+  "note": "Muttering to himself, mildly annoyed."
+ },
+ "hedontgotnofirestarterhegotabook": {
+  "emotion": "disappointed",
+  "intensity": 2,
+  "note": "Peeking, unimpressed. A little betrayed that it's just a book."
+ },
+ "aintnofirestarterinthetentjustxyloslorebookstooheavytoburn": {
+  "emotion": "grumbling",
+  "intensity": 2,
+  "note": "Muttering, disappointed. 'Too heavy to burn' said like it's a real problem."
+ },
+ "ayoyallgotalight": {
+  "emotion": "casual",
+  "intensity": 3,
+  "note": "Popping up out of nowhere, way too casual, like a guy outside a gas station."
+ },
+ "doitlooklikewegotalight": {
+  "emotion": "angry",
+  "intensity": 4,
+  "note": "Snapping, gesturing at the obvious. Sarcastic."
+ },
+ "whyismybagopenwhoopenedmybag": {
+  "emotion": "suspicious",
+  "intensity": 4,
+  "note": "Slow, rising suspicion. Each sentence angrier."
+ },
+ "actnatural": {
+  "emotion": "panicked",
+  "intensity": 3,
+  "note": "Nervous inner voice trying to act cool."
+ },
+ "iknowtheconditionerisdoingnumberstonight": {
+  "emotion": "flattered",
+  "intensity": 4,
+  "note": "Smooth and proud, flipping his hair. Basking."
+ },
+ "deloyelorevolume4saysthenightbeforeaquestissacred": {
+  "emotion": "mysterious",
+  "intensity": 2,
+  "note": "Grand and wise, ancient-dragon mode."
+ },
+ "whatitsayaboutthemetocy": {
+  "emotion": "curious",
+  "intensity": 3,
+  "note": "Hopeful and dumb, leaning in."
+ },
+ "nothingthereisnolore": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Flat, matter-of-fact. Pause before 'There is no lore.'"
+ },
+ "manitsaboutcoldasamotherfucker": {
+  "emotion": "annoyed",
+  "intensity": 3,
+  "note": "Shivering, grumbling."
+ },
+ "goodthingigotthefiregoingthough": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Proud of himself, chest puffed out."
+ },
+ "thecampfireburningbrightsuspiciouslybright": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Gentle documentary calm, with a knowing little pause before 'Suspiciously bright.'"
+ },
+ "bestfirestarterieverused": {
+  "emotion": "proud",
+  "intensity": 4,
+  "note": "Happy and oblivious. Loves his fire."
+ },
+ "acharredscrapofpaperallthatsleftreadstocy": {
+  "emotion": "ominous",
+  "intensity": 2,
+  "note": "Quiet, slowing down on '…TOCY' like a clue."
+ },
+ "bunchofsquigglyasslines": {
+  "emotion": "grumbling",
+  "intensity": 2,
+  "note": "Dismissive mutter."
+ },
+ "whydoesthatlooklikenahnah": {
+  "emotion": "dread",
+  "intensity": 3,
+  "note": "Starts suspicious, then denial. Doesn't want to say it."
+ },
+ "lykorsbagitsopensomethingimportantusedtobeinhere": {
+  "emotion": "ominous",
+  "intensity": 2,
+  "note": "Gentle and sad, like observing an empty nest."
+ },
+ "conditionerthreebottlesnothingelseanymore": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Dry and slow. 'Anymore.' lands as a sad little punchline."
+ },
+ "donttouchmybagthough": {
+  "emotion": "angry",
+  "intensity": 4,
+  "note": "Shouting a warning, too late."
+ },
+ "alreadytoucheditoncethatsenoughforonenight": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Inner voice, pleased with himself, shameless."
+ },
+ "imnottiredimfinnastayupandguardthefire": {
+  "emotion": "determined",
+  "intensity": 3,
+  "note": "Puffed up, heroic for no reason. Clearly tired."
+ },
+ "guarditfromwhat": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Flat, not even a real question."
+ },
+ "fromotherfires": {
+  "emotion": "defensive",
+  "intensity": 4,
+  "note": "Thinking of an answer on the spot, then declaring it with full confidence."
+ },
+ "ayoyallhiring": {
+  "emotion": "casual",
+  "intensity": 3,
+  "note": "Popping up again, hopeful."
+ },
+ "icanholdaspoon": {
+  "emotion": "proud",
+  "intensity": 3,
+  "note": "Listing his one skill like a resume highlight. Totally serious."
+ },
+ "respect": {
+  "emotion": "impressed",
+  "intensity": 3,
+  "note": "Quiet, genuine respect, nodding."
+ },
+ "damnaightmyvillageisupnorthifyallchangeyourmind": {
+  "emotion": "disappointed",
+  "intensity": 3,
+  "note": "Shrugging it off, a little sad, then a casual tip."
+ },
+ "thenextmorning": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "Soft transition, like a new chapter beginning at dawn."
+ },
+ "aightnewruleskorndontholdnothingimleading": {
+  "emotion": "stern",
+  "intensity": 3,
+  "note": "Taking charge, laying down the law, a little smug."
+ },
+ "betmyfaultimdumbashell": {
+  "emotion": "sheepish",
+  "intensity": 3,
+  "note": "Starts sheepish, then weirdly proud of being dumb on 'dumb as hell'."
+ },
+ "youhadcalled": {
+  "emotion": "knowing",
+  "intensity": 3,
+  "note": "Appearing out of nowhere, smooth and amused, a frail old rasp. Like he's been waiting."
+ },
+ "metocinmattiaswhatareyoudoinghere": {
+  "emotion": "shocked",
+  "intensity": 4,
+  "note": "Surprised and confused."
+ },
+ "ididnotseetscomingtswasnotinthedeloyelorescripture": {
+  "emotion": "shocked",
+  "intensity": 3,
+  "note": "Rattled out of his calm for once, almost offended the scripture didn't warn him."
+ },
+ "laterthatmorning": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "Soft scene transition."
+ },
+ "manicantbelievethisjitgottheleadnow": {
+  "emotion": "angry",
+  "intensity": 4,
+  "note": "Pouting, bitter, stomping."
+ },
+ "mapburnersdontgetavoteskorn": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Smooth and cutting, enjoying it."
+ },
+ "youreplayingaslykornowheadintothevillage": {
+  "emotion": "gentle",
+  "intensity": 1,
+  "note": "A soft, friendly aside, like a narrator giving a helpful tip. Plain and quick."
+ },
+ "waitasecondsumdontfeelrightfolk": {
+  "emotion": "suspicious",
+  "intensity": 2,
+  "note": "Slow, uneasy, sniffing the air."
+ },
+ "yayyouareallowedtomogthathardrightcooldudethatsfuckingfair": {
+  "emotion": "awestruck",
+  "intensity": 4,
+  "note": "Stunned at Lykor's face, rambling, half-defeated, half-worshipping."
+ },
+ "themoggingelf": {
+  "emotion": "ecstatic",
+  "intensity": 5,
+  "note": "Screaming in pure worship, like seeing a celebrity."
+ },
+ "hellyupthislooksmaxxinshipayinoff": {
+  "emotion": "flattered",
+  "intensity": 4,
+  "note": "Smug, basking, smooth victory voice."
+ },
+ "hellnahwhytheyaintbowingtomeimtheonewitharmor": {
+  "emotion": "jealous",
+  "intensity": 4,
+  "note": "Indignant and jealous, gesturing at his armor."
+ },
+ "propheciesbeweirdlikethat": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Shrug, totally unbothered."
+ },
+ "forathousandyearswehavewaitedforthemoggingelfgoldenhairpoint_67fb": {
+  "emotion": "reverent",
+  "intensity": 4,
+  "note": "Grand, ceremonial prophecy voice, slowly building. Gets weirdly specific on 'expensive conditioner'."
+ },
+ "aightifimyallsgodorwhateverthenanswermethiswherethemetocyat": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Casual and confident, leaning back, playing along with being a god."
+ },
+ "gaspthemoggingelfseeksthemetocyweknowwhereitis": {
+  "emotion": "shocked",
+  "intensity": 4,
+  "note": "Real gasp, then dramatic and mysterious."
+ },
+ "thenrunitshortstuff": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Cocky, impatient."
+ },
+ "wewilltellthemoggingelfonceheiscrownedcomeyourthroneawaits": {
+  "emotion": "sly",
+  "intensity": 3,
+  "note": "Ceremonial, with a sneaky little catch on 'once he is crowned'."
+ },
+ "yourthroneawaitsmoggingelfsitsit": {
+  "emotion": "demanding",
+  "intensity": 4,
+  "note": "Polite, then suddenly bossy on 'SIT. SIT.'"
+ },
+ "theysellit": {
+  "emotion": "confused",
+  "intensity": 2,
+  "note": "Flat disbelief."
+ },
+ "forallyometocyneeds": {
+  "emotion": "proud",
+  "intensity": 3,
+  "note": "Says the slogan proudly, like a commercial."
+ },
+ "sobbingbyecomebackharder": {
+  "emotion": "crying",
+  "intensity": 5,
+  "note": "Ugly crying, screaming with love."
+ },
+ "onmydragonmamaimleadingfromhere": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Calm, satisfied, taking over."
+ },
+ "thegoblinsseatlykoronathronemadeofspoonsbonesandone1wagonwhe_1bc6": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Calm documentary observation, a gentle beat on 'one (1) wagon wheel'."
+ },
+ "yallhadsaidyougotsomebeezyorsomeshi": {
+  "emotion": "hopeful",
+  "intensity": 3,
+  "note": "Settling into the throne, casual and greedy."
+ },
+ "thegoblinshandthemoggingelfamugofgoblinbeezy": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "Calm and ceremonial."
+ },
+ "ayynowthisakingdom": {
+  "emotion": "delighted",
+  "intensity": 4,
+  "note": "Thrilled, lifting the mug."
+ },
+ "lykorfocusaskhim": {
+  "emotion": "impatient",
+  "intensity": 2,
+  "note": "Dry, nudging him back on track."
+ },
+ "aightimcrownedwherethemetocyat": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Business-like, done with the ceremony."
+ },
+ "ohwelltellyouaslongasyoustayourkingforever": {
+  "emotion": "sly",
+  "intensity": 4,
+  "note": "Creepy-friendly, then booming on 'FOREVER'."
+ },
+ "foreverforeverforever": {
+  "emotion": "chanting",
+  "intensity": 5,
+  "note": "A creepy, joyful chant."
+ },
+ "broijustwanteddirections": {
+  "emotion": "exasperated",
+  "intensity": 4,
+  "note": "Done with this."
+ },
+ "howdoeslykorgetoutofthis": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "Gentle question to the player, like a narrator pausing the story."
+ },
+ "mychoppedgoblinsmyloyalchoppedgoblins": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Smooth politician charm, buttering them up."
+ },
+ "yallneedtoquitbeingodandletmediponamfandthatsonsometypeshiil_d44a": {
+  "emotion": "smooth",
+  "intensity": 4,
+  "note": "Long, fast-talking smooth hustle. Keep it flowing like a pitch. Confident, charming, slightly unhinged."
+ },
+ "betdat": {
+  "emotion": "satisfied",
+  "intensity": 3,
+  "note": "Short, approving."
+ },
+ "aightsoifyoucouldkeepwalkingdoeoverthereonsomeeastshitasfara_f021": {
+  "emotion": "casual",
+  "intensity": 3,
+  "note": "Rambling directions, pointing, chill and slangy."
+ },
+ "heregosomebeezyfolktakeitfortheroad": {
+  "emotion": "generous",
+  "intensity": 3,
+  "note": "Warm and proud, handing them over."
+ },
+ "lykorgotbeezy3heals": {
+  "emotion": "cheerful",
+  "intensity": 2,
+  "note": "Pleasant item announcement."
+ },
+ "yallrealforthisrealones": {
+  "emotion": "grateful",
+  "intensity": 4,
+  "note": "Genuinely touched, smooth."
+ },
+ "whyhegetthebeezy": {
+  "emotion": "jealous",
+  "intensity": 4,
+  "note": "Whiny and outraged."
+ },
+ "ibetyourasscantbeatmeinabeezycontest": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Cocky challenge, grinning."
+ },
+ "gaspnobodyhasoutdrunkbogdrinkerin400years": {
+  "emotion": "shocked",
+  "intensity": 4,
+  "note": "Gasp, then dramatic and ominous."
+ },
+ "broliterallychugsbogsandswampsitsinhisnamedumbass": {
+  "emotion": "exasperated",
+  "intensity": 4,
+  "note": "Yelling at Lykor for being stupid."
+ },
+ "themoggingelfoutdrankbogdrinker": {
+  "emotion": "stunned",
+  "intensity": 4,
+  "note": "Dazed, in total disbelief, slowly realizing."
+ },
+ "legendlegendlegend": {
+  "emotion": "chanting",
+  "intensity": 5,
+  "note": "Cheering wildly, chanting."
+ },
+ "hicthemetocymarteastgobeforeicry": {
+  "emotion": "drunk",
+  "intensity": 4,
+  "note": "Hiccup, slurring, emotional and teary."
+ },
+ "lykorpassesout": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Calm, matter-of-fact. A short beat of comedy."
+ },
+ "lykorwakesupoutsidethevillagesomethingiswrittenonhisforehead": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Calm, building a little suspense on the forehead."
+ },
+ "onmydragonmamaitsaysmetocymarteastloser": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Reads it flat, pausing before 'LOSER.' to savor it."
+ },
+ "theyainthavetoaddthelastpart": {
+  "emotion": "wounded",
+  "intensity": 3,
+  "note": "Hurt pride, muttering."
+ },
+ "imleadingfromhere": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Calm, taking over."
+ },
+ "aightrealtalktakehiminsteadhespurplethatsbasicallyroyal": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Smooth salesman, selling Skorn off."
+ },
+ "saywhatnow": {
+  "emotion": "confused",
+  "intensity": 3,
+  "note": "Lost."
+ },
+ "apurpleking": {
+  "emotion": "awestruck",
+  "intensity": 3,
+  "note": "Whispering in wonder."
+ },
+ "purplekingpurpleking": {
+  "emotion": "chanting",
+  "intensity": 5,
+  "note": "Cheering, chanting."
+ },
+ "thegoblinscrownskorn": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Calm, a gentle beat of comedy."
+ },
+ "waitdisbihtufflowkeyicouldfwthis": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Pleasantly surprised, warming up to being king."
+ },
+ "themetocymartiseastnowleavemoggingelfwehaveanewgod": {
+  "emotion": "dismissive",
+  "intensity": 3,
+  "note": "Done with Lykor, devoted to the new king."
+ },
+ "damnthatwaseasytooeasy": {
+  "emotion": "suspicious",
+  "intensity": 3,
+  "note": "Pleased, then a little uneasy."
+ },
+ "weareleavinghimherearentwe": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Flat, not really asking."
+ },
+ "yup": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Short and cold."
+ },
+ "slowquiet": {
+  "emotion": "whispering",
+  "intensity": 2,
+  "note": "Tiptoeing, whisper to himself."
+ },
+ "whatthefuckisyalldoing": {
+  "emotion": "shocked",
+  "intensity": 4,
+  "note": "Turning around, startled and confused."
+ },
+ "wegowherethemoggingelfgoes": {
+  "emotion": "devoted",
+  "intensity": 3,
+  "note": "Simple, creepy devotion."
+ },
+ "themoggingelfseeksthemetocythenthegoblinswilltakehimthereour_f04b": {
+  "emotion": "excited",
+  "intensity": 4,
+  "note": "Rallying the troops."
+ },
+ "fieldtripfieldtripfieldtrip": {
+  "emotion": "chanting",
+  "intensity": 5,
+  "note": "Excited kid energy, chanting."
+ },
+ "hellnah": {
+  "emotion": "annoyed",
+  "intensity": 4,
+  "note": "Flat refusal."
+ },
+ "onmydragonmamawegotanentouragenow": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Resigned acceptance."
+ },
+ "stepasideprettyboyletaprofessionalnegotiate": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Cracking knuckles, overconfident."
+ },
+ "skorndonot": {
+  "emotion": "panicked",
+  "intensity": 4,
+  "note": "Trying to stop him, cut off mid-word."
+ },
+ "skorndiddyslapsthenearestgoblin": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Calm and matter-of-fact, like a nature documentary describing a violent animal."
+ },
+ "thepurpleonehitssohardsobeautifully": {
+  "emotion": "awestruck",
+  "intensity": 4,
+  "note": "Dazed, starry-eyed, in love with the slap."
+ },
+ "weworshipthepurpleonenow": {
+  "emotion": "ecstatic",
+  "intensity": 5,
+  "note": "Sudden conversion, worshipful screaming."
+ },
+ "themoggingelfisdethronedgivethebeezytothepurpleone": {
+  "emotion": "ceremonial",
+  "intensity": 3,
+  "note": "Solemn, then casual on the beezy."
+ },
+ "yalldeadass": {
+  "emotion": "outraged",
+  "intensity": 5,
+  "note": "Betrayed, voice cracking."
+ },
+ "finallysomebodyinthisforestgottaste": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Basking, appreciated at last."
+ },
+ "themetocymartiseastpurpleonecomebackanytimeelfdont": {
+  "emotion": "dismissive",
+  "intensity": 3,
+  "note": "Warm to Skorn, cold to the elf. Pause before 'Elf… don't.'"
+ },
+ "eastmoggingelfonsomeeastshit": {
+  "emotion": "casual",
+  "intensity": 3,
+  "note": "Pointing, slangy."
+ },
+ "dontworryaboutmeimakingnowigotspoons": {
+  "emotion": "proud",
+  "intensity": 4,
+  "note": "Royally proud of his spoons."
+ },
+ "yallhiring": {
+  "emotion": "hopeful",
+  "intensity": 3,
+  "note": "Hopeful, again."
+ },
+ "eastofthegoblinvillage": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "Soft transition, setting the scene."
+ },
+ "oooohastore": {
+  "emotion": "amazed",
+  "intensity": 4,
+  "note": "Wide-eyed wonder, like a kid at a toy store."
+ },
+ "bogdrinkerhasheardofthisplaceverylegit": {
+  "emotion": "confident",
+  "intensity": 3,
+  "note": "Proudly vouching. Not legit at all."
+ },
+ "yallodashellforfollowingusstill": {
+  "emotion": "annoyed",
+  "intensity": 4,
+  "note": "Exasperated."
+ },
+ "onsomefieldtripshiiiiii": {
+  "emotion": "hyped",
+  "intensity": 4,
+  "note": "Drawing out 'shiiiiii'."
+ },
+ "youreplayingasxylonow": {
+  "emotion": "gentle",
+  "intensity": 1,
+  "note": "A soft, friendly aside, like a narrator giving a helpful tip. Plain and quick."
+ },
+ "thereicanfeelitthemetocyisnear": {
+  "emotion": "mystical",
+  "intensity": 2,
+  "note": "Grand, eyes closed, ancient-dragon mode."
+ },
+ "broitsastoreyoufeelastore": {
+  "emotion": "confused",
+  "intensity": 3,
+  "note": "Dumbfounded."
+ },
+ "itsweirdwithoutskornpeacefulbutweird": {
+  "emotion": "thoughtful",
+  "intensity": 2,
+  "note": "Quiet, a little wistful."
+ },
+ "forallyometocyneedsnshifolkveryprofessional": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Reads the sign, then dry sarcasm."
+ },
+ "heyguysitsyourboydulbersfrint": {
+  "emotion": "excited",
+  "intensity": 5,
+  "note": "Classic YouTuber intro, way too excited, squeaky."
+ },
+ "yallcouldpullupbeforethediddychudgiantsmellsyou": {
+  "emotion": "hyped",
+  "intensity": 5,
+  "note": "Fast and salesy, nervously eager."
+ },
+ "losersayssorightonyourforeheadmyboy": {
+  "emotion": "giggly",
+  "intensity": 4,
+  "note": "Snickering, poking fun."
+ },
+ "dont": {
+  "emotion": "cold",
+  "intensity": 3,
+  "note": "One word, ice cold warning."
+ },
+ "makewaypurplegodofthegoblinscomingthroughnobigdeal": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Grand entrance, pompous."
+ },
+ "youwasagodforfiveminutesbropipedown": {
+  "emotion": "annoyed",
+  "intensity": 4,
+  "note": "Shutting him down."
+ },
+ "comeonincomeoninstoresopen": {
+  "emotion": "excited",
+  "intensity": 5,
+  "note": "Rapid-fire salesman, waving them in."
+ },
+ "hehyeahsothatsactuallymidtocyoffbrandsimilarvibes": {
+  "emotion": "nervous",
+  "intensity": 4,
+  "note": "Nervous laugh, trying to play it off."
+ },
+ "youlaceduswithmidtocy": {
+  "emotion": "furious",
+  "intensity": 5,
+  "note": "Screaming, betrayed, still tweaking."
+ },
+ "andnowthatyouknow": {
+  "emotion": "sinister",
+  "intensity": 4,
+  "note": "Voice dropping, getting creepy."
+ },
+ "nobodyleavesmetocymartnorefundsnoexchanges": {
+  "emotion": "menacing",
+  "intensity": 5,
+  "note": "Booming, villainous. Each phrase hits harder."
+ },
+ "balrightiainteverpopmetocyandhaveajitturnintoagotdamndemonth_5944": {
+  "emotion": "tweaking",
+  "intensity": 5,
+  "note": "Freaked out and rambling, still high, outraged and wide-eyed."
+ },
+ "realenoughtofight": {
+  "emotion": "determined",
+  "intensity": 3,
+  "note": "Calm and steady, ready to fight."
+ },
+ "goblinsonedemonzero": {
+  "emotion": "proud",
+  "intensity": 4,
+  "note": "Triumphant scorekeeping."
+ },
+ "ughfinetherealmetocyispastthemountainpass": {
+  "emotion": "defeated",
+  "intensity": 3,
+  "note": "Wheezing, beaten, reluctant."
+ },
+ "butnobodygetspastthegiant": {
+  "emotion": "sinister",
+  "intensity": 3,
+  "note": "Defeated, but with an ominous last warning."
+ },
+ "imkeepingoneofthese": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Pocketing it, sneaky."
+ },
+ "istillkindaseecolors": {
+  "emotion": "dazed",
+  "intensity": 3,
+  "note": "Still high, a little worried."
+ },
+ "mountainpassitis": {
+  "emotion": "determined",
+  "intensity": 3,
+  "note": "Short, decisive."
+ },
+ "finestmetocyincaelidthisshitllhaveugeekinfolkhandmade": {
+  "emotion": "salesy",
+  "intensity": 5,
+  "note": "Fast-talking pitch, overselling."
+ },
+ "theyhadkickedmeout": {
+  "emotion": "outraged",
+  "intensity": 5,
+  "note": "Bursting in, yelling."
+ },
+ "already": {
+  "emotion": "shocked",
+  "intensity": 4,
+  "note": "Surprised."
+ },
+ "idranktoomuchbeezyandcrackedontoomanygoblinbiddiestheygotpis_ee67": {
+  "emotion": "sheepish",
+  "intensity": 4,
+  "note": "Explaining like it's a normal thing that happened. Not sorry."
+ },
+ "goblinbiddies": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Flat repeat, judging hard."
+ },
+ "dontjudgeme": {
+  "emotion": "defensive",
+  "intensity": 3,
+  "note": "Short, unbothered."
+ },
+ "aightsowhatthewordwhatweoweyaforsomemetocymud": {
+  "emotion": "casual",
+  "intensity": 3,
+  "note": "Getting down to business, friendly."
+ },
+ "foryallfirstonesfree": {
+  "emotion": "sly",
+  "intensity": 4,
+  "note": "Too-friendly, suspicious deal."
+ },
+ "onsometypeshit": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Pleased."
+ },
+ "doyoutakethemetocy": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "Gentle question to the player."
+ },
+ "freesayless": {
+  "emotion": "excited",
+  "intensity": 4,
+  "note": "Instantly sold."
+ },
+ "thetriotakesthemetocy": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "Matter-of-fact."
+ },
+ "idontfeelnothing": {
+  "emotion": "confused",
+  "intensity": 3,
+  "note": "Unimpressed, waiting."
+ },
+ "meneith": {
+  "emotion": "confused",
+  "intensity": 3,
+  "note": "Cut off mid-word."
+ },
+ "yoyowhythefloorbreathing": {
+  "emotion": "tweaking",
+  "intensity": 5,
+  "note": "Suddenly tripping hard, panicked and amazed."
+ },
+ "nahimreallifetweaking": {
+  "emotion": "tweaking",
+  "intensity": 4,
+  "note": "Dazed and freaked out."
+ },
+ "onmydragonmamaicanseesoundsthesoundsarepurple": {
+  "emotion": "tweaking",
+  "intensity": 3,
+  "note": "Profound and spaced out. 'The sounds are purple' said with total awe."
+ },
+ "nahthisdontfeellikemetocythisfeellikesomebullshitonmydeadorc_c090": {
+  "emotion": "tweaking",
+  "intensity": 4,
+  "note": "Suspicious and paranoid."
+ },
+ "dulberswhatdidyougiveus": {
+  "emotion": "angry",
+  "intensity": 4,
+  "note": "Cold and suspicious, through gritted teeth."
+ },
+ "skornyoufirst": {
+  "emotion": "bossy",
+  "intensity": 3,
+  "note": "Volunteering Skorn as the test subject."
+ },
+ "betletmepeepts": {
+  "emotion": "confident",
+  "intensity": 3,
+  "note": "Totally unafraid."
+ },
+ "yowhylykorgotthreeheadswhichoneitalkto": {
+  "emotion": "tweaking",
+  "intensity": 4,
+  "note": "Squinting, genuinely confused."
+ },
+ "thatisnotprofoundinsightthatisamanmalfunctioning": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Clinical and dry."
+ },
+ "dulberswhatdidyoujustgivemyguy": {
+  "emotion": "angry",
+  "intensity": 4,
+  "note": "Protective and accusing."
+ },
+ "nahwegoodsumoffaboutyoufolk": {
+  "emotion": "suspicious",
+  "intensity": 3,
+  "note": "Polite refusal, side-eyeing him."
+ },
+ "sumoffaboutmeyourboydulbers": {
+  "emotion": "offended",
+  "intensity": 5,
+  "note": "Squeaky and wounded."
+ },
+ "aightyallcouldgetthefuckoutmystoredoefoicallupdulbmeethus": {
+  "emotion": "menacing",
+  "intensity": 4,
+  "note": "Voice dropping into a threat, still a little dweeby."
+ },
+ "dulbmeethusfwmyahhiainttrippinbouthim": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Unbothered, flexing."
+ },
+ "broreallyjustkickedusoutofastore": {
+  "emotion": "outraged",
+  "intensity": 4,
+  "note": "Disbelief."
+ },
+ "andwestilldonotknowwherethemetocyis": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Dry summary of failure."
+ },
+ "thereisasignitwastherethewholetime": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Gentle, amused narration. A tiny beat before 'the whole time'."
+ },
+ "aightthatslowkeyconvenient": {
+  "emotion": "sheepish",
+  "intensity": 3,
+  "note": "Awkward, a little embarrassed."
+ },
+ "muffledfrominsideyoullregretthistrio": {
+  "emotion": "muffled",
+  "intensity": 4,
+  "note": "Yelling through a closed door, petty threat."
+ },
+ "allowme": {
+  "emotion": "confident",
+  "intensity": 2,
+  "note": "Calm, stepping forward."
+ },
+ "itiswritteninchapter8784sectionb12thattruemetocyglowsfromwit_8d6e": {
+  "emotion": "mystical",
+  "intensity": 3,
+  "note": "Grand ancient-dragon lore recital, slow and rhythmic, building like scripture."
+ },
+ "thisoneismoist": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Flat, disgusted pause before 'moist'."
+ },
+ "itsnotmoist": {
+  "emotion": "defensive",
+  "intensity": 5,
+  "note": "Squeaky interruption."
+ },
+ "itiscrackedpurpleandgrowingasmallcivilization": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Dry list, getting more disgusted."
+ },
+ "youwasfinnalaceuswithmidtocy": {
+  "emotion": "angry",
+  "intensity": 4,
+  "note": "Accusing."
+ },
+ "aightaightaightkeepyourvoicedownletsmakeadeal": {
+  "emotion": "panicked",
+  "intensity": 5,
+  "note": "Shushing, fast-talking, sweating."
+ },
+ "therealmetocyispastthemountainpasspastthegiantheretakesomemi_99e7": {
+  "emotion": "nervous",
+  "intensity": 4,
+  "note": "Rushed whisper, bribing them."
+ },
+ "gotmidtocythrowable": {
+  "emotion": "cheerful",
+  "intensity": 2,
+  "note": "Item announcement."
+ },
+ "betimkeepingthis": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Pleased."
+ },
+ "pleasuredoingbusiness": {
+  "emotion": "relieved",
+  "intensity": 4,
+  "note": "Overly cheerful, relieved to be off the hook."
+ },
+ "bogdrinkeryalltryitfirst": {
+  "emotion": "sly",
+  "intensity": 3,
+  "note": "Volunteering the goblins."
+ },
+ "holdupimkeepingonebeforeyalleatemall": {
+  "emotion": "sneaky",
+  "intensity": 3,
+  "note": "Quickly grabbing one."
+ },
+ "anhonor": {
+  "emotion": "proud",
+  "intensity": 3,
+  "note": "Honored, formal."
+ },
+ "thisaintmetocythismidtocybogdrinkerknowshisdrugs": {
+  "emotion": "outraged",
+  "intensity": 5,
+  "note": "Furious and very proud of his drug knowledge."
+ },
+ "uhoh": {
+  "emotion": "scared",
+  "intensity": 4,
+  "note": "Small, nervous squeak."
+ },
+ "gethimmmm": {
+  "emotion": "battle cry",
+  "intensity": 5,
+  "note": "Screaming charge."
+ },
+ "whenthedustclearsonlygoblinsremain": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Calm, a little ominous."
+ },
+ "bogdrinkerhandleditdonotaskquestions": {
+  "emotion": "calm",
+  "intensity": 3,
+  "note": "Suspiciously calm."
+ },
+ "dulbersfrintwasneverseenagain": {
+  "emotion": "ominous",
+  "intensity": 2,
+  "note": "Quiet, final."
+ },
+ "therealmetocyispastthegiantfieldtripisovergoblinshome": {
+  "emotion": "authoritative",
+  "intensity": 4,
+  "note": "Commanding, wrapping it up."
+ },
+ "onmydragonmamaourentouragehasleftus": {
+  "emotion": "melancholy",
+  "intensity": 2,
+  "note": "Deadpan, mock-sad."
+ },
+ "goodriddanceikindamissem": {
+  "emotion": "sad",
+  "intensity": 3,
+  "note": "Tough at first, then soft."
+ },
+ "astoreinthemiddleofnowheretotallynormal": {
+  "emotion": "sarcastic",
+  "intensity": 3,
+  "note": "Dry sarcasm."
+ },
+ "youthinktheygotsnacks": {
+  "emotion": "hopeful",
+  "intensity": 3,
+  "note": "Hopeful, dumb."
+ },
+ "okayokayokaymyfaultiaintknowyallwassomecrashouts": {
+  "emotion": "defeated",
+  "intensity": 4,
+  "note": "Booming but apologetic, backing down, embarrassed."
+ },
+ "foolish": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Dramatic, contemptuous, drawn out."
+ },
+ "pastthegiantthepathclimbshighersomewhereupaheadthemetocy": {
+  "emotion": "hopeful",
+  "intensity": 2,
+  "note": "Warm, slowly building anticipation."
+ },
+ "echoingimpressivemybelovedtriocomecloser": {
+  "emotion": "mysterious",
+  "intensity": 3,
+  "note": "Echoing, wise and inviting, a frail old breath between phrases."
+ },
+ "manimfinnaslapthisoldheadtoo": {
+  "emotion": "cocky",
+  "intensity": 4,
+  "note": "Cracking knuckles."
+ },
+ "themountainpasshotashyrude": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Calm, with a dry beat on 'Rude.'"
+ },
+ "manitshotashellouthere": {
+  "emotion": "annoyed",
+  "intensity": 4,
+  "note": "Sweating, complaining."
+ },
+ "andwhytherocksbreathingohthatsstillthemidtocymybad": {
+  "emotion": "confused",
+  "intensity": 3,
+  "note": "Confused, then casual realization."
+ },
+ "myhaircannotsurvivetheseconditionsprayforme": {
+  "emotion": "dramatic",
+  "intensity": 4,
+  "note": "Mock-tragic, like a dying poet."
+ },
+ "onmydragonmamaifeellikedulbersiswatchingus": {
+  "emotion": "uneasy",
+  "intensity": 2,
+  "note": "Low and wary."
+ },
+ "lethimwatchshortyaintscary": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Dismissive."
+ },
+ "youreplayingasskornagain": {
+  "emotion": "gentle",
+  "intensity": 1,
+  "note": "A soft, friendly aside, like a narrator giving a helpful tip. Plain and quick."
+ },
+ "mybelovedtrioivecametotellyouyoumustgetpastthismountainpassa_115a": {
+  "emotion": "wise",
+  "intensity": 3,
+  "note": "Long, articulate wizard speech. Wheezes and crackles of age at the commas, then carries on composed."
+ },
+ "brodeadahhsleeprightwhereamfgottagolikeyep": {
+  "emotion": "exasperated",
+  "intensity": 3,
+  "note": "Unimpressed, sighing."
+ },
+ "sohowwegettingpastthisbigmf": {
+  "emotion": "curious",
+  "intensity": 3,
+  "note": "Sizing him up."
+ },
+ "howdoyougetpastdiddychudgiant": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "Gentle question to the player."
+ },
+ "watchthiswakeupcallbigdawg": {
+  "emotion": "cocky",
+  "intensity": 4,
+  "note": "Wind-up taunt."
+ },
+ "whothrewmidtocyatdiddychud": {
+  "emotion": "furious",
+  "intensity": 5,
+  "note": "Booming, one word at a time, shaking the mountain."
+ },
+ "thedragondidit": {
+  "emotion": "sheepish",
+  "intensity": 3,
+  "note": "Instant blame, innocent."
+ },
+ "waitwhyaretherocksbreathing": {
+  "emotion": "confused",
+  "intensity": 4,
+  "note": "Booming but dazed, tripping out."
+ },
+ "ohhegeekednow": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Amused."
+ },
+ "wejustgottatiptoeacrossquietashell": {
+  "emotion": "whispering",
+  "intensity": 2,
+  "note": "Quiet, conspiratorial."
+ },
+ "ima72chadorcwithacosignfromclavicularinmetalarmorbro": {
+  "emotion": "offended",
+  "intensity": 4,
+  "note": "Insulted, listing his stats proudly, loud."
+ },
+ "thenstepwhenhesnoresthesnorewillhideus": {
+  "emotion": "calm",
+  "intensity": 2,
+  "note": "Quiet, clever."
+ },
+ "thetriomakesitacrossdiddychudneverwakesup": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Calm and relieved."
+ },
+ "lookwhatwasinhispocket": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Proud, showing off loot."
+ },
+ "yourobbedasleepinggiant": {
+  "emotion": "shocked",
+  "intensity": 4,
+  "note": "Disbelief."
+ },
+ "hewassleepingonitthatsbasicallyadonation": {
+  "emotion": "smug",
+  "intensity": 3,
+  "note": "Shameless logic."
+ },
+ "whoisondiddychudsbelly": {
+  "emotion": "angry",
+  "intensity": 5,
+  "note": "Waking up, booming."
+ },
+ "nobody": {
+  "emotion": "sheepish",
+  "intensity": 3,
+  "note": "Weak lie."
+ },
+ "diddychudissomadrightnow": {
+  "emotion": "furious",
+  "intensity": 5,
+  "note": "Third-person rage, booming."
+ },
+ "standbackherequireslore": {
+  "emotion": "mystical",
+  "intensity": 3,
+  "note": "Grand, stepping up with the book."
+ },
+ "bronoteverythingissolvedbydeloyelore": {
+  "emotion": "exasperated",
+  "intensity": 3,
+  "note": "Done with the lore."
+ },
+ "justwatchfolk": {
+  "emotion": "confident",
+  "intensity": 3,
+  "note": "Calm, confident."
+ },
+ "diddychudgiantsmilesinhissleepandrollsoverthepathisclear": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Gentle and amused."
+ },
+ "thelorehasfinallyserveditspurpose": {
+  "emotion": "proud",
+  "intensity": 3,
+  "note": "Grand, satisfied."
+ },
+ "ifellasleeptoongl": {
+  "emotion": "sheepish",
+  "intensity": 3,
+  "note": "Casual admission."
+ },
+ "thataintcanon": {
+  "emotion": "angry",
+  "intensity": 5,
+  "note": "Booming, offended, a lore nerd."
+ },
+ "itisperfectlycanon": {
+  "emotion": "angry",
+  "intensity": 4,
+  "note": "Offended, defending his lore."
+ },
+ "heknowsthelore": {
+  "emotion": "shocked",
+  "intensity": 4,
+  "note": "Surprised."
+ },
+ "aightfuckallatwakeupchud": {
+  "emotion": "angry",
+  "intensity": 5,
+  "note": "Done talking, yelling."
+ },
+ "skorndiddyslapsthegiantacrosstheface": {
+  "emotion": "wry",
+  "intensity": 2,
+  "note": "Calm, a gentle beat."
+ },
+ "didyoujustslapdiddychud": {
+  "emotion": "stunned",
+  "intensity": 5,
+  "note": "Slow, booming disbelief."
+ },
+ "hellyupandwhat": {
+  "emotion": "smug",
+  "intensity": 4,
+  "note": "Unbothered, cocky."
+ },
+ "cousinchud": {
+  "emotion": "surprised",
+  "intensity": 3,
+  "note": "Recognition."
+ },
+ "cousinbogdrinker": {
+  "emotion": "surprised",
+  "intensity": 4,
+  "note": "Booming, then softening."
+ },
+ "yallarecousins": {
+  "emotion": "shocked",
+  "intensity": 4,
+  "note": "Disbelief."
+ },
+ "onmymamassidechudmovethesemypeople": {
+  "emotion": "proud",
+  "intensity": 4,
+  "note": "Proud family explanation, then bossing his cousin."
+ },
+ "ughfineforfamily": {
+  "emotion": "grumpy",
+  "intensity": 4,
+  "note": "Booming but reluctant."
+ },
+ "theashisgettinginmyhairicanfeelitjudgingme": {
+  "emotion": "dramatic",
+  "intensity": 4,
+  "note": "Mock-tragic."
+ },
+ "deloyelorespeaksofagiantitdoesnotsayanythingelseabouthimclas_45b8": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Grand start, flat ending."
+ },
+ "whytheyalwayspickhimbro": {
+  "emotion": "jealous",
+  "intensity": 4,
+  "note": "Pouting."
+ },
+ "deloyeloresaidnothingaboutgoblinsnothingaboutanythingreally": {
+  "emotion": "deadpan",
+  "intensity": 2,
+  "note": "Dry and resigned."
+ }
+}

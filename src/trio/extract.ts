@@ -16,7 +16,35 @@ export const FILES: [string, string][] = [
   ["pass.gd", "Scene 4 · The Pass"],
   ["village.gd", "Scene 2 · Goblin Village"],
   ["level.gd", "Misc"],
+  ["combat/combat_data.gd", "Combat · Banter"],
 ];
+
+// Combat banter is a different shape: const BANTER := { "skorn": { "perfect": ["RAAAAH!", ...], ... }, ... }
+export const BANTER_MOODS: Record<string, string> = {
+  perfect: "pumped after landing a perfect hit", ult: "screaming a battle cry for their ultimate move",
+  lowhp: "badly hurt, low on health", ko: "knocked out, fading away", allyKo: "a teammate just went down",
+  hurt: "just got hit", taunt: "taunting the party mid-fight", hype: "hyped up", phase: "boss changing tactics, ominous",
+};
+function extractBanter(src: string, scene: string, file: string): TrioLine[] {
+  const start = src.indexOf("const BANTER");
+  if (start < 0) return [];
+  let i = src.indexOf("{", start), depth = 0, j = i;
+  for (; j < src.length; j++) { if (src[j] === "{") depth++; else if (src[j] === "}" && --depth === 0) break; }
+  const block = src.slice(i + 1, j);
+  const out: TrioLine[] = [];
+  for (const sp of block.matchAll(/"(\w+)"\s*:\s*\{([^}]*)\}/g)) {
+    for (const kind of sp[2].matchAll(/"(\w+)"\s*:\s*\[([^\]]*)\]/g)) {
+      for (const str of kind[2].matchAll(new RegExp(STR, "g"))) {
+        const line = unescape(str[1]);
+        const k = lineKey(line);
+        if (!k) continue;
+        out.push({ id: lineId(k), key: k, who: sp[1], name: null, mood: BANTER_MOODS[kind[1]] || kind[1], thought: false, line, scene, file,
+          srcLine: src.slice(0, i).split("\n").length, tag: "DRAFT", recorded: null, prev: null, uses: 1 });
+      }
+    }
+  }
+  return out;
+}
 
 export const lineKey = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
 
@@ -73,6 +101,10 @@ export function extractLines(sources: Record<string, string>): TrioLine[] {
   for (const [file, scene] of FILES) {
     const src = sources[file];
     if (!src) continue;
+    if (file.endsWith("combat_data.gd")) {
+      for (const b of extractBanter(src, scene, file)) if (!seen[b.key]) { seen[b.key] = b; out.push(b); }
+      continue;
+    }
     const consts: Record<string, string> = {};
     for (const m of src.matchAll(new RegExp(String.raw`^const\s+([A-Z_][A-Z0-9_]*)\s*:?=\s*${STR}`, "gm"))) consts[m[1]] = unescape(m[2]);
     let prev: TrioLine["prev"] = null;

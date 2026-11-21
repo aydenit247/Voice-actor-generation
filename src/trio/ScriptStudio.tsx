@@ -5,6 +5,7 @@ import {
   AlertCircle, Check, ChevronDown, ChevronRight, Download, Loader2, Mic, Play, Settings2, Square, Star, Trash2, Upload, Wand2,
 } from "lucide-react";
 import linesJson from "../data/trio/lines.json";
+import defaultsJson from "../data/trio/lineDirections.json";
 import {
   ACTIONS, CAST, EMOTIONS, GEMINI_VOICES, HOUSE_STYLE, INLINE_CUES, INTENSITY_LABELS, PACES, type CastMember, type Pace, type Variant,
 } from "../data/trio/cast";
@@ -18,6 +19,19 @@ import { friendlyError, loadSyncConfig, mergeSettings, syncNow, type SyncConfig 
 import { b64ToBytes, download, makeZip } from "./zip";
 
 const BUNDLED = linesJson as TrioLine[];
+// Starting directions written for the main story (Claude's suggestions; anything set in the app overrides them)
+const LINE_DEFAULTS = defaultsJson as Record<string, LineDirection>;
+const BANTER_ENERGY: Record<string, number> = {
+  "pumped after landing a perfect hit": 4, "screaming a battle cry for their ultimate move": 5, "badly hurt, low on health": 3,
+  "knocked out, fading away": 2, "a teammate just went down": 4, "just got hit": 4, "taunting the party mid-fight": 4,
+  "hyped up": 5, "boss changing tactics, ominous": 3,
+};
+function defaultDirection(l: TrioLine | undefined): LineDirection {
+  if (!l) return {};
+  if (LINE_DEFAULTS[l.id]) return LINE_DEFAULTS[l.id];
+  if (l.scene.startsWith("Combat") && l.mood) return { intensity: BANTER_ENERGY[l.mood], note: "Short mid-battle bark. Punchy." };
+  return {};
+}
 const PAGE = 30;
 const SEEN_KEY = "trio-voice-seen-lines";
 type Status = "all" | "todo" | "takes" | "approved" | "removed";
@@ -169,7 +183,8 @@ export default function ScriptStudio() {
     Object.values(m).forEach((l) => l.sort((a, b) => a.n - b.n));
     return m;
   }, [takes]);
-  const dirOf = useCallback((id: string): LineDirection => settings.lines[id] || {}, [settings.lines]);
+  const lineById = useMemo(() => new Map(LINES.map((l) => [l.id, l])), [LINES]);
+  const dirOf = useCallback((id: string): LineDirection => ({ ...defaultDirection(lineById.get(id)), ...(settings.lines[id] || {}) }), [settings.lines, lineById]);
   const statusOf = useCallback((l: TrioLine): Exclude<Status, "all" | "removed"> => {
     if (dirOf(l.id).approved) return "approved";
     if (takesBy[l.id]?.length) return "takes";
@@ -208,7 +223,7 @@ export default function ScriptStudio() {
   // ---------- generation ----------
   const generate = useCallback(async (l: TrioLine): Promise<"ok" | "rate" | "fatal"> => {
     const c = cast[l.who] || cast.narrator;
-    const d = settings.lines[l.id] || {};
+    const d = dirOf(l.id);
     const prompt = buildDirection(l, c, d, houseStyle, castNames);
     const text = performanceText(l, d);
     const voice = voicing(l, c, d).voice;
@@ -239,7 +254,7 @@ export default function ScriptStudio() {
     } finally {
       setBusy((b) => ({ ...b, [l.id]: false }));
     }
-  }, [cast, castNames, houseStyle, settings.lines, settings.model, takesBy, me]);
+  }, [cast, castNames, houseStyle, dirOf, settings.model, takesBy, me]);
 
   const generateMissing = async () => {
     const todo = filtered.filter((l) => !takesBy[l.id]?.length);
@@ -514,6 +529,7 @@ export default function ScriptStudio() {
                 {pageLines.map((l) => (
                   <LineCard key={l.id} l={l} c={cast[l.who] || cast.narrator} d={dirOf(l.id)} takes={takesBy[l.id] || []}
                     busy={!!busy[l.id]} playing={playing} castNames={castNames} houseStyle={houseStyle}
+                    suggested={!!LINE_DEFAULTS[l.id] && !settings.lines[l.id]}
                     onChange={(p) => setLine(l.id, p)} onGenerate={() => generate(l)} onPlay={play} onDelete={removeTake} />
                 ))}
                 {!pageLines.length && <p className="py-10 text-center text-stone-500">No lines match.</p>}
@@ -544,7 +560,7 @@ function Label({ text, children }: { text: string; children: React.ReactNode }) 
 // ---------- one line ----------
 function LineCard(props: {
   l: TrioLine; c: CastMember; d: LineDirection; takes: Take[]; busy: boolean; playing: string | null;
-  castNames: Record<string, string>; houseStyle: string;
+  castNames: Record<string, string>; houseStyle: string; suggested?: boolean;
   onChange: (p: Partial<LineDirection>) => void; onGenerate: () => void; onPlay: (t: Take) => void; onDelete: (t: Take) => void;
 }) {
   const { l, c, d, takes, busy, playing, onChange } = props;
@@ -575,6 +591,7 @@ function LineCard(props: {
         {l.uses > 1 && <span>used {l.uses}×</span>}
         <span className="text-stone-500">voice: {vo.variant ? vo.variant.label : vo.voice}</span>
         {d.by && <span className="text-sky-400">last edited by {d.by}</span>}
+        {props.suggested && <span className="text-stone-500" title="A starting direction Claude wrote. Change anything.">suggested direction</span>}
       </div>
       {d.carriedFrom && (
         <p className="mb-1 rounded bg-sky-950/50 px-2 py-1 text-xs text-sky-300">

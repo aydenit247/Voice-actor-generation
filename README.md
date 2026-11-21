@@ -35,7 +35,9 @@ and open http://localhost:3000.
    - an optional **accent**
 
    Click a character's name to show only their lines.
-2. **Each line** has its own delivery controls. Leave any of them empty to use the character's defaults.
+2. **Each line** has its own delivery controls. The 278 main-story lines come pre-filled with a suggested emotion, energy
+   and director's note (marked "suggested direction"), and combat banter gets an energy level. Change anything; your
+   changes always win. Leave a field empty to use the character's defaults.
    - **Emotion:** pick from the list or type anything, like "drunk", "betrayed", or "trying not to laugh".
    - **Energy 1–5** and **Pace**.
    - **Director's note:** free text, like "voice cracks on 'dumb'" or "like he just realized he burned the map".
@@ -90,6 +92,7 @@ If GitHub can't be reached, the studio falls back to the copy bundled with the a
 - `src/trio/store.ts`: saving (directions in localStorage, takes in IndexedDB)
 - `src/trio/zip.ts`: the zip export
 - `src/data/trio/cast.ts`: default voices and directions for each character
+- `src/data/trio/lineDirections.json`: suggested starting directions for the main-story lines
 - `src/trio/extract.ts`: reads the game's scripts from GitHub and pulls out every line
 - `src/data/trio/lines.json`: offline copy of every game line (`tools/extract_trio_lines.ts`)
 - `server.ts`: the API route that calls Gemini (now allows all 30 voices and converts raw PCM audio to WAV)
