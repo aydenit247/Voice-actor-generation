@@ -6,18 +6,19 @@ import {
 } from "lucide-react";
 import linesJson from "../data/trio/lines.json";
 import {
-  CAST, EMOTIONS, GEMINI_VOICES, INLINE_CUES, INTENSITY_LABELS, PACES, type CastMember, type Pace,
+  ACTIONS, CAST, EMOTIONS, GEMINI_VOICES, HOUSE_STYLE, INLINE_CUES, INTENSITY_LABELS, PACES, type CastMember, type Pace, type Variant,
 } from "../data/trio/cast";
 import {
   allTakes, clearTakes, deleteTake, loadSettings, putTake, saveSettings, type LineDirection, type Settings, type Take,
 } from "./store";
-import { buildDirection, performanceText, slug, type TrioLine } from "./direction";
+import { buildDirection, performanceText, slug, variantFor, voicing, type TrioLine } from "./direction";
+import { fetchGameLines, similarity } from "./extract";
 import { b64ToBytes, download, makeZip } from "./zip";
 
-const LINES = linesJson as TrioLine[];
-const SCENES = Array.from(new Set(LINES.map((l) => l.scene)));
+const BUNDLED = linesJson as TrioLine[];
 const PAGE = 30;
-type Status = "all" | "todo" | "takes" | "approved" | "recorded";
+const SEEN_KEY = "trio-voice-seen-lines";
+type Status = "all" | "todo" | "takes" | "approved" | "removed";
 
 // ---------- small audio helpers ----------
 let audioCtx: AudioContext | null = null;
@@ -44,6 +45,8 @@ function stopAudio() {
 
 export default function ScriptStudio() {
   const [settings, setSettings] = useState<Settings>(loadSettings);
+  const [LINES, setLines] = useState<TrioLine[]>(BUNDLED);
+  const [sync, setSync] = useState<{ state: "loading" | "live" | "offline"; msg?: string }>({ state: "loading" });
   const [takes, setTakes] = useState<Take[]>([]);
   const [who, setWho] = useState<string>("all");
   const [scene, setScene] = useState<string>("all");
@@ -60,15 +63,68 @@ export default function ScriptStudio() {
   const fileRef = useRef<HTMLInputElement | null>(null);
 
   useEffect(() => { allTakes().then(setTakes).catch(() => setError("Couldn't open saved takes (browser storage blocked?)")); }, []);
+
+  // Pull the current dialogue from the game repo on GitHub; fall back to the copy bundled with the app
+  const refreshLines = useCallback(async () => {
+    setSync({ state: "loading" });
+    try {
+      const live = await fetchGameLines();
+      let seen: string[] = [];
+      try { seen = JSON.parse(localStorage.getItem(SEEN_KEY) || "[]"); } catch { /* ignore */ }
+      const seenSet = new Set(seen);
+      const liveIds = new Set(live.map((l) => l.id));
+      const added = seen.length ? live.filter((l) => !seenSet.has(l.id)).length : 0;
+      const removed = seen.filter((id) => !liveIds.has(id)).length;
+      // Carry directions over to reworded lines (same speaker, very similar text, no direction yet)
+      let carried = 0;
+      setSettings((s) => {
+        const lines = { ...s.lines };
+        const orphans = Object.entries(lines).filter(([id, d]) => !liveIds.has(id) && d.lineText);
+        for (const l of live) {
+          if (lines[l.id]) continue;
+          let best: [string, number] | null = null;
+          for (const [id, d] of orphans) {
+            const sim = similarity(d.lineText!, l.line);
+            if (sim >= 0.6 && (!best || sim > best[1])) best = [id, sim];
+          }
+          if (best) {
+            const old = lines[best[0]];
+            lines[l.id] = { ...old, performance: undefined, chosenTake: undefined, approved: false, lineText: l.line, carriedFrom: old.lineText };
+            carried += 1;
+          }
+        }
+        return carried ? { ...s, lines } : s;
+      });
+      try { localStorage.setItem(SEEN_KEY, JSON.stringify(live.map((l) => l.id))); } catch { /* ignore */ }
+      setLines(live);
+      const bits = [added && `${added} new`, removed && `${removed} changed or removed`, carried && `${carried} kept their directions`].filter(Boolean);
+      setSync({ state: "live", msg: bits.length ? `Script updated since last time: ${bits.join(", ")}.` : undefined });
+    } catch {
+      setSync({ state: "offline", msg: "Couldn't reach GitHub, so these are the lines bundled with the app." });
+    }
+  }, []);
+  useEffect(() => { refreshLines(); }, [refreshLines]);
   useEffect(() => { saveSettings(settings); }, [settings]);
   useEffect(() => { setPage(0); }, [who, scene, status, search]);
 
   // ---------- derived ----------
   const cast = useMemo(() => {
     const m: Record<string, CastMember> = {};
-    CAST.forEach((c) => { m[c.id] = { ...c, ...(settings.cast[c.id] || {}) } as CastMember; });
+    CAST.forEach((c) => {
+      const variants = c.variants?.map((v) => ({ ...v, ...(settings.variants?.[`${c.id}:${v.id}`] || {}) }) as Variant);
+      m[c.id] = { ...c, ...(settings.cast[c.id] || {}), variants } as CastMember;
+    });
     return m;
-  }, [settings.cast]);
+  }, [settings.cast, settings.variants]);
+  const houseStyle = settings.houseStyle ?? HOUSE_STYLE;
+  const SCENES = useMemo(() => Array.from(new Set(LINES.map((l) => l.scene))), [LINES]);
+  const lineIds = useMemo(() => new Set(LINES.map((l) => l.id)), [LINES]);
+  // Takes / directions for lines that are no longer in the game (reworded or deleted)
+  const removed = useMemo(() => {
+    const ids = new Set<string>();
+    takes.forEach((t) => { if (!lineIds.has(t.lineId)) ids.add(t.lineId); });
+    return Array.from(ids).map((id) => ({ id, text: settings.lines[id]?.lineText || takes.find((t) => t.lineId === id)?.text || id }));
+  }, [takes, lineIds, settings.lines]);
   const castNames = useMemo(() => Object.fromEntries(Object.values(cast).map((c) => [c.id, c.name])), [cast]);
   const takesBy = useMemo(() => {
     const m: Record<string, Take[]> = {};
@@ -77,8 +133,7 @@ export default function ScriptStudio() {
     return m;
   }, [takes]);
   const dirOf = useCallback((id: string): LineDirection => settings.lines[id] || {}, [settings.lines]);
-  const statusOf = useCallback((l: TrioLine): Exclude<Status, "all"> => {
-    if (l.recorded) return "recorded";
+  const statusOf = useCallback((l: TrioLine): Exclude<Status, "all" | "removed"> => {
     if (dirOf(l.id).approved) return "approved";
     if (takesBy[l.id]?.length) return "takes";
     return "todo";
@@ -88,24 +143,28 @@ export default function ScriptStudio() {
     (who === "all" || l.who === who) &&
     (scene === "all" || l.scene === scene) &&
     (status === "all" ? true : statusOf(l) === status) &&
-    (!search.trim() || l.line.toLowerCase().includes(search.toLowerCase()))), [who, scene, status, search, statusOf]);
+    (!search.trim() || l.line.toLowerCase().includes(search.toLowerCase()) || (l.name || "").toLowerCase().includes(search.toLowerCase()))),
+  [LINES, who, scene, status, search, statusOf]);
   const pageLines = filtered.slice(page * PAGE, page * PAGE + PAGE);
   const counts = useMemo(() => {
     const c: Record<string, { total: number; done: number }> = {};
     LINES.forEach((l) => {
       const x = (c[l.who] = c[l.who] || { total: 0, done: 0 });
       x.total += 1;
-      const s = statusOf(l);
-      if (s === "approved" || s === "recorded") x.done += 1;
+      if (statusOf(l) === "approved") x.done += 1;
     });
     return c;
-  }, [statusOf]);
+  }, [LINES, statusOf]);
   const approvedCount = LINES.filter((l) => statusOf(l) === "approved").length;
   const withTakes = LINES.filter((l) => takesBy[l.id]?.length).length;
 
   // ---------- settings updates ----------
-  const setLine = (id: string, patch: Partial<LineDirection>) =>
-    setSettings((s) => ({ ...s, lines: { ...s.lines, [id]: { ...(s.lines[id] || {}), ...patch } } }));
+  const setLine = (id: string, patch: Partial<LineDirection>) => {
+    const text = LINES.find((l) => l.id === id)?.line;
+    setSettings((s) => ({ ...s, lines: { ...s.lines, [id]: { ...(s.lines[id] || {}), ...patch, ...(text ? { lineText: text } : {}) } } }));
+  };
+  const setVariantField = (who: string, vid: string, patch: Partial<Variant>) =>
+    setSettings((s) => ({ ...s, variants: { ...(s.variants || {}), [`${who}:${vid}`]: { ...(s.variants?.[`${who}:${vid}`] || {}), ...patch } } }));
   const setCastField = (id: string, patch: Partial<CastMember>) =>
     setSettings((s) => ({ ...s, cast: { ...s.cast, [id]: { ...(s.cast[id] || {}), ...patch } } }));
 
@@ -113,13 +172,14 @@ export default function ScriptStudio() {
   const generate = useCallback(async (l: TrioLine): Promise<"ok" | "rate" | "fatal"> => {
     const c = cast[l.who] || cast.narrator;
     const d = settings.lines[l.id] || {};
-    const prompt = buildDirection(l, c, d, settings.globalNote, castNames);
+    const prompt = buildDirection(l, c, d, houseStyle, castNames);
     const text = performanceText(l, d);
+    const voice = voicing(l, c, d).voice;
     setBusy((b) => ({ ...b, [l.id]: true }));
     try {
       const r = await fetch("/api/tts", {
         method: "POST", headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ script: text, style: prompt, voiceName: c.voice, model: settings.model }),
+        body: JSON.stringify({ script: text, style: prompt, voiceName: voice, model: settings.model }),
       });
       const p = await r.json().catch(() => ({}));
       if (!r.ok || !p.audioBase64) {
@@ -129,7 +189,7 @@ export default function ScriptStudio() {
       const existing = takesBy[l.id] || [];
       const take: Take = {
         id: `${l.id}-${Date.now()}`, lineId: l.id, n: (existing[existing.length - 1]?.n || 0) + 1,
-        audioBase64: p.audioBase64, durationSec: await durationOf(p.audioBase64), voice: c.voice, model: settings.model,
+        audioBase64: p.audioBase64, durationSec: await durationOf(p.audioBase64), voice, model: settings.model,
         prompt, text, createdAt: Date.now(),
       };
       await putTake(take);
@@ -142,10 +202,10 @@ export default function ScriptStudio() {
     } finally {
       setBusy((b) => ({ ...b, [l.id]: false }));
     }
-  }, [cast, castNames, settings.globalNote, settings.lines, settings.model, takesBy]);
+  }, [cast, castNames, houseStyle, settings.lines, settings.model, takesBy]);
 
   const generateMissing = async () => {
-    const todo = filtered.filter((l) => !l.recorded && !takesBy[l.id]?.length);
+    const todo = filtered.filter((l) => !takesBy[l.id]?.length);
     if (!todo.length) { setError("Every line in this view already has a take. Use Redo on a line for another take."); return; }
     stopRef.current = false;
     setBatch({ done: 0, total: todo.length });
@@ -183,7 +243,7 @@ export default function ScriptStudio() {
     LINES.forEach((l) => {
       const list = takesBy[l.id];
       const d = dirOf(l.id);
-      if (!list?.length || l.recorded || (approvedOnly && !d.approved)) return;
+      if (!list?.length || (approvedOnly && !d.approved)) return;
       const t = list.find((x) => x.id === d.chosenTake) || list[list.length - 1];
       let base = `${l.who}_${slug(l.line)}`;
       while (used.has(base)) base += "_2";
@@ -217,7 +277,10 @@ export default function ScriptStudio() {
         <div className="mr-2">
           <h1 className="text-xl font-semibold text-[#F5F2EB]">Trio Adventures · Voice Studio</h1>
           <p className="text-xs text-stone-400">
-            {approvedCount} approved · {withTakes} with takes · {LINES.length} lines ({LINES.filter((l) => l.recorded).length} already recorded by Asar)
+            {approvedCount} approved · {withTakes} with takes · {LINES.length} lines ·{" "}
+            <button className="underline hover:text-white" onClick={refreshLines} title="Reload the dialogue from the game on GitHub">
+              {sync.state === "loading" ? "checking the game for script changes…" : sync.state === "live" ? "script is up to date with the game ↻" : "offline copy ↻"}
+            </button>
           </p>
         </div>
         <select className="rounded bg-stone-900 px-2 py-1.5 text-stone-200" value={settings.model}
@@ -232,7 +295,7 @@ export default function ScriptStudio() {
         ) : (
           <button className="flex items-center gap-2 rounded bg-[#E86F25] px-3 py-1.5 font-semibold text-black hover:bg-[#ff8a3d]" onClick={generateMissing}
             title="Generate one take for every line in the current view that doesn't have one yet">
-            <Wand2 size={14} /> Generate missing ({filtered.filter((l) => !l.recorded && !takesBy[l.id]?.length).length})
+            <Wand2 size={14} /> Generate missing ({filtered.filter((l) => !takesBy[l.id]?.length).length})
           </button>
         )}
         <button className="flex items-center gap-2 rounded bg-stone-800 px-3 py-1.5 text-stone-100 hover:bg-stone-700" onClick={() => exportZip(true)}
@@ -255,6 +318,12 @@ export default function ScriptStudio() {
         </div>
       </div>
 
+      {sync.msg && (
+        <div className="mb-3 flex items-start gap-2 rounded border border-sky-900 bg-sky-950/50 px-3 py-2 text-sky-200">
+          <span className="flex-1">{sync.msg}{removed.length > 0 && <> Old takes for changed lines are under the status filter <b>Removed from game</b>.</>}</span>
+          <button className="text-sky-300 hover:text-white" onClick={() => setSync((x) => ({ ...x, msg: undefined }))}>✕</button>
+        </div>
+      )}
       {error && (
         <div className="mb-3 flex items-start gap-2 rounded border border-red-800 bg-red-950/60 px-3 py-2 text-red-200">
           <AlertCircle size={16} className="mt-0.5 shrink-0" /> <span className="flex-1">{error}</span>
@@ -309,8 +378,33 @@ export default function ScriptStudio() {
                       <input className="w-full rounded bg-stone-950 px-2 py-1 text-stone-200" placeholder="e.g. Southern, British, Brooklyn"
                         value={c.accent || ""} onChange={(e) => setCastField(c.id, { accent: e.target.value })} />
                     </Label>
+                    {c.variants && (
+                      <div className="space-y-2 rounded bg-stone-950/60 p-2">
+                        <p className="text-xs font-semibold text-stone-300">Voices for different {c.name.toLowerCase()}</p>
+                        {c.variants.map((v) => (
+                          <div key={v.id} className="space-y-1 border-t border-stone-800 pt-2">
+                            <input className="w-full rounded bg-stone-900 px-2 py-1 text-xs font-semibold text-stone-100" value={v.label}
+                              onChange={(e) => setVariantField(c.id, v.id, { label: e.target.value })} />
+                            <select className="w-full rounded bg-stone-900 px-2 py-1 text-xs text-stone-200" value={v.voice} onChange={(e) => setVariantField(c.id, v.id, { voice: e.target.value })}>
+                              {GEMINI_VOICES.map((g) => <option key={g.name} value={g.name}>{g.name}: {g.tone} ({g.sounds})</option>)}
+                            </select>
+                            <input className="w-full rounded bg-stone-900 px-2 py-1 text-xs text-stone-200" placeholder="Accent" value={v.accent || ""}
+                              onChange={(e) => setVariantField(c.id, v.id, { accent: e.target.value })} />
+                            <textarea className="h-16 w-full rounded bg-stone-900 px-2 py-1 text-xs text-stone-200" value={v.direction}
+                              onChange={(e) => setVariantField(c.id, v.id, { direction: e.target.value })} />
+                            {c.nameVariant && Object.entries(c.nameVariant).some(([, id]) => id === v.id) && (
+                              <p className="text-[11px] text-stone-500">Used by: {Object.entries(c.nameVariant).filter(([, id]) => id === v.id).map(([n]) => n).join(", ")}</p>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
                     <button className="text-xs text-stone-400 underline hover:text-white"
-                      onClick={() => setSettings((s) => { const next = { ...s.cast }; delete next[c.id]; return { ...s, cast: next }; })}>
+                      onClick={() => setSettings((s) => {
+                        const next = { ...s.cast }; delete next[c.id];
+                        const vars = { ...(s.variants || {}) }; Object.keys(vars).forEach((k) => { if (k.startsWith(c.id + ":")) delete vars[k]; });
+                        return { ...s, cast: next, variants: vars };
+                      })}>
                       Reset {c.name} to defaults
                     </button>
                   </div>
@@ -318,10 +412,13 @@ export default function ScriptStudio() {
               </div>
             );
           })}
-          <Label text="Note for every line (optional)">
-            <textarea className="h-16 w-full rounded bg-stone-900 px-2 py-1 text-xs text-stone-200" placeholder="e.g. keep it short and punchy, no long pauses"
-              value={settings.globalNote} onChange={(e) => setSettings((s) => ({ ...s, globalNote: e.target.value }))} />
+          <Label text="Style for every line">
+            <textarea className="h-36 w-full rounded bg-stone-900 px-2 py-1 text-xs text-stone-200"
+              value={houseStyle} onChange={(e) => setSettings((s) => ({ ...s, houseStyle: e.target.value }))} />
           </Label>
+          {settings.houseStyle !== undefined && settings.houseStyle !== HOUSE_STYLE && (
+            <button className="text-xs text-stone-400 underline" onClick={() => setSettings((s) => ({ ...s, houseStyle: undefined }))}>Reset style</button>
+          )}
         </aside>
 
         {/* Lines */}
@@ -336,7 +433,7 @@ export default function ScriptStudio() {
               <option value="todo">Needs a take</option>
               <option value="takes">Has takes, not approved</option>
               <option value="approved">Approved</option>
-              <option value="recorded">Recorded by Asar</option>
+              <option value="removed">Removed from game ({removed.length})</option>
             </select>
             <input className="min-w-[220px] flex-1 rounded bg-stone-900 px-3 py-1.5 text-stone-200" placeholder="Search lines…"
               value={search} onChange={(e) => setSearch(e.target.value)} />
@@ -344,15 +441,34 @@ export default function ScriptStudio() {
           </div>
 
           <div className="space-y-3">
-            {pageLines.map((l) => (
-              <LineCard key={l.id} l={l} c={cast[l.who] || cast.narrator} d={dirOf(l.id)} takes={takesBy[l.id] || []}
-                busy={!!busy[l.id]} playing={playing} castNames={castNames} globalNote={settings.globalNote}
-                onChange={(p) => setLine(l.id, p)} onGenerate={() => generate(l)} onPlay={play} onDelete={removeTake} />
-            ))}
-            {!pageLines.length && <p className="py-10 text-center text-stone-500">No lines match.</p>}
+            {status === "removed" ? (
+              removed.length ? removed.map((r) => (
+                <div key={r.id} className="rounded border border-stone-800 bg-stone-900/40 px-4 py-3">
+                  <p className="mb-1 text-xs text-stone-500">No longer in the game (reworded or deleted). Old takes kept here.</p>
+                  <p className="mb-2 text-stone-300 line-through decoration-stone-600">{r.text}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {(takesBy[r.id] || []).map((t) => (
+                      <div key={t.id} className="flex items-center gap-1 rounded bg-stone-950 px-1.5 py-1">
+                        <button className="flex items-center gap-1 px-1 text-stone-100" onClick={() => play(t)}>{playing === t.id ? <Square size={12} /> : <Play size={12} />} Take {t.n}</button>
+                        <button title="Delete take" onClick={() => removeTake(t)} className="text-stone-600 hover:text-red-400"><Trash2 size={12} /></button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )) : <p className="py-10 text-center text-stone-500">Nothing here.</p>
+            ) : (
+              <>
+                {pageLines.map((l) => (
+                  <LineCard key={l.id} l={l} c={cast[l.who] || cast.narrator} d={dirOf(l.id)} takes={takesBy[l.id] || []}
+                    busy={!!busy[l.id]} playing={playing} castNames={castNames} houseStyle={houseStyle}
+                    onChange={(p) => setLine(l.id, p)} onGenerate={() => generate(l)} onPlay={play} onDelete={removeTake} />
+                ))}
+                {!pageLines.length && <p className="py-10 text-center text-stone-500">No lines match.</p>}
+              </>
+            )}
           </div>
 
-          {filtered.length > PAGE && (
+          {status !== "removed" && filtered.length > PAGE && (
             <div className="mt-4 flex items-center justify-center gap-3 text-stone-300">
               <button disabled={page === 0} className="rounded bg-stone-800 px-3 py-1 disabled:opacity-40" onClick={() => setPage((p) => p - 1)}>← Prev</button>
               <span>Page {page + 1} / {Math.ceil(filtered.length / PAGE)}</span>
@@ -375,7 +491,7 @@ function Label({ text, children }: { text: string; children: React.ReactNode }) 
 // ---------- one line ----------
 function LineCard(props: {
   l: TrioLine; c: CastMember; d: LineDirection; takes: Take[]; busy: boolean; playing: string | null;
-  castNames: Record<string, string>; globalNote: string;
+  castNames: Record<string, string>; houseStyle: string;
   onChange: (p: Partial<LineDirection>) => void; onGenerate: () => void; onPlay: (t: Take) => void; onDelete: (t: Take) => void;
 }) {
   const { l, c, d, takes, busy, playing, onChange } = props;
@@ -392,14 +508,8 @@ function LineCard(props: {
     onChange({ performance: next.replace(/\s{2,}/g, " ") });
   };
 
-  if (l.recorded) {
-    return (
-      <div className="rounded border border-emerald-900/60 bg-emerald-950/20 px-4 py-3 opacity-80">
-        <div className="mb-1 flex gap-2 text-xs"><Badge>{l.name || props.castNames[l.who] || l.who}</Badge><span className="text-emerald-300">Recorded by Asar · skipped</span></div>
-        <p className="text-stone-200">{l.line}</p>
-      </div>
-    );
-  }
+  const vo = voicing(l, c, d);
+  const autoVariant = c.variants ? variantFor(l, c, {}) : undefined;
 
   return (
     <div className={`rounded border px-4 py-3 ${d.approved ? "border-emerald-700/60 bg-emerald-950/10" : "border-stone-800 bg-stone-900/50"}`}>
@@ -410,7 +520,14 @@ function LineCard(props: {
         {l.mood && <span>mood: {l.mood}</span>}
         {l.thought && <span className="italic">inner thought</span>}
         {l.uses > 1 && <span>used {l.uses}×</span>}
+        <span className="text-stone-500">voice: {vo.variant ? vo.variant.label : vo.voice}</span>
       </div>
+      {d.carriedFrom && (
+        <p className="mb-1 rounded bg-sky-950/50 px-2 py-1 text-xs text-sky-300">
+          Reworded line. Kept the directions from the old version: “{d.carriedFrom}”{" "}
+          <button className="underline" onClick={() => onChange({ carriedFrom: undefined })}>ok</button>
+        </p>
+      )}
       {l.prev && <p className="mb-1 text-xs italic text-stone-500">after {props.castNames[l.prev.who] || l.prev.who}: “{l.prev.line.length > 110 ? l.prev.line.slice(0, 110) + "…" : l.prev.line}”</p>}
       <p className="mb-3 text-base text-[#F5F2EB]">{l.line}</p>
 
@@ -436,6 +553,16 @@ function LineCard(props: {
           </select>
         </Label>
       </div>
+      {c.variants && (
+        <div className="mt-2">
+          <Label text="Which voice">
+            <select className="w-full rounded bg-stone-950 px-2 py-1 text-stone-200" value={d.variant || ""} onChange={(e) => onChange({ variant: e.target.value || undefined })}>
+              <option value="">automatic ({autoVariant?.label}{l.name ? ` for ${l.name}` : ""})</option>
+              {c.variants.map((v) => <option key={v.id} value={v.id}>{v.label}</option>)}
+            </select>
+          </Label>
+        </div>
+      )}
       <div className="mt-2">
         <Label text="Director's note">
           <input className="w-full rounded bg-stone-950 px-2 py-1 text-stone-200" placeholder="e.g. like he just realized he burned the only map; voice cracks on 'dumb'"
@@ -457,6 +584,11 @@ function LineCard(props: {
           <textarea ref={perfRef} className="h-16 w-full rounded bg-stone-950 px-2 py-1 text-stone-200" value={d.performance || l.line}
             onChange={(e) => onChange({ performance: e.target.value === l.line ? undefined : e.target.value })} />
           <div className="mt-1 flex flex-wrap gap-1">
+            <span className="mr-1 self-center text-[11px] text-stone-500">Actions:</span>
+            {ACTIONS.map((a) => <button key={a} className="rounded bg-amber-900/40 px-2 py-0.5 text-xs text-amber-200 hover:bg-amber-900/70" onClick={() => insertCue(a)}>{a}</button>)}
+          </div>
+          <div className="mt-1 flex flex-wrap gap-1">
+            <span className="mr-1 self-center text-[11px] text-stone-500">Cues:</span>
             {INLINE_CUES.map((cue) => <button key={cue} className="rounded bg-stone-800 px-2 py-0.5 font-mono text-xs text-stone-300 hover:bg-stone-700" onClick={() => insertCue(cue)}>{cue}</button>)}
             {d.performance && <button className="ml-auto text-xs text-stone-400 underline" onClick={() => onChange({ performance: undefined })}>reset to game line</button>}
           </div>
@@ -464,7 +596,7 @@ function LineCard(props: {
       )}
       {showPrompt && (
         <pre className="mt-2 whitespace-pre-wrap rounded bg-black/50 p-2 text-[11px] text-stone-400">
-          {buildDirection(l, c, d, props.globalNote, props.castNames)}{"\n\n"}Text: {performanceText(l, d)}{"\n"}Voice: {c.voice}
+          {buildDirection(l, c, d, props.houseStyle, props.castNames)}{"\n\n"}Text: {performanceText(l, d)}{"\n"}Voice: {vo.voice}
         </pre>
       )}
 

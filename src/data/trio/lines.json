@@ -1240,7 +1240,7 @@
   "file": "village_script.gd",
   "srcLine": 16,
   "tag": "Ebain",
-  "recorded": "goblins/goblin_yay_mog_that_hard",
+  "recorded": null,
   "prev": {
    "who": "xylo",
    "line": "Wait a second… sum don't feel right, folk."
@@ -1259,7 +1259,7 @@
   "file": "village_script.gd",
   "srcLine": 17,
   "tag": "Ebain",
-  "recorded": "goblins/goblins_the_mogging_elf",
+  "recorded": null,
   "prev": {
    "who": "goblin",
    "line": "Yay.. you are allowed to mog that hard, right? Cool dude, that's fucking fair."
@@ -1335,7 +1335,7 @@
   "file": "village_script.gd",
   "srcLine": 23,
   "tag": "",
-  "recorded": "goblins/chief_thousand_years",
+  "recorded": null,
   "prev": {
    "who": "xylo",
    "line": "Prophecies be weird like that."
@@ -1373,7 +1373,7 @@
   "file": "village_script.gd",
   "srcLine": 25,
   "tag": "",
-  "recorded": "goblins/chief_elf_seeks_metocy",
+  "recorded": null,
   "prev": {
    "who": "lykor",
    "line": "Aight, if I'm y'all's god or whatever, then answer me this: where the metocy at?"
@@ -1411,7 +1411,7 @@
   "file": "village_script.gd",
   "srcLine": 27,
   "tag": "",
-  "recorded": "goblins/chief_once_crowned",
+  "recorded": null,
   "prev": {
    "who": "skorn",
    "line": "Then run it, short stuff."
@@ -1468,7 +1468,7 @@
   "file": "village_script.gd",
   "srcLine": 38,
   "tag": "",
-  "recorded": "goblins/chief_metocy_needs",
+  "recorded": null,
   "prev": {
    "who": "xylo",
    "line": "They… sell it?"
@@ -1487,7 +1487,7 @@
   "file": "village_script.gd",
   "srcLine": 40,
   "tag": "",
-  "recorded": "goblins/goblins_bye_come_back_harder",
+  "recorded": null,
   "prev": {
    "who": "chief",
    "line": "For all yo metocy needs."
@@ -1639,7 +1639,7 @@
   "file": "village_script.gd",
   "srcLine": 56,
   "tag": "",
-  "recorded": "goblins/chief_stay_our_king",
+  "recorded": null,
   "prev": {
    "who": "lykor",
    "line": "Aight, I'm crowned. Where the metocy at?"
@@ -1658,7 +1658,7 @@
   "file": "village_script.gd",
   "srcLine": 57,
   "tag": "",
-  "recorded": "goblins/goblins_forever",
+  "recorded": null,
   "prev": {
    "who": "chief",
    "line": "Oh, we'll tell you… as long as you stay our king. FOREVER."
@@ -1753,7 +1753,7 @@
   "file": "village_script.gd",
   "srcLine": 65,
   "tag": "Ebain",
-  "recorded": "goblins/chief_bet_dat",
+  "recorded": null,
   "prev": {
    "who": "lykor",
    "line": "Y'all need to quit being OD and let me dip on a mf, and that's on some type shi. I'll spin the block on y'all and bring u some metocy n shi, trust. Y'all type coo."
@@ -1772,7 +1772,7 @@
   "file": "village_script.gd",
   "srcLine": 66,
   "tag": "Ebain",
-  "recorded": "goblins/chief_on_some_east_shit",
+  "recorded": null,
   "prev": {
    "who": "chief",
    "line": "Bet dat."
@@ -1791,7 +1791,7 @@
   "file": "village_script.gd",
   "srcLine": 67,
   "tag": "Ebain",
-  "recorded": "goblins/chief_beezy_for_the_road",
+  "recorded": null,
   "prev": {
    "who": "chief",
    "line": "Aight, so if you could keep walking doe, over there, on some east shit. As far as I know, that's the best metocy a goblin like me could get his hands on."
@@ -1886,7 +1886,7 @@
   "file": "village_script.gd",
   "srcLine": 76,
   "tag": "",
-  "recorded": "goblins/chief_400_years",
+  "recorded": null,
   "prev": {
    "who": "lykor",
    "line": "I bet your ass can't beat me in a beezy contest."
@@ -1924,7 +1924,7 @@
   "file": "village_script.gd",
   "srcLine": 80,
   "tag": "",
-  "recorded": "goblins/chief_elf_out_drank",
+  "recorded": null,
   "prev": {
    "who": "skorn",
    "line": "Bro literally chugs bogs and swamps. It's in his NAME, dumbass."
@@ -1943,7 +1943,7 @@
   "file": "village_script.gd",
   "srcLine": 81,
   "tag": "",
-  "recorded": "goblins/goblins_legend",
+  "recorded": null,
   "prev": {
    "who": "chief",
    "line": "…The Mogging Elf… out-drank… BOGDRINKER?"
@@ -1962,7 +1962,7 @@
   "file": "village_script.gd",
   "srcLine": 82,
   "tag": "",
-  "recorded": "goblins/chief_go_before_i_cry",
+  "recorded": null,
   "prev": {
    "who": "goblins",
    "line": "LEGEND! LEGEND! LEGEND!"
@@ -2114,7 +2114,7 @@
   "file": "village_script.gd",
   "srcLine": 99,
   "tag": "",
-  "recorded": "goblins/chief_a_purple_king",
+  "recorded": null,
   "prev": {
    "who": "skorn",
    "line": "Say what now?"
@@ -2133,7 +2133,7 @@
   "file": "village_script.gd",
   "srcLine": 100,
   "tag": "",
-  "recorded": "goblins/goblins_purple_king",
+  "recorded": null,
   "prev": {
    "who": "chief",
    "line": "…A purple king…"
@@ -2190,7 +2190,7 @@
   "file": "village_script.gd",
   "srcLine": 104,
   "tag": "",
-  "recorded": "goblins/chief_new_god",
+  "recorded": null,
   "prev": {
    "who": "skorn",
    "line": "Wait, dis bih tuff lowkey. I could fw this."
@@ -2304,7 +2304,7 @@
   "file": "village_script.gd",
   "srcLine": 115,
   "tag": "",
-  "recorded": "goblins/goblin_we_go_where_elf_goes",
+  "recorded": null,
   "prev": {
    "who": "lykor",
    "line": "What the fuck is y'all doing?"
@@ -2323,7 +2323,7 @@
   "file": "village_script.gd",
   "srcLine": 116,
   "tag": "",
-  "recorded": "goblins/chief_take_him_ourselves",
+  "recorded": null,
   "prev": {
    "who": "goblin",
    "line": "We go where the Mogging Elf goes."
@@ -2342,7 +2342,7 @@
   "file": "village_script.gd",
   "srcLine": 117,
   "tag": "",
-  "recorded": "goblins/goblins_field_trip",
+  "recorded": null,
   "prev": {
    "who": "chief",
    "line": "The Mogging Elf seeks the metocy? Then the goblins will take him there OURSELVES. To the Metocy Mart!"
@@ -2456,7 +2456,7 @@
   "file": "village_script.gd",
   "srcLine": 130,
   "tag": "",
-  "recorded": "goblins/chief_purple_one_hits",
+  "recorded": null,
   "prev": {
    "who": "narrator",
    "line": "Skorn Diddy Slaps the nearest goblin."
@@ -2475,7 +2475,7 @@
   "file": "village_script.gd",
   "srcLine": 131,
   "tag": "",
-  "recorded": "goblins/goblins_worship_purple_one",
+  "recorded": null,
   "prev": {
    "who": "chief",
    "line": "…The purple one hits so hard. So beautifully."
@@ -2494,7 +2494,7 @@
   "file": "village_script.gd",
   "srcLine": 132,
   "tag": "",
-  "recorded": "goblins/chief_elf_dethroned",
+  "recorded": null,
   "prev": {
    "who": "goblins",
    "line": "WE WORSHIP THE PURPLE ONE NOW!"
@@ -2551,7 +2551,7 @@
   "file": "village_script.gd",
   "srcLine": 136,
   "tag": "",
-  "recorded": "goblins/chief_elf_dont",
+  "recorded": null,
   "prev": {
    "who": "skorn",
    "line": "Finally. Somebody in this forest got taste."
@@ -2996,7 +2996,7 @@
   "id": "welcometotheunemploymentofficebarfilloutaformhaveadrinkorhav_087a",
   "key": "welcometotheunemploymentofficebarfilloutaformhaveadrinkorhaveadrinkforgettheform",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "Welcome to the Unemployment Office & Bar. Fill out a form, have a drink. Or have a drink, forget the form.",
@@ -3015,7 +3015,7 @@
   "id": "ohohitsthekingyourcoronationpartyranatabyourmajesty",
   "key": "ohohitsthekingyourcoronationpartyranatabyourmajesty",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "Oh. OH. It's the king. Your coronation party ran a tab, your majesty.",
@@ -3053,7 +3053,7 @@
   "id": "threehundredspoonsplustipweputitonthecrown",
   "key": "threehundredspoonsplustipweputitonthecrown",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "Three hundred spoons. Plus tip. We put it on the crown.",
@@ -3072,7 +3072,7 @@
   "id": "soaboutthattab",
   "key": "soaboutthattab",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "So. About that tab.",
@@ -3110,7 +3110,7 @@
   "id": "pleasuredoingbusinessyourmajestycomebackwhenyourerich",
   "key": "pleasuredoingbusinessyourmajestycomebackwhenyourerich",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "Pleasure doing business, your majesty. Come back when you're rich.",
@@ -3148,7 +3148,7 @@
   "id": "bigthumbs",
   "key": "bigthumbs",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "BIG THUMBS.",
@@ -3186,7 +3186,7 @@
   "id": "youaskedforitbigthumbs",
   "key": "youaskedforitbigthumbs",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "You asked for it. BIG THUMBS!",
@@ -3205,7 +3205,7 @@
   "id": "thetabaintgoinganywhereitsearninginterest",
   "key": "thetabaintgoinganywhereitsearninginterest",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "The tab ain't going anywhere. It's earning interest.",
@@ -3224,7 +3224,7 @@
   "id": "thetabispaidinfull",
   "key": "thetabispaidinfull",
   "who": "goblin",
-  "name": null,
+  "name": "Big Thumbs (Bouncer)",
   "mood": null,
   "thought": false,
   "line": "…the tab is… paid… in full…",
@@ -3243,7 +3243,7 @@
   "id": "okayokaytabsclearedheretwoonthehousepleasestophittingmystaff",
   "key": "okayokaytabsclearedheretwoonthehousepleasestophittingmystaff",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "Okay! Okay. Tab's cleared. Here, two on the house. Please stop hitting my staff.",
@@ -3262,7 +3262,7 @@
   "id": "tabsclearyourmajestywereoutofbeezyanywaywerealwaysoutofbeezy",
   "key": "tabsclearyourmajestywereoutofbeezyanywaywerealwaysoutofbeezy",
   "who": "goblin",
-  "name": null,
+  "name": "Sludge (Bartender)",
   "mood": null,
   "thought": false,
   "line": "Tab's clear, your majesty. We're out of beezy anyway. We're always out of beezy.",
@@ -3281,7 +3281,7 @@
   "id": "notroubleinhereidonotgetpaidenoughfortroubleigetpaidzero",
   "key": "notroubleinhereidonotgetpaidenoughfortroubleigetpaidzero",
   "who": "goblin",
-  "name": null,
+  "name": "Big Thumbs (Bouncer)",
   "mood": null,
   "thought": false,
   "line": "No trouble in here. I do NOT get paid enough for trouble. I get paid zero.",
@@ -3300,7 +3300,7 @@
   "id": "imcancellingmygymmembershipitdidntwork",
   "key": "imcancellingmygymmembershipitdidntwork",
   "who": "goblin",
-  "name": null,
+  "name": "Big Thumbs (Bouncer)",
   "mood": null,
   "thought": false,
   "line": "I'm cancelling my gym membership. It didn't work.",
@@ -3319,7 +3319,7 @@
   "id": "takeanumber",
   "key": "takeanumber",
   "who": "goblin",
-  "name": null,
+  "name": "Unemployment Clerk",
   "mood": null,
   "thought": false,
   "line": "Take a number.",
@@ -3376,7 +3376,7 @@
   "id": "isthisthingonhellohelloyallevernoticegoblinsnevergetjobs",
   "key": "isthisthingonhellohelloyallevernoticegoblinsnevergetjobs",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "Is this thing on? Hello, hello! Y'all ever notice goblins never get jobs?",
@@ -3395,7 +3395,7 @@
   "id": "causewedontapplybadumtssthatsnotajokethatsmylife",
   "key": "causewedontapplybadumtssthatsnotajokethatsmylife",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "Cause we don't APPLY! *ba dum tss* …That's not a joke. That's my life.",
@@ -3452,7 +3452,7 @@
   "id": "thatsthejokeman",
   "key": "thatsthejokeman",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "…that's the joke, man.",
@@ -3471,7 +3471,7 @@
   "id": "mywifetoldmetostopstealingspoonsisaidforkthat",
   "key": "mywifetoldmetostopstealingspoonsisaidforkthat",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "My wife told me to stop stealing spoons. I said \"fork that.\"",
@@ -3490,7 +3490,7 @@
   "id": "imalsonotmarriedijustwantedtosayfork",
   "key": "imalsonotmarriedijustwantedtosayfork",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "…I'm also not married. I just wanted to say fork.",
@@ -3547,7 +3547,7 @@
   "id": "ohhesgood",
   "key": "ohhesgood",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "Oh he's GOOD.",
@@ -3566,7 +3566,7 @@
   "id": "lastoneiwenttothemetocymartdulberschargedmetwentyspoonsforar_c801",
   "key": "lastoneiwenttothemetocymartdulberschargedmetwentyspoonsforareceipt",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "Last one. I went to the Metocy Mart. Dulbers charged me twenty spoons for a receipt.",
@@ -3585,7 +3585,7 @@
   "id": "thereceiptsaidnorefundsididntevenbuyanything",
   "key": "thereceiptsaidnorefundsididntevenbuyanything",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "The receipt said NO REFUNDS. I didn't even buy anything!",
@@ -3623,7 +3623,7 @@
   "id": "thatsitimdoneimquittingcomedyimgoingbacktobeingunemployedthe_aeff",
   "key": "thatsitimdoneimquittingcomedyimgoingbacktobeingunemployedthenormalway",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "That's it. I'm done. I'm quitting comedy. I'm going back to being unemployed the normal way.",
@@ -3661,7 +3661,7 @@
   "id": "yallarethebestcrowdieverhadyallaretheonlycrowdieverhadhereta_35ac",
   "key": "yallarethebestcrowdieverhadyallaretheonlycrowdieverhadheretakemytipjarbeezy",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "Y'all are the best crowd I ever had. Y'all are the ONLY crowd I ever had. Here — take my tip jar beezy.",
@@ -3680,7 +3680,7 @@
   "id": "imworkingonnewmaterialitsaboutyouguysitsmostlyaboutthehair",
   "key": "imworkingonnewmaterialitsaboutyouguysitsmostlyaboutthehair",
   "who": "goblin",
-  "name": null,
+  "name": "Gorbo (Open Mic)",
   "mood": null,
   "thought": false,
   "line": "I'm working on new material. It's about you guys. It's mostly about the hair.",
@@ -3699,7 +3699,7 @@
   "id": "soyouretheelfwhochuggedwiththechieflemmetellyousomethingthec_f944",
   "key": "soyouretheelfwhochuggedwiththechieflemmetellyousomethingthechiefiswashed",
   "who": "goblin",
-  "name": null,
+  "name": "Gulpo (Bar Champion)",
   "mood": null,
   "thought": false,
   "line": "So YOU'RE the elf who chugged with the Chief. Lemme tell you something. The Chief is washed.",
@@ -3718,7 +3718,7 @@
   "id": "meigotaliverofsteelchugmerightnowwinnergetstwobeezylosergets_dec0",
   "key": "meigotaliverofsteelchugmerightnowwinnergetstwobeezylosergetsembarrassed",
   "who": "goblin",
-  "name": null,
+  "name": "Gulpo (Bar Champion)",
   "mood": null,
   "thought": false,
   "line": "Me? I got a liver of STEEL. Chug me. Right now. Winner gets two beezy. Loser gets… embarrassed.",
@@ -3756,7 +3756,7 @@
   "id": "scaredigetitmyliverscaresmetoo",
   "key": "scaredigetitmyliverscaresmetoo",
   "who": "goblin",
-  "name": null,
+  "name": "Gulpo (Bar Champion)",
   "mood": null,
   "thought": false,
   "line": "Scared. I get it. My liver scares me too.",
@@ -3775,7 +3775,7 @@
   "id": "myliveritbetrayedmeafterallwevebeenthrough",
   "key": "myliveritbetrayedmeafterallwevebeenthrough",
   "who": "goblin",
-  "name": null,
+  "name": "Gulpo (Bar Champion)",
   "mood": null,
   "thought": false,
   "line": "My liver… it betrayed me… after all we've been through…",
@@ -3908,7 +3908,7 @@
   "id": "yyoureadmypostingfinallymyluckyspoongottook",
   "key": "yyoureadmypostingfinallymyluckyspoongottook",
   "who": "goblin",
-  "name": null,
+  "name": "Grubnik",
   "mood": null,
   "thought": false,
   "line": "Y-you read my posting?! Finally! My lucky spoon got took!",
@@ -3927,7 +3927,7 @@
   "id": "thegoblinpatrolontheeastroadjackeditsaiditwasaspoontaxtheres_5934",
   "key": "thegoblinpatrolontheeastroadjackeditsaiditwasaspoontaxtheresnospoontaxichecked",
   "who": "goblin",
-  "name": null,
+  "name": "Grubnik",
   "mood": null,
   "thought": false,
   "line": "The Goblin Patrol on the east road jacked it. Said it was a \"spoon tax.\" There's no spoon tax! I checked!",
@@ -3965,7 +3965,7 @@
   "id": "eastroadthepatrolmyspoonmissesmeicanfeelit",
   "key": "eastroadthepatrolmyspoonmissesmeicanfeelit",
   "who": "goblin",
-  "name": null,
+  "name": "Grubnik",
   "mood": null,
   "thought": false,
   "line": "East road! The patrol! My spoon misses me, I can feel it!",
@@ -3984,7 +3984,7 @@
   "id": "myspoonmybeautifulluckyspoonitsgotpatrolgreaseonitbutidontca_bcb7",
   "key": "myspoonmybeautifulluckyspoonitsgotpatrolgreaseonitbutidontcare",
   "who": "goblin",
-  "name": null,
+  "name": "Grubnik",
   "mood": null,
   "thought": false,
   "line": "MY SPOON! My beautiful lucky spoon! It's got patrol grease on it but I don't care!",
@@ -4003,7 +4003,7 @@
   "id": "hereiwonthiswithmyluckyspooninadicegameyoukeepititsweightedd_7b3f",
   "key": "hereiwonthiswithmyluckyspooninadicegameyoukeepititsweighteddonttellnobody",
   "who": "goblin",
-  "name": null,
+  "name": "Grubnik",
   "mood": null,
   "thought": false,
   "line": "Here. I won this with my lucky spoon in a dice game. You keep it. It's weighted. Don't tell nobody.",
@@ -4022,7 +4022,7 @@
   "id": "meandmyspoonaregoingonalittlevacationjustus",
   "key": "meandmyspoonaregoingonalittlevacationjustus",
   "who": "goblin",
-  "name": null,
+  "name": "Grubnik",
   "mood": null,
   "thought": false,
   "line": "Me and my spoon are going on a little vacation. Just us.",
@@ -4041,7 +4041,7 @@
   "id": "ahhhisawyoucominginavisionalsothroughthetentflap",
   "key": "ahhhisawyoucominginavisionalsothroughthetentflap",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "Ahhh. I saw you coming. In a vision. Also through the tent flap.",
@@ -4060,7 +4060,7 @@
   "id": "thedragonyoucarrythebookofdeloyeyesbahgoblinprophecyistentim_3fb2",
   "key": "thedragonyoucarrythebookofdeloyeyesbahgoblinprophecyistentimesthelore",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "The dragon. You carry the book of… Deloye, yes? Bah. Goblin prophecy is ten times the lore.",
@@ -4098,7 +4098,7 @@
   "id": "herenowaloreoffanswerthreepropheciesbeatmeandigiveyousomethi_6b20",
   "key": "herenowaloreoffanswerthreepropheciesbeatmeandigiveyousomethingsigned",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "Here. Now. A LORE-OFF. Answer three prophecies. Beat me, and I give you something… signed.",
@@ -4117,7 +4117,7 @@
   "id": "thespiritsarelisteningmostlyoneofthemisonbreak",
   "key": "thespiritsarelisteningmostlyoneofthemisonbreak",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "The spirits are listening. Mostly. One of them is on break.",
@@ -4136,7 +4136,7 @@
   "id": "iknewyoudsaythat",
   "key": "iknewyoudsaythat",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "I knew you'd say that.",
@@ -4155,7 +4155,7 @@
   "id": "prophecyonethescrollofglorbsaysthespoonshallrise",
   "key": "prophecyonethescrollofglorbsaysthespoonshallrise",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "Prophecy one! The Scroll of Glorb says: \"The spoon shall rise!\"",
@@ -4174,7 +4174,7 @@
   "id": "prophecytwoagoldenhairedelfshallcomeandmogtheland",
   "key": "prophecytwoagoldenhairedelfshallcomeandmogtheland",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "Prophecy two! \"A golden-haired elf shall come… and mog the land!\"",
@@ -4193,7 +4193,7 @@
   "id": "finalprophecythegreatgoblinintheskyhasspoken",
   "key": "finalprophecythegreatgoblinintheskyhasspoken",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "Final prophecy! \"The Great Goblin in the sky HAS SPOKEN!\"",
@@ -4212,7 +4212,7 @@
   "id": "nonothespiritstheyreclappingforhim",
   "key": "nonothespiritstheyreclappingforhim",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "No… NO… the spirits… they're clapping for HIM…",
@@ -4231,7 +4231,7 @@
   "id": "takeitdeloyelorevolume9signedidontknowwhosignedititwasliketh_6ca0",
   "key": "takeitdeloyelorevolume9signedidontknowwhosignedititwaslikethatwhenistoleit",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "Take it. Deloye Lore, Volume 9. Signed. I don't know who signed it. It was like that when I stole it.",
@@ -4269,7 +4269,7 @@
   "id": "hathespiritslaughatyoudragoncomebackwhenyourlorehaslore",
   "key": "hathespiritslaughatyoudragoncomebackwhenyourlorehaslore",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "HA! The spirits laugh at you, dragon! Come back when your lore has lore.",
@@ -4345,7 +4345,7 @@
   "id": "goawayloredragonimwritingnewpropheciestheyreabouthowyoucheat_a081",
   "key": "goawayloredragonimwritingnewpropheciestheyreabouthowyoucheated",
   "who": "goblin",
-  "name": null,
+  "name": "Shaman Wuzzle",
   "mood": null,
   "thought": false,
   "line": "Go away, lore dragon. I'm writing new prophecies. They're about how you cheated.",
@@ -4364,7 +4364,7 @@
   "id": "welcometoclanksspoonsmithyimakespoonsspoonswordsspoonarmorsp_84bf",
   "key": "welcometoclanksspoonsmithyimakespoonsspoonswordsspoonarmorspoonspoons",
   "who": "goblin",
-  "name": null,
+  "name": "Clank (Spoonsmith)",
   "mood": null,
   "thought": false,
   "line": "Welcome to Clank's Spoonsmithy. I make spoons. Spoon swords. Spoon armor. Spoon spoons.",
@@ -4402,7 +4402,7 @@
   "id": "whywouldihavethat",
   "key": "whywouldihavethat",
   "who": "goblin",
-  "name": null,
+  "name": "Clank (Spoonsmith)",
   "mood": null,
   "thought": false,
   "line": "…Why would I have that.",
@@ -4421,7 +4421,7 @@
   "id": "bringmeshinyspoonstheyrealloverthevillagegoblinsdropemeveryw_350e",
   "key": "bringmeshinyspoonstheyrealloverthevillagegoblinsdropemeverywherethreeandillforgeyouaweaponfiveandillmakeyouarmor",
   "who": "goblin",
-  "name": null,
+  "name": "Clank (Spoonsmith)",
   "mood": null,
   "thought": false,
   "line": "Bring me shiny spoons. They're all over the village — goblins drop 'em everywhere. Three and I'll forge you a weapon. Five and I'll make you armor.",
@@ -4440,7 +4440,7 @@
   "id": "showmethespoons",
   "key": "showmethespoons",
   "who": "goblin",
-  "name": null,
+  "name": "Clank (Spoonsmith)",
   "mood": null,
   "thought": false,
   "line": "Show me the spoons.",
@@ -4459,7 +4459,7 @@
   "id": "thatsallthespoonsinthevillageicheckedicountedtwiceilovecount_373c",
   "key": "thatsallthespoonsinthevillageicheckedicountedtwiceilovecountingspoons",
   "who": "goblin",
-  "name": null,
+  "name": "Clank (Spoonsmith)",
   "mood": null,
   "thought": false,
   "line": "That's all the spoons in the village. I checked. I counted twice. I love counting spoons.",
@@ -4879,7 +4879,7 @@
   "file": "mart_script.gd",
   "srcLine": 8,
   "tag": "",
-  "recorded": "goblins/goblin_a_store",
+  "recorded": null,
   "prev": {
    "who": "narrator",
    "line": "East of the goblin village…"
@@ -4898,7 +4898,7 @@
   "file": "mart_script.gd",
   "srcLine": 9,
   "tag": "",
-  "recorded": "goblins/chief_very_legit",
+  "recorded": null,
   "prev": {
    "who": "goblin",
    "line": "Ooooh. A STORE."
@@ -4936,7 +4936,7 @@
   "file": "mart_script.gd",
   "srcLine": 11,
   "tag": "Ebain",
-  "recorded": "goblins/goblins_field_trip_shi",
+  "recorded": null,
   "prev": {
    "who": "skorn",
    "line": "Y'all OD as hell for following us still."
@@ -5297,7 +5297,7 @@
   "file": "mart_script.gd",
   "srcLine": 50,
   "tag": "",
-  "recorded": "goblins/chief_goblins_one_demon_zero",
+  "recorded": null,
   "prev": {
    "who": "xylo",
    "line": "Real enough to fight."
@@ -6285,7 +6285,7 @@
   "file": "mart_script.gd",
   "srcLine": 141,
   "tag": "",
-  "recorded": "goblins/chief_an_honor",
+  "recorded": null,
   "prev": {
    "who": "skorn",
    "line": "Hold up. I'm keeping one before y'all eat 'em all."
@@ -6304,7 +6304,7 @@
   "file": "mart_script.gd",
   "srcLine": 144,
   "tag": "",
-  "recorded": "goblins/chief_this_midtocy",
+  "recorded": null,
   "prev": {
    "who": "chief",
    "line": "An honor."
@@ -6342,7 +6342,7 @@
   "file": "mart_script.gd",
   "srcLine": 146,
   "tag": "",
-  "recorded": "goblins/goblins_get_him",
+  "recorded": null,
   "prev": {
    "who": "dulbers",
    "line": "…Uh oh."
@@ -6380,7 +6380,7 @@
   "file": "mart_script.gd",
   "srcLine": 149,
   "tag": "",
-  "recorded": "goblins/chief_handled_it",
+  "recorded": null,
   "prev": {
    "who": "narrator",
    "line": "When the dust clears, only goblins remain."
@@ -6418,7 +6418,7 @@
   "file": "mart_script.gd",
   "srcLine": 151,
   "tag": "",
-  "recorded": "goblins/chief_goblins_home",
+  "recorded": null,
   "prev": {
    "who": "narrator",
    "line": "Dulbers Frint was never seen again."
@@ -7343,7 +7343,7 @@
   "file": "pass_script.gd",
   "srcLine": 111,
   "tag": "",
-  "recorded": "goblins/chief_cousin_chud",
+  "recorded": null,
   "prev": {
    "who": "skorn",
    "line": "Hell yup. And what?"
@@ -7400,7 +7400,7 @@
   "file": "pass_script.gd",
   "srcLine": 115,
   "tag": "",
-  "recorded": "goblins/chief_mamas_side",
+  "recorded": null,
   "prev": {
    "who": "lykor",
    "line": "Y'all are COUSINS?"
@@ -7471,7 +7471,7 @@
   "line": "Why they always pick HIM, bro.",
   "scene": "Scene 2 · Goblin Village",
   "file": "village.gd",
-  "srcLine": 47,
+  "srcLine": 48,
   "tag": "DRAFT",
   "recorded": null,
   "prev": null,
@@ -7487,7 +7487,7 @@
   "line": "Deloye Lore said nothing about goblins. Nothing about anything, really.",
   "scene": "Scene 2 · Goblin Village",
   "file": "village.gd",
-  "srcLine": 48,
+  "srcLine": 49,
   "tag": "DRAFT",
   "recorded": null,
   "prev": {
