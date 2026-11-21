@@ -1,0 +1,7499 @@
+[
+ {
+  "id": "caelidnightthenightbeforethegreatestquestoftheirlives",
+  "key": "caelidnightthenightbeforethegreatestquestoftheirlives",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Caelid. Night. The night before the greatest quest of their lives.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 12,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": null,
+  "uses": 1
+ },
+ {
+  "id": "thequestforthemetocy",
+  "key": "thequestforthemetocy",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The quest for the metocy.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 13,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Caelid. Night. The night before the greatest quest of their lives."
+  },
+  "uses": 1
+ },
+ {
+  "id": "datmetocygonbegahtomorrowontheabsolute",
+  "key": "datmetocygonbegahtomorrowontheabsolute",
+  "who": "lykor",
+  "name": null,
+  "mood": "flattered",
+  "thought": false,
+  "line": "Dat metocy gon be gah tomorrow, on the absolute.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 14,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The quest for the metocy."
+  },
+  "uses": 2
+ },
+ {
+  "id": "onmydragonmamaitis",
+  "key": "onmydragonmamaitis",
+  "who": "xylo",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "On my Dragon Mama it is.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 15,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Dat metocy gon be gah tomorrow, on the absolute."
+  },
+  "uses": 3
+ },
+ {
+  "id": "manitsaboutcoldasamotherfuckerwecouldgetthefiregoingthough",
+  "key": "manitsaboutcoldasamotherfuckerwecouldgetthefiregoingthough",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Man, it's about cold as a motherfucker. We could get the fire going, though.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 16,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama it is."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightbetbutdonttouchmybagthough",
+  "key": "aightbetbutdonttouchmybagthough",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Aight bet. But don't touch my bag, though.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 17,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Man, it's about cold as a motherfucker. We could get the fire going, though."
+  },
+  "uses": 3
+ },
+ {
+  "id": "whywoulditouchyobagmud",
+  "key": "whywoulditouchyobagmud",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Why would I touch yo bag, mud?",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 18,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Aight bet. But don't touch my bag, though."
+  },
+  "uses": 2
+ },
+ {
+  "id": "alrightwherethefuckissomefirestarterimtrynagetthisbitchgoing",
+  "key": "alrightwherethefuckissomefirestarterimtrynagetthisbitchgoing",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "Alright, where the fuck is some fire starter? I'm tryna get this bitch going.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 19,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Why would I touch yo bag, mud?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "manfuckthisjitlykorheprobablygotsomegasfirestarterinhisbag",
+  "key": "manfuckthisjitlykorheprobablygotsomegasfirestarterinhisbag",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "Man, fuck this jit Lykor. He probably got some gas fire starter in his bag.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 20,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Alright, where the fuck is some fire starter? I'm tryna get this bitch going."
+  },
+  "uses": 1
+ },
+ {
+  "id": "wasdtowalketointeractgetthefiregoing",
+  "key": "wasdtowalketointeractgetthefiregoing",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "(WASD to walk, E to interact. Get the fire going.)",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 21,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Man, fuck this jit Lykor. He probably got some gas fire starter in his bag."
+  },
+  "uses": 1
+ },
+ {
+  "id": "skorngotimportantlookingpaper",
+  "key": "skorngotimportantlookingpaper",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Skorn got: Important-Looking Paper.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 27,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "(WASD to walk, E to interact. Get the fire going.)"
+  },
+  "uses": 1
+ },
+ {
+  "id": "itreadsmmcskorncannotread",
+  "key": "itreadsmmcskorncannotread",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "It reads: \"M̷Ꭺ̵Ꮲ̶ ̸Ƭ̷Ө̴ ̵Ƭ̶Ң̸Ɛ̷ ̴M̵Ɛ̶Ƭ̸Ө̷C̴Ɏ̵\" (Skorn cannot read)",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 28,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Skorn got: Important-Looking Paper."
+  },
+  "uses": 1
+ },
+ {
+  "id": "bunchofsquigglyasslinesyeahthatsfirestarter",
+  "key": "bunchofsquigglyasslinesyeahthatsfirestarter",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "Bunch of squiggly ass lines. Yeah, that's fire starter.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 29,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "It reads: \"M̷Ꭺ̵Ꮲ̶ ̸Ƭ̷Ө̴ ̵Ƭ̶Ң̸Ɛ̷ ̴M̵Ɛ̶Ƭ̸Ө̷C̴Ɏ̵\" (Skorn cannot read)"
+  },
+  "uses": 1
+ },
+ {
+  "id": "damnyoustartedthatupquickgoodshitdude",
+  "key": "damnyoustartedthatupquickgoodshitdude",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Damn, you started that up quick. Good shit, dude.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 35,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Bunch of squiggly ass lines. Yeah, that's fire starter."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yeahijustusedthepaperthatwasinyourbagidontknowwhyyousaidicou_0579",
+  "key": "yeahijustusedthepaperthatwasinyourbagidontknowwhyyousaidicouldntuseyourbag",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Yeah, I just used the paper that was in your bag. I don't know why you said I couldn't use your bag.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 36,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Damn, you started that up quick. Good shit, dude."
+  },
+  "uses": 1
+ },
+ {
+  "id": "sayyousweartotheabsolute",
+  "key": "sayyousweartotheabsolute",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Say you swear to the absolute.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 37,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Yeah, I just used the paper that was in your bag. I don't know why you said I couldn't use your bag."
+  },
+  "uses": 1
+ },
+ {
+  "id": "whatwhatareyoutalkingaboutmud",
+  "key": "whatwhatareyoutalkingaboutmud",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "What? What are you talking about, mud?",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 38,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Say you swear to the absolute."
+  },
+  "uses": 1
+ },
+ {
+  "id": "brothatwasthemaptothemetocytheonlymap",
+  "key": "brothatwasthemaptothemetocytheonlymap",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "BRO. THAT WAS THE MAP TO THE METOCY. THE ONLY MAP.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 40,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "What? What are you talking about, mud?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "onmydragonmamaiseenthisinavisionijustaintthinkitdbethisdumb",
+  "key": "onmydragonmamaiseenthisinavisionijustaintthinkitdbethisdumb",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "On my Dragon Mama... I seen this in a vision. I just ain't think it'd be this dumb.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 41,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "BRO. THAT WAS THE MAP TO THE METOCY. THE ONLY MAP."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thenwhythefuckyouleaveitinabagbagsisforfirestarter",
+  "key": "thenwhythefuckyouleaveitinabagbagsisforfirestarter",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Then why the fuck you leave it in a bag?! Bags is for fire starter!",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 42,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama... I seen this in a vision. I just ain't think it'd be this dumb."
+  },
+  "uses": 1
+ },
+ {
+  "id": "bagsisformapsskorn",
+  "key": "bagsisformapsskorn",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Bags is for MAPS, Skorn!",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 43,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Then why the fuck you leave it in a bag?! Bags is for fire starter!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "notnomore",
+  "key": "notnomore",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Not no more.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 44,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Bags is for MAPS, Skorn!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "chillthemgoblinsupnorthknoweveryroadincaelidwejustaskthem",
+  "key": "chillthemgoblinsupnorthknoweveryroadincaelidwejustaskthem",
+  "who": "xylo",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Chill. Them goblins up north know every road in Caelid. We just ask them.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 45,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Not no more."
+  },
+  "uses": 1
+ },
+ {
+  "id": "betweleaveatsunriseandnobodytouchnothing",
+  "key": "betweleaveatsunriseandnobodytouchnothing",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Bet. We leave at sunrise. And nobody touch NOTHING.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 46,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Chill. Them goblins up north know every road in Caelid. We just ask them."
+  },
+  "uses": 1
+ },
+ {
+  "id": "explorethecampqswitcheswhoyoucontroltabopensyourinventory",
+  "key": "explorethecampqswitcheswhoyoucontroltabopensyourinventory",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "(Explore the camp. Q switches who you control. Tab opens your inventory.)",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 48,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Bet. We leave at sunrise. And nobody touch NOTHING."
+  },
+  "uses": 1
+ },
+ {
+  "id": "cantstartafirewithnothingneedsomefirestarter",
+  "key": "cantstartafirewithnothingneedsomefirestarter",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "Can't start a fire with nothing. Need some fire starter.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 54,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "(Explore the camp. Q switches who you control. Tab opens your inventory.)"
+  },
+  "uses": 1
+ },
+ {
+  "id": "hedontgotnofirestarterhegotabook",
+  "key": "hedontgotnofirestarterhegotabook",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "…He don't got no fire starter. He got a book.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 63,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama it is."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aintnofirestarterinthetentjustxyloslorebookstooheavytoburn",
+  "key": "aintnofirestarterinthetentjustxyloslorebookstooheavytoburn",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "Ain't no fire starter in the tent. Just Xylo's lore books. Too heavy to burn.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 66,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "…He don't got no fire starter. He got a book."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ayoyallgotalight",
+  "key": "ayoyallgotalight",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Ayo. Y'all got a light?",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 69,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Ain't no fire starter in the tent. Just Xylo's lore books. Too heavy to burn."
+  },
+  "uses": 1
+ },
+ {
+  "id": "doitlooklikewegotalight",
+  "key": "doitlooklikewegotalight",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Do it LOOK like we got a light?",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 70,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Ayo. Y'all got a light?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "whyismybagopenwhoopenedmybag",
+  "key": "whyismybagopenwhoopenedmybag",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Why is my bag open. Who opened my bag.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 79,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Do it LOOK like we got a light?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "actnatural",
+  "key": "actnatural",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "Act natural.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 80,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Why is my bag open. Who opened my bag."
+  },
+  "uses": 1
+ },
+ {
+  "id": "iknowtheconditionerisdoingnumberstonight",
+  "key": "iknowtheconditionerisdoingnumberstonight",
+  "who": "lykor",
+  "name": null,
+  "mood": "flattered",
+  "thought": false,
+  "line": "I know. The conditioner is doing numbers tonight.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 89,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Why would I touch yo bag, mud?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "deloyelorevolume4saysthenightbeforeaquestissacred",
+  "key": "deloyelorevolume4saysthenightbeforeaquestissacred",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "Deloye Lore, Volume 4, says the night before a quest is sacred.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 96,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama it is."
+  },
+  "uses": 1
+ },
+ {
+  "id": "whatitsayaboutthemetocy",
+  "key": "whatitsayaboutthemetocy",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "What it say about the metocy?",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 97,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Deloye Lore, Volume 4, says the night before a quest is sacred."
+  },
+  "uses": 1
+ },
+ {
+  "id": "nothingthereisnolore",
+  "key": "nothingthereisnolore",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "Nothing. There is no lore.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 98,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "What it say about the metocy?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "manitsaboutcoldasamotherfucker",
+  "key": "manitsaboutcoldasamotherfucker",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Man, it's about cold as a motherfucker.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 101,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Nothing. There is no lore."
+  },
+  "uses": 1
+ },
+ {
+  "id": "goodthingigotthefiregoingthough",
+  "key": "goodthingigotthefiregoingthough",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Good thing I got the fire going though.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 102,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Man, it's about cold as a motherfucker."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thecampfireburningbrightsuspiciouslybright",
+  "key": "thecampfireburningbrightsuspiciouslybright",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The campfire. Burning bright. Suspiciously bright.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 109,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Good thing I got the fire going though."
+  },
+  "uses": 1
+ },
+ {
+  "id": "bestfirestarterieverused",
+  "key": "bestfirestarterieverused",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Best fire starter I ever used.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 110,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The campfire. Burning bright. Suspiciously bright."
+  },
+  "uses": 1
+ },
+ {
+  "id": "acharredscrapofpaperallthatsleftreadstocy",
+  "key": "acharredscrapofpaperallthatsleftreadstocy",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "A charred scrap of paper. All that's left reads: \"…TOCY\".",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 113,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Best fire starter I ever used."
+  },
+  "uses": 1
+ },
+ {
+  "id": "bunchofsquigglyasslines",
+  "key": "bunchofsquigglyasslines",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "Bunch of squiggly ass lines.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 114,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "A charred scrap of paper. All that's left reads: \"…TOCY\"."
+  },
+  "uses": 1
+ },
+ {
+  "id": "whydoesthatlooklikenahnah",
+  "key": "whydoesthatlooklikenahnah",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "Why does that look like… nah. Nah.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 115,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Bunch of squiggly ass lines."
+  },
+  "uses": 1
+ },
+ {
+  "id": "lykorsbagitsopensomethingimportantusedtobeinhere",
+  "key": "lykorsbagitsopensomethingimportantusedtobeinhere",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Lykor's bag. It's open. Something important used to be in here.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 118,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Why does that look like… nah. Nah."
+  },
+  "uses": 1
+ },
+ {
+  "id": "conditionerthreebottlesnothingelseanymore",
+  "key": "conditionerthreebottlesnothingelseanymore",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Conditioner. Three bottles. Nothing else. Anymore.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 122,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Lykor's bag. It's open. Something important used to be in here."
+  },
+  "uses": 1
+ },
+ {
+  "id": "donttouchmybagthough",
+  "key": "donttouchmybagthough",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Don't touch my bag, though!",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 123,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Conditioner. Three bottles. Nothing else. Anymore."
+  },
+  "uses": 1
+ },
+ {
+  "id": "alreadytoucheditoncethatsenoughforonenight",
+  "key": "alreadytoucheditoncethatsenoughforonenight",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "Already touched it once. That's enough for one night.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 126,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Don't touch my bag, though!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "imnottiredimfinnastayupandguardthefire",
+  "key": "imnottiredimfinnastayupandguardthefire",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "I'm not tired. I'm finna stay up and guard the fire.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 131,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Already touched it once. That's enough for one night."
+  },
+  "uses": 1
+ },
+ {
+  "id": "guarditfromwhat",
+  "key": "guarditfromwhat",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "Guard it from what.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 132,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "I'm not tired. I'm finna stay up and guard the fire."
+  },
+  "uses": 1
+ },
+ {
+  "id": "fromotherfires",
+  "key": "fromotherfires",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "From… other fires.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 133,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Guard it from what."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ayoyallhiring",
+  "key": "ayoyallhiring",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Ayo. Y'all hiring?",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 136,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "From… other fires."
+  },
+  "uses": 1
+ },
+ {
+  "id": "icanholdaspoon",
+  "key": "icanholdaspoon",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "I can hold a spoon.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 139,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Ayo. Y'all hiring?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "respect",
+  "key": "respect",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "…Respect.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 140,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "I can hold a spoon."
+  },
+  "uses": 1
+ },
+ {
+  "id": "damnaightmyvillageisupnorthifyallchangeyourmind",
+  "key": "damnaightmyvillageisupnorthifyallchangeyourmind",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Damn. Aight. My village is up north if y'all change your mind.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 143,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "…Respect."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thenextmorning",
+  "key": "thenextmorning",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The next morning…",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 151,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Damn. Aight. My village is up north if y'all change your mind."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightnewruleskorndontholdnothingimleading",
+  "key": "aightnewruleskorndontholdnothingimleading",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Aight, new rule: Skorn don't hold nothing. I'm leading.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 152,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The next morning…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "betmyfaultimdumbashell",
+  "key": "betmyfaultimdumbashell",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "Bet, my fault. I'm dumb as hell.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 153,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Aight, new rule: Skorn don't hold nothing. I'm leading."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youhadcalled",
+  "key": "youhadcalled",
+  "who": "mattias",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "You had called?",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 159,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Bet, my fault. I'm dumb as hell."
+  },
+  "uses": 2
+ },
+ {
+  "id": "metocinmattiaswhatareyoudoinghere",
+  "key": "metocinmattiaswhatareyoudoinghere",
+  "who": "skorn",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "Metocin Mattias? What are you doing here?",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 160,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "mattias",
+   "line": "You had called?"
+  },
+  "uses": 2
+ },
+ {
+  "id": "ididnotseetscomingtswasnotinthedeloyelorescripture",
+  "key": "ididnotseetscomingtswasnotinthedeloyelorescripture",
+  "who": "xylo",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "I did not see ts coming. Ts was not in the Deloye Lore scripture.",
+  "scene": "Scene 1 · Camp",
+  "file": "camp_script.gd",
+  "srcLine": 162,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Metocin Mattias? What are you doing here?"
+  },
+  "uses": 2
+ },
+ {
+  "id": "laterthatmorning",
+  "key": "laterthatmorning",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Later that morning…",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 6,
+  "tag": "",
+  "recorded": null,
+  "prev": null,
+  "uses": 1
+ },
+ {
+  "id": "manicantbelievethisjitgottheleadnow",
+  "key": "manicantbelievethisjitgottheleadnow",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Man, I can't believe this jit got the lead now.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 7,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Later that morning…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "mapburnersdontgetavoteskorn",
+  "key": "mapburnersdontgetavoteskorn",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Map-burners don't get a vote, Skorn.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 8,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Man, I can't believe this jit got the lead now."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youreplayingaslykornowheadintothevillage",
+  "key": "youreplayingaslykornowheadintothevillage",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "(You're playing as Lykor now. Head into the village.)",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 9,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Map-burners don't get a vote, Skorn."
+  },
+  "uses": 1
+ },
+ {
+  "id": "waitasecondsumdontfeelrightfolk",
+  "key": "waitasecondsumdontfeelrightfolk",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "Wait a second… sum don't feel right, folk.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 13,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "(You're playing as Lykor now. Head into the village.)"
+  },
+  "uses": 1
+ },
+ {
+  "id": "yayyouareallowedtomogthathardrightcooldudethatsfuckingfair",
+  "key": "yayyouareallowedtomogthathardrightcooldudethatsfuckingfair",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Yay.. you are allowed to mog that hard, right? Cool dude, that's fucking fair.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 16,
+  "tag": "Ebain",
+  "recorded": "goblins/goblin_yay_mog_that_hard",
+  "prev": {
+   "who": "xylo",
+   "line": "Wait a second… sum don't feel right, folk."
+  },
+  "uses": 1
+ },
+ {
+  "id": "themoggingelf",
+  "key": "themoggingelf",
+  "who": "goblins",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "THE MOGGING ELF!!",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 17,
+  "tag": "Ebain",
+  "recorded": "goblins/goblins_the_mogging_elf",
+  "prev": {
+   "who": "goblin",
+   "line": "Yay.. you are allowed to mog that hard, right? Cool dude, that's fucking fair."
+  },
+  "uses": 1
+ },
+ {
+  "id": "hellyupthislooksmaxxinshipayinoff",
+  "key": "hellyupthislooksmaxxinshipayinoff",
+  "who": "lykor",
+  "name": null,
+  "mood": "flattered",
+  "thought": false,
+  "line": "Hell yup… this looksmaxxin shi payin off.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 19,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "goblins",
+   "line": "THE MOGGING ELF!!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "hellnahwhytheyaintbowingtomeimtheonewitharmor",
+  "key": "hellnahwhytheyaintbowingtomeimtheonewitharmor",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Hell nah. Why they ain't bowing to ME? I'm the one with armor.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 20,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Hell yup… this looksmaxxin shi payin off."
+  },
+  "uses": 1
+ },
+ {
+  "id": "propheciesbeweirdlikethat",
+  "key": "propheciesbeweirdlikethat",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "Prophecies be weird like that.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 21,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Hell nah. Why they ain't bowing to ME? I'm the one with armor."
+  },
+  "uses": 1
+ },
+ {
+  "id": "forathousandyearswehavewaitedforthemoggingelfgoldenhairpoint_67fb",
+  "key": "forathousandyearswehavewaitedforthemoggingelfgoldenhairpointyearssmellslikeexpensiveconditioner",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "For a thousand years we have waited for the Mogging Elf. Golden hair. Pointy ears. Smells like expensive conditioner.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 23,
+  "tag": "",
+  "recorded": "goblins/chief_thousand_years",
+  "prev": {
+   "who": "xylo",
+   "line": "Prophecies be weird like that."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightifimyallsgodorwhateverthenanswermethiswherethemetocyat",
+  "key": "aightifimyallsgodorwhateverthenanswermethiswherethemetocyat",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Aight, if I'm y'all's god or whatever, then answer me this: where the metocy at?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 24,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "For a thousand years we have waited for the Mogging Elf. Golden hair. Pointy ears. Smells like expensive conditioner."
+  },
+  "uses": 1
+ },
+ {
+  "id": "gaspthemoggingelfseeksthemetocyweknowwhereitis",
+  "key": "gaspthemoggingelfseeksthemetocyweknowwhereitis",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "*gasp* The Mogging Elf seeks the metocy… We know where it is.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 25,
+  "tag": "",
+  "recorded": "goblins/chief_elf_seeks_metocy",
+  "prev": {
+   "who": "lykor",
+   "line": "Aight, if I'm y'all's god or whatever, then answer me this: where the metocy at?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "thenrunitshortstuff",
+  "key": "thenrunitshortstuff",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Then run it, short stuff.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 26,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "*gasp* The Mogging Elf seeks the metocy… We know where it is."
+  },
+  "uses": 1
+ },
+ {
+  "id": "wewilltellthemoggingelfonceheiscrownedcomeyourthroneawaits",
+  "key": "wewilltellthemoggingelfonceheiscrownedcomeyourthroneawaits",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "We will tell the Mogging Elf… once he is crowned. Come. Your throne awaits.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 27,
+  "tag": "",
+  "recorded": "goblins/chief_once_crowned",
+  "prev": {
+   "who": "skorn",
+   "line": "Then run it, short stuff."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yourthroneawaitsmoggingelfsitsit",
+  "key": "yourthroneawaitsmoggingelfsitsit",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Your throne awaits, Mogging Elf. Sit. SIT.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 32,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "We will tell the Mogging Elf… once he is crowned. Come. Your throne awaits."
+  },
+  "uses": 1
+ },
+ {
+  "id": "theysellit",
+  "key": "theysellit",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "They… sell it?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 37,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "Your throne awaits, Mogging Elf. Sit. SIT."
+  },
+  "uses": 1
+ },
+ {
+  "id": "forallyometocyneeds",
+  "key": "forallyometocyneeds",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "For all yo metocy needs.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 38,
+  "tag": "",
+  "recorded": "goblins/chief_metocy_needs",
+  "prev": {
+   "who": "xylo",
+   "line": "They… sell it?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "sobbingbyecomebackharder",
+  "key": "sobbingbyecomebackharder",
+  "who": "goblins",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "*sobbing* BYE!! COME BACK HARDER!!",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 40,
+  "tag": "",
+  "recorded": "goblins/goblins_bye_come_back_harder",
+  "prev": {
+   "who": "chief",
+   "line": "For all yo metocy needs."
+  },
+  "uses": 1
+ },
+ {
+  "id": "onmydragonmamaimleadingfromhere",
+  "key": "onmydragonmamaimleadingfromhere",
+  "who": "xylo",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "On my Dragon Mama, I'm leading from here.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 41,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "goblins",
+   "line": "*sobbing* BYE!! COME BACK HARDER!!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "thegoblinsseatlykoronathronemadeofspoonsbonesandone1wagonwhe_1bc6",
+  "key": "thegoblinsseatlykoronathronemadeofspoonsbonesandone1wagonwheel",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The goblins seat Lykor on a throne made of spoons, bones, and one (1) wagon wheel.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 47,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama, I'm leading from here."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yallhadsaidyougotsomebeezyorsomeshi",
+  "key": "yallhadsaidyougotsomebeezyorsomeshi",
+  "who": "lykor",
+  "name": null,
+  "mood": "flattered",
+  "thought": false,
+  "line": "Y'all had said you got some beezy or some shi?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 49,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The goblins seat Lykor on a throne made of spoons, bones, and one (1) wagon wheel."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thegoblinshandthemoggingelfamugofgoblinbeezy",
+  "key": "thegoblinshandthemoggingelfamugofgoblinbeezy",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The goblins hand the Mogging Elf a mug of goblin beezy.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 51,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Y'all had said you got some beezy or some shi?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "ayynowthisakingdom",
+  "key": "ayynowthisakingdom",
+  "who": "lykor",
+  "name": null,
+  "mood": "flattered",
+  "thought": false,
+  "line": "Ayy. Now THIS a kingdom.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 52,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The goblins hand the Mogging Elf a mug of goblin beezy."
+  },
+  "uses": 1
+ },
+ {
+  "id": "lykorfocusaskhim",
+  "key": "lykorfocusaskhim",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "Lykor. Focus. Ask him.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 53,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Ayy. Now THIS a kingdom."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightimcrownedwherethemetocyat",
+  "key": "aightimcrownedwherethemetocyat",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Aight, I'm crowned. Where the metocy at?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 54,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Lykor. Focus. Ask him."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ohwelltellyouaslongasyoustayourkingforever",
+  "key": "ohwelltellyouaslongasyoustayourkingforever",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Oh, we'll tell you… as long as you stay our king. FOREVER.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 56,
+  "tag": "",
+  "recorded": "goblins/chief_stay_our_king",
+  "prev": {
+   "who": "lykor",
+   "line": "Aight, I'm crowned. Where the metocy at?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "foreverforeverforever",
+  "key": "foreverforeverforever",
+  "who": "goblins",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "FOREVER! FOREVER! FOREVER!",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 57,
+  "tag": "",
+  "recorded": "goblins/goblins_forever",
+  "prev": {
+   "who": "chief",
+   "line": "Oh, we'll tell you… as long as you stay our king. FOREVER."
+  },
+  "uses": 1
+ },
+ {
+  "id": "broijustwanteddirections",
+  "key": "broijustwanteddirections",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Bro, I just wanted directions.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 58,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "goblins",
+   "line": "FOREVER! FOREVER! FOREVER!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "howdoeslykorgetoutofthis",
+  "key": "howdoeslykorgetoutofthis",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "How does Lykor get out of this?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 59,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Bro, I just wanted directions."
+  },
+  "uses": 1
+ },
+ {
+  "id": "mychoppedgoblinsmyloyalchoppedgoblins",
+  "key": "mychoppedgoblinsmyloyalchoppedgoblins",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "My chopped goblins. My loyal chopped goblins.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 63,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "How does Lykor get out of this?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "yallneedtoquitbeingodandletmediponamfandthatsonsometypeshiil_d44a",
+  "key": "yallneedtoquitbeingodandletmediponamfandthatsonsometypeshiillspintheblockonyallandbringusomemetocynshitrustyalltypecoo",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Y'all need to quit being OD and let me dip on a mf, and that's on some type shi. I'll spin the block on y'all and bring u some metocy n shi, trust. Y'all type coo.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 64,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "My chopped goblins. My loyal chopped goblins."
+  },
+  "uses": 1
+ },
+ {
+  "id": "betdat",
+  "key": "betdat",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Bet dat.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 65,
+  "tag": "Ebain",
+  "recorded": "goblins/chief_bet_dat",
+  "prev": {
+   "who": "lykor",
+   "line": "Y'all need to quit being OD and let me dip on a mf, and that's on some type shi. I'll spin the block on y'all and bring u some metocy n shi, trust. Y'all type coo."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightsoifyoucouldkeepwalkingdoeoverthereonsomeeastshitasfara_f021",
+  "key": "aightsoifyoucouldkeepwalkingdoeoverthereonsomeeastshitasfarasiknowthatsthebestmetocyagoblinlikemecouldgethishandson",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Aight, so if you could keep walking doe, over there, on some east shit. As far as I know, that's the best metocy a goblin like me could get his hands on.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 66,
+  "tag": "Ebain",
+  "recorded": "goblins/chief_on_some_east_shit",
+  "prev": {
+   "who": "chief",
+   "line": "Bet dat."
+  },
+  "uses": 1
+ },
+ {
+  "id": "heregosomebeezyfolktakeitfortheroad",
+  "key": "heregosomebeezyfolktakeitfortheroad",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Here go some beezy, folk. Take it for the road.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 67,
+  "tag": "Ebain",
+  "recorded": "goblins/chief_beezy_for_the_road",
+  "prev": {
+   "who": "chief",
+   "line": "Aight, so if you could keep walking doe, over there, on some east shit. As far as I know, that's the best metocy a goblin like me could get his hands on."
+  },
+  "uses": 1
+ },
+ {
+  "id": "lykorgotbeezy3heals",
+  "key": "lykorgotbeezy3heals",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Lykor got: Beezy ×3 (heals)",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 69,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "Here go some beezy, folk. Take it for the road."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yallrealforthisrealones",
+  "key": "yallrealforthisrealones",
+  "who": "lykor",
+  "name": null,
+  "mood": "flattered",
+  "thought": false,
+  "line": "Y'all real for this. Real ones.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 70,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Lykor got: Beezy ×3 (heals)"
+  },
+  "uses": 1
+ },
+ {
+  "id": "whyhegetthebeezy",
+  "key": "whyhegetthebeezy",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Why HE get the beezy?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 71,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Y'all real for this. Real ones."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ibetyourasscantbeatmeinabeezycontest",
+  "key": "ibetyourasscantbeatmeinabeezycontest",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "I bet your ass can't beat me in a beezy contest.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 75,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Why HE get the beezy?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "gaspnobodyhasoutdrunkbogdrinkerin400years",
+  "key": "gaspnobodyhasoutdrunkbogdrinkerin400years",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "*gasp* Nobody has out-drunk Bogdrinker in 400 years.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 76,
+  "tag": "",
+  "recorded": "goblins/chief_400_years",
+  "prev": {
+   "who": "lykor",
+   "line": "I bet your ass can't beat me in a beezy contest."
+  },
+  "uses": 1
+ },
+ {
+  "id": "broliterallychugsbogsandswampsitsinhisnamedumbass",
+  "key": "broliterallychugsbogsandswampsitsinhisnamedumbass",
+  "who": "skorn",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "Bro literally chugs bogs and swamps. It's in his NAME, dumbass.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 77,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "*gasp* Nobody has out-drunk Bogdrinker in 400 years."
+  },
+  "uses": 1
+ },
+ {
+  "id": "themoggingelfoutdrankbogdrinker",
+  "key": "themoggingelfoutdrankbogdrinker",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…The Mogging Elf… out-drank… BOGDRINKER?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 80,
+  "tag": "",
+  "recorded": "goblins/chief_elf_out_drank",
+  "prev": {
+   "who": "skorn",
+   "line": "Bro literally chugs bogs and swamps. It's in his NAME, dumbass."
+  },
+  "uses": 1
+ },
+ {
+  "id": "legendlegendlegend",
+  "key": "legendlegendlegend",
+  "who": "goblins",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "LEGEND! LEGEND! LEGEND!",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 81,
+  "tag": "",
+  "recorded": "goblins/goblins_legend",
+  "prev": {
+   "who": "chief",
+   "line": "…The Mogging Elf… out-drank… BOGDRINKER?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "hicthemetocymarteastgobeforeicry",
+  "key": "hicthemetocymarteastgobeforeicry",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "*hic* The Metocy Mart. East. Go before I cry.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 82,
+  "tag": "",
+  "recorded": "goblins/chief_go_before_i_cry",
+  "prev": {
+   "who": "goblins",
+   "line": "LEGEND! LEGEND! LEGEND!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "lykorpassesout",
+  "key": "lykorpassesout",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Lykor passes out.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 86,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "*hic* The Metocy Mart. East. Go before I cry."
+  },
+  "uses": 1
+ },
+ {
+  "id": "lykorwakesupoutsidethevillagesomethingiswrittenonhisforehead",
+  "key": "lykorwakesupoutsidethevillagesomethingiswrittenonhisforehead",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Lykor wakes up outside the village. Something is written on his forehead.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 88,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Lykor passes out."
+  },
+  "uses": 1
+ },
+ {
+  "id": "onmydragonmamaitsaysmetocymarteastloser",
+  "key": "onmydragonmamaitsaysmetocymarteastloser",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "On my Dragon Mama… it says \"METOCY MART, EAST. LOSER.\"",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 89,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Lykor wakes up outside the village. Something is written on his forehead."
+  },
+  "uses": 1
+ },
+ {
+  "id": "theyainthavetoaddthelastpart",
+  "key": "theyainthavetoaddthelastpart",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "…They ain't have to add the last part.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 90,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama… it says \"METOCY MART, EAST. LOSER.\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "imleadingfromhere",
+  "key": "imleadingfromhere",
+  "who": "xylo",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "I'm leading from here.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 91,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "…They ain't have to add the last part."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightrealtalktakehiminsteadhespurplethatsbasicallyroyal",
+  "key": "aightrealtalktakehiminsteadhespurplethatsbasicallyroyal",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Aight, real talk. Take HIM instead. He's purple. That's basically royal.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 97,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "I'm leading from here."
+  },
+  "uses": 1
+ },
+ {
+  "id": "saywhatnow",
+  "key": "saywhatnow",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "Say what now?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 98,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Aight, real talk. Take HIM instead. He's purple. That's basically royal."
+  },
+  "uses": 1
+ },
+ {
+  "id": "apurpleking",
+  "key": "apurpleking",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…A purple king…",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 99,
+  "tag": "",
+  "recorded": "goblins/chief_a_purple_king",
+  "prev": {
+   "who": "skorn",
+   "line": "Say what now?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "purplekingpurpleking",
+  "key": "purplekingpurpleking",
+  "who": "goblins",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "PURPLE KING! PURPLE KING!",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 100,
+  "tag": "",
+  "recorded": "goblins/goblins_purple_king",
+  "prev": {
+   "who": "chief",
+   "line": "…A purple king…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "thegoblinscrownskorn",
+  "key": "thegoblinscrownskorn",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The goblins crown Skorn.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 102,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "goblins",
+   "line": "PURPLE KING! PURPLE KING!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "waitdisbihtufflowkeyicouldfwthis",
+  "key": "waitdisbihtufflowkeyicouldfwthis",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Wait, dis bih tuff lowkey. I could fw this.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 103,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The goblins crown Skorn."
+  },
+  "uses": 1
+ },
+ {
+  "id": "themetocymartiseastnowleavemoggingelfwehaveanewgod",
+  "key": "themetocymartiseastnowleavemoggingelfwehaveanewgod",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The Metocy Mart is east. Now leave, Mogging Elf. We have a new god.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 104,
+  "tag": "",
+  "recorded": "goblins/chief_new_god",
+  "prev": {
+   "who": "skorn",
+   "line": "Wait, dis bih tuff lowkey. I could fw this."
+  },
+  "uses": 1
+ },
+ {
+  "id": "damnthatwaseasytooeasy",
+  "key": "damnthatwaseasytooeasy",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Damn. That was easy. Too easy.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 105,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "The Metocy Mart is east. Now leave, Mogging Elf. We have a new god."
+  },
+  "uses": 1
+ },
+ {
+  "id": "weareleavinghimherearentwe",
+  "key": "weareleavinghimherearentwe",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "We are leaving him here, aren't we.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 106,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Damn. That was easy. Too easy."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yup",
+  "key": "yup",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Yup.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 107,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "We are leaving him here, aren't we."
+  },
+  "uses": 1
+ },
+ {
+  "id": "slowquiet",
+  "key": "slowquiet",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": true,
+  "line": "Slow… quiet…",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 112,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Yup."
+  },
+  "uses": 1
+ },
+ {
+  "id": "whatthefuckisyalldoing",
+  "key": "whatthefuckisyalldoing",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "What the fuck is y'all doing?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 114,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Slow… quiet…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "wegowherethemoggingelfgoes",
+  "key": "wegowherethemoggingelfgoes",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "We go where the Mogging Elf goes.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 115,
+  "tag": "",
+  "recorded": "goblins/goblin_we_go_where_elf_goes",
+  "prev": {
+   "who": "lykor",
+   "line": "What the fuck is y'all doing?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "themoggingelfseeksthemetocythenthegoblinswilltakehimthereour_f04b",
+  "key": "themoggingelfseeksthemetocythenthegoblinswilltakehimthereourselvestothemetocymart",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The Mogging Elf seeks the metocy? Then the goblins will take him there OURSELVES. To the Metocy Mart!",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 116,
+  "tag": "",
+  "recorded": "goblins/chief_take_him_ourselves",
+  "prev": {
+   "who": "goblin",
+   "line": "We go where the Mogging Elf goes."
+  },
+  "uses": 1
+ },
+ {
+  "id": "fieldtripfieldtripfieldtrip",
+  "key": "fieldtripfieldtripfieldtrip",
+  "who": "goblins",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "FIELD TRIP! FIELD TRIP! FIELD TRIP!",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 117,
+  "tag": "",
+  "recorded": "goblins/goblins_field_trip",
+  "prev": {
+   "who": "chief",
+   "line": "The Mogging Elf seeks the metocy? Then the goblins will take him there OURSELVES. To the Metocy Mart!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "hellnah",
+  "key": "hellnah",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Hell nah.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 118,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "goblins",
+   "line": "FIELD TRIP! FIELD TRIP! FIELD TRIP!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "onmydragonmamawegotanentouragenow",
+  "key": "onmydragonmamawegotanentouragenow",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "On my Dragon Mama… we got an entourage now.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 120,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Hell nah."
+  },
+  "uses": 1
+ },
+ {
+  "id": "stepasideprettyboyletaprofessionalnegotiate",
+  "key": "stepasideprettyboyletaprofessionalnegotiate",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Step aside, pretty boy. Let a professional negotiate.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 125,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama… we got an entourage now."
+  },
+  "uses": 1
+ },
+ {
+  "id": "skorndonot",
+  "key": "skorndonot",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "Skorn, do NOT—",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 126,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Step aside, pretty boy. Let a professional negotiate."
+  },
+  "uses": 1
+ },
+ {
+  "id": "skorndiddyslapsthenearestgoblin",
+  "key": "skorndiddyslapsthenearestgoblin",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Skorn Diddy Slaps the nearest goblin.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 128,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Skorn, do NOT—"
+  },
+  "uses": 1
+ },
+ {
+  "id": "thepurpleonehitssohardsobeautifully",
+  "key": "thepurpleonehitssohardsobeautifully",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…The purple one hits so hard. So beautifully.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 130,
+  "tag": "",
+  "recorded": "goblins/chief_purple_one_hits",
+  "prev": {
+   "who": "narrator",
+   "line": "Skorn Diddy Slaps the nearest goblin."
+  },
+  "uses": 1
+ },
+ {
+  "id": "weworshipthepurpleonenow",
+  "key": "weworshipthepurpleonenow",
+  "who": "goblins",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "WE WORSHIP THE PURPLE ONE NOW!",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 131,
+  "tag": "",
+  "recorded": "goblins/goblins_worship_purple_one",
+  "prev": {
+   "who": "chief",
+   "line": "…The purple one hits so hard. So beautifully."
+  },
+  "uses": 1
+ },
+ {
+  "id": "themoggingelfisdethronedgivethebeezytothepurpleone",
+  "key": "themoggingelfisdethronedgivethebeezytothepurpleone",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The Mogging Elf is… dethroned. Give the beezy to the purple one.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 132,
+  "tag": "",
+  "recorded": "goblins/chief_elf_dethroned",
+  "prev": {
+   "who": "goblins",
+   "line": "WE WORSHIP THE PURPLE ONE NOW!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "yalldeadass",
+  "key": "yalldeadass",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Y'all DEADASS?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 134,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "The Mogging Elf is… dethroned. Give the beezy to the purple one."
+  },
+  "uses": 1
+ },
+ {
+  "id": "finallysomebodyinthisforestgottaste",
+  "key": "finallysomebodyinthisforestgottaste",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Finally. Somebody in this forest got taste.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 135,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Y'all DEADASS?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "themetocymartiseastpurpleonecomebackanytimeelfdont",
+  "key": "themetocymartiseastpurpleonecomebackanytimeelfdont",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The Metocy Mart is east. Purple one, come back anytime. Elf… don't.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 136,
+  "tag": "",
+  "recorded": "goblins/chief_elf_dont",
+  "prev": {
+   "who": "skorn",
+   "line": "Finally. Somebody in this forest got taste."
+  },
+  "uses": 1
+ },
+ {
+  "id": "eastmoggingelfonsomeeastshit",
+  "key": "eastmoggingelfonsomeeastshit",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "East, Mogging Elf. On some east shit.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 143,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "The Metocy Mart is east. Purple one, come back anytime. Elf… don't."
+  },
+  "uses": 1
+ },
+ {
+  "id": "dontworryaboutmeimakingnowigotspoons",
+  "key": "dontworryaboutmeimakingnowigotspoons",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Don't worry about me. I'm a king now. I got spoons.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 146,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "East, Mogging Elf. On some east shit."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yallhiring",
+  "key": "yallhiring",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Y'all hiring?",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village_script.gd",
+  "srcLine": 149,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Don't worry about me. I'm a king now. I got spoons."
+  },
+  "uses": 1
+ },
+ {
+  "id": "moggingelfinmyhumblehutdonttouchthebeltdonottouchthebelt",
+  "key": "moggingelfinmyhumblehutdonttouchthebeltdonottouchthebelt",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Mogging Elf! In my humble hut! Don't touch the belt. Do NOT touch the belt.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 27,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": null,
+  "uses": 1
+ },
+ {
+  "id": "humblebroyougotaportraitofyourself",
+  "key": "humblebroyougotaportraitofyourself",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Humble? Bro, you got a portrait of yourself.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 28,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "Mogging Elf! In my humble hut! Don't touch the belt. Do NOT touch the belt."
+  },
+  "uses": 1
+ },
+ {
+  "id": "painteditmyselftooknineyearscapturedmyessence",
+  "key": "painteditmyselftooknineyearscapturedmyessence",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Painted it myself. Took nine years. Captured my essence.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 29,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Humble? Bro, you got a portrait of yourself."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ifyourestayingawhilethevillagehasworkcheckthejobboardandpayy_9e56",
+  "key": "ifyourestayingawhilethevillagehasworkcheckthejobboardandpayyourtabatthebartheyputitontheking",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "If you're staying a while, the village has work. Check the Job Board. And pay your tab at the bar. They put it on the king.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 30,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "Painted it myself. Took nine years. Captured my essence."
+  },
+  "uses": 1
+ },
+ {
+  "id": "iwaskingforliketenminutes",
+  "key": "iwaskingforliketenminutes",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "I was king for like ten minutes.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 31,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "If you're staying a while, the village has work. Check the Job Board. And pay your tab at the bar. They put it on the king."
+  },
+  "uses": 1
+ },
+ {
+  "id": "expensivetenminutes",
+  "key": "expensivetenminutes",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Expensive ten minutes.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 32,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "I was king for like ten minutes."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thebeltisstillwatchingyoumoggingelf",
+  "key": "thebeltisstillwatchingyoumoggingelf",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The belt is still watching you, Mogging Elf.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 35,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "Expensive ten minutes."
+  },
+  "uses": 1
+ },
+ {
+  "id": "arustybeltengravedchugchampion400yearsrunningtheresabeezysta_9106",
+  "key": "arustybeltengravedchugchampion400yearsrunningtheresabeezystainoneverysingleyear",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "A rusty belt. Engraved: \"CHUG CHAMPION — 400 YEARS RUNNING.\" There's a beezy stain on every single year.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 38,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "The belt is still watching you, Mogging Elf."
+  },
+  "uses": 1
+ },
+ {
+  "id": "fourhundredyearsandheneverwasheditoncerespect",
+  "key": "fourhundredyearsandheneverwasheditoncerespect",
+  "who": "xylo",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Four hundred years and he never washed it once. Respect.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 39,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "A rusty belt. Engraved: \"CHUG CHAMPION — 400 YEARS RUNNING.\" There's a beezy stain on every single year."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aportraitofchiefbogdrinkerpaintedbychiefbogdrinkerhegavehims_071a",
+  "key": "aportraitofchiefbogdrinkerpaintedbychiefbogdrinkerhegavehimselfabs",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "A portrait of Chief Bogdrinker, painted by Chief Bogdrinker. He gave himself abs.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 42,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Four hundred years and he never washed it once. Respect."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thatscrazycausehedonotgotabs",
+  "key": "thatscrazycausehedonotgotabs",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "That's crazy, cause he do not got abs.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 43,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "A portrait of Chief Bogdrinker, painted by Chief Bogdrinker. He gave himself abs."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aroyalchestitsnotlockedgoblinsdontbelieveinlockstheybelievei_09f3",
+  "key": "aroyalchestitsnotlockedgoblinsdontbelieveinlockstheybelieveinhoping",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "A royal chest. It's not locked. Goblins don't believe in locks. They believe in hoping.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 46,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "That's crazy, cause he do not got abs."
+  },
+  "uses": 1
+ },
+ {
+  "id": "holdonholdonthatsmybackupconditioner",
+  "key": "holdonholdonthatsmybackupconditioner",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "Hold on. HOLD ON. That's MY backup conditioner.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 47,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "A royal chest. It's not locked. Goblins don't believe in locks. They believe in hoping."
+  },
+  "uses": 1
+ },
+ {
+  "id": "tribute",
+  "key": "tribute",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Tribute.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 48,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Hold on. HOLD ON. That's MY backup conditioner."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youcanttributesomethingyoustoleoutmybag",
+  "key": "youcanttributesomethingyoustoleoutmybag",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "You can't tribute something you STOLE out my bag.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 49,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "Tribute."
+  },
+  "uses": 1
+ },
+ {
+  "id": "werebackthehairisback",
+  "key": "werebackthehairisback",
+  "who": "lykor",
+  "name": null,
+  "mood": "flattered",
+  "thought": false,
+  "line": "We're back. The hair is back.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 51,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "You can't tribute something you STOLE out my bag."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thechestisemptynowexceptforanoteiouone1conditionerchief",
+  "key": "thechestisemptynowexceptforanoteiouone1conditionerchief",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The chest is empty now, except for a note: \"I.O.U. one (1) conditioner — Chief.\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 54,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "We're back. The hair is back."
+  },
+  "uses": 1
+ },
+ {
+  "id": "imustrestmyeyestheloreiscalling",
+  "key": "imustrestmyeyestheloreiscalling",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "I must rest my eyes. The lore is calling.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 57,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The chest is empty now, except for a note: \"I.O.U. one (1) conditioner — Chief.\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "isawitisawtheloreitwasablankpageiveneverfeltsoseen",
+  "key": "isawitisawtheloreitwasablankpageiveneverfeltsoseen",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "I saw it. I saw the lore. It was a blank page. I've never felt so seen.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 59,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "I must rest my eyes. The lore is calling."
+  },
+  "uses": 1
+ },
+ {
+  "id": "itsapileofhaywithaxyloshapeddentinitnow",
+  "key": "itsapileofhaywithaxyloshapeddentinitnow",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "It's a pile of hay with a Xylo-shaped dent in it now.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 62,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "I saw it. I saw the lore. It was a blank page. I've never felt so seen."
+  },
+  "uses": 1
+ },
+ {
+  "id": "welcometotheunemploymentofficebarfilloutaformhaveadrinkorhav_087a",
+  "key": "welcometotheunemploymentofficebarfilloutaformhaveadrinkorhaveadrinkforgettheform",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Welcome to the Unemployment Office & Bar. Fill out a form, have a drink. Or have a drink, forget the form.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 67,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "It's a pile of hay with a Xylo-shaped dent in it now."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ohohitsthekingyourcoronationpartyranatabyourmajesty",
+  "key": "ohohitsthekingyourcoronationpartyranatabyourmajesty",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Oh. OH. It's the king. Your coronation party ran a tab, your majesty.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 68,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Welcome to the Unemployment Office & Bar. Fill out a form, have a drink. Or have a drink, forget the form."
+  },
+  "uses": 1
+ },
+ {
+  "id": "mywhat",
+  "key": "mywhat",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "My WHAT?",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 69,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Oh. OH. It's the king. Your coronation party ran a tab, your majesty."
+  },
+  "uses": 1
+ },
+ {
+  "id": "threehundredspoonsplustipweputitonthecrown",
+  "key": "threehundredspoonsplustipweputitonthecrown",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Three hundred spoons. Plus tip. We put it on the crown.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 70,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "My WHAT?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "soaboutthattab",
+  "key": "soaboutthattab",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "So. About that tab.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 74,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Three hundred spoons. Plus tip. We put it on the crown."
+  },
+  "uses": 1
+ },
+ {
+  "id": "heretakeittakemybeezyihopeitswarm",
+  "key": "heretakeittakemybeezyihopeitswarm",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Here. Take it. Take my beezy. I hope it's warm.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 78,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "So. About that tab."
+  },
+  "uses": 1
+ },
+ {
+  "id": "pleasuredoingbusinessyourmajestycomebackwhenyourerich",
+  "key": "pleasuredoingbusinessyourmajestycomebackwhenyourerich",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Pleasure doing business, your majesty. Come back when you're rich.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 80,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Here. Take it. Take my beezy. I hope it's warm."
+  },
+  "uses": 1
+ },
+ {
+  "id": "lookatthisfacedoesthisfacepaytabs",
+  "key": "lookatthisfacedoesthisfacepaytabs",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Look at this face. Does this face pay tabs?",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 83,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Pleasure doing business, your majesty. Come back when you're rich."
+  },
+  "uses": 1
+ },
+ {
+  "id": "bigthumbs",
+  "key": "bigthumbs",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "BIG THUMBS.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 85,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Look at this face. Does this face pay tabs?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "sendyourbiggestguy",
+  "key": "sendyourbiggestguy",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Send your biggest guy.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 89,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "BIG THUMBS."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youaskedforitbigthumbs",
+  "key": "youaskedforitbigthumbs",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "You asked for it. BIG THUMBS!",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 90,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Send your biggest guy."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thetabaintgoinganywhereitsearninginterest",
+  "key": "thetabaintgoinganywhereitsearninginterest",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The tab ain't going anywhere. It's earning interest.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 94,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "You asked for it. BIG THUMBS!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "thetabispaidinfull",
+  "key": "thetabispaidinfull",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…the tab is… paid… in full…",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 99,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "The tab ain't going anywhere. It's earning interest."
+  },
+  "uses": 1
+ },
+ {
+  "id": "okayokaytabsclearedheretwoonthehousepleasestophittingmystaff",
+  "key": "okayokaytabsclearedheretwoonthehousepleasestophittingmystaff",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Okay! Okay. Tab's cleared. Here, two on the house. Please stop hitting my staff.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 100,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "…the tab is… paid… in full…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "tabsclearyourmajestywereoutofbeezyanywaywerealwaysoutofbeezy",
+  "key": "tabsclearyourmajestywereoutofbeezyanywaywerealwaysoutofbeezy",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Tab's clear, your majesty. We're out of beezy anyway. We're always out of beezy.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 104,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Okay! Okay. Tab's cleared. Here, two on the house. Please stop hitting my staff."
+  },
+  "uses": 1
+ },
+ {
+  "id": "notroubleinhereidonotgetpaidenoughfortroubleigetpaidzero",
+  "key": "notroubleinhereidonotgetpaidenoughfortroubleigetpaidzero",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "No trouble in here. I do NOT get paid enough for trouble. I get paid zero.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 107,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Tab's clear, your majesty. We're out of beezy anyway. We're always out of beezy."
+  },
+  "uses": 1
+ },
+ {
+  "id": "imcancellingmygymmembershipitdidntwork",
+  "key": "imcancellingmygymmembershipitdidntwork",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "I'm cancelling my gym membership. It didn't work.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 110,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "No trouble in here. I do NOT get paid enough for trouble. I get paid zero."
+  },
+  "uses": 1
+ },
+ {
+  "id": "takeanumber",
+  "key": "takeanumber",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Take a number.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 113,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "I'm cancelling my gym membership. It didn't work."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youtakeanumberitsays4000001thesignsaysnowserving3",
+  "key": "youtakeanumberitsays4000001thesignsaysnowserving3",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "You take a number. It says 4,000,001. The sign says NOW SERVING: 3.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 114,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Take a number."
+  },
+  "uses": 1
+ },
+ {
+  "id": "deloyelorepredictedthischapteronetheline",
+  "key": "deloyelorepredictedthischapteronetheline",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "Deloye Lore predicted this. Chapter one: \"The line.\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 115,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "You take a number. It says 4,000,001. The sign says NOW SERVING: 3."
+  },
+  "uses": 1
+ },
+ {
+  "id": "isthisthingonhellohelloyallevernoticegoblinsnevergetjobs",
+  "key": "isthisthingonhellohelloyallevernoticegoblinsnevergetjobs",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Is this thing on? Hello, hello! Y'all ever notice goblins never get jobs?",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 120,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Deloye Lore predicted this. Chapter one: \"The line.\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "causewedontapplybadumtssthatsnotajokethatsmylife",
+  "key": "causewedontapplybadumtssthatsnotajokethatsmylife",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Cause we don't APPLY! *ba dum tss* …That's not a joke. That's my life.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 121,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Is this thing on? Hello, hello! Y'all ever notice goblins never get jobs?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "haokaythatskindasadbutokay",
+  "key": "haokaythatskindasadbutokay",
+  "who": "lykor",
+  "name": null,
+  "mood": "flattered",
+  "thought": false,
+  "line": "Ha. Okay. That's kinda sad but okay.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 123,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Cause we don't APPLY! *ba dum tss* …That's not a joke. That's my life."
+  },
+  "uses": 1
+ },
+ {
+  "id": "boooogetajob",
+  "key": "boooogetajob",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "BOOOO. GET A JOB.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 124,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Ha. Okay. That's kinda sad but okay."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thatsthejokeman",
+  "key": "thatsthejokeman",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…that's the joke, man.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 124,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "BOOOO. GET A JOB."
+  },
+  "uses": 1
+ },
+ {
+  "id": "mywifetoldmetostopstealingspoonsisaidforkthat",
+  "key": "mywifetoldmetostopstealingspoonsisaidforkthat",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "My wife told me to stop stealing spoons. I said \"fork that.\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 126,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "…that's the joke, man."
+  },
+  "uses": 1
+ },
+ {
+  "id": "imalsonotmarriedijustwantedtosayfork",
+  "key": "imalsonotmarriedijustwantedtosayfork",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…I'm also not married. I just wanted to say fork.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 127,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "My wife told me to stop stealing spoons. I said \"fork that.\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "apundeloyewouldbeprouddeloyehasnevertoldajoke",
+  "key": "apundeloyewouldbeprouddeloyehasnevertoldajoke",
+  "who": "xylo",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "A pun. Deloye would be proud. Deloye has never told a joke.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 129,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "…I'm also not married. I just wanted to say fork."
+  },
+  "uses": 1
+ },
+ {
+  "id": "evenyourjokesareunemployed",
+  "key": "evenyourjokesareunemployed",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Even your jokes are unemployed.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 130,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "A pun. Deloye would be proud. Deloye has never told a joke."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ohhesgood",
+  "key": "ohhesgood",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Oh he's GOOD.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 130,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Even your jokes are unemployed."
+  },
+  "uses": 1
+ },
+ {
+  "id": "lastoneiwenttothemetocymartdulberschargedmetwentyspoonsforar_c801",
+  "key": "lastoneiwenttothemetocymartdulberschargedmetwentyspoonsforareceipt",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Last one. I went to the Metocy Mart. Dulbers charged me twenty spoons for a receipt.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 132,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Oh he's GOOD."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thereceiptsaidnorefundsididntevenbuyanything",
+  "key": "thereceiptsaidnorefundsididntevenbuyanything",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The receipt said NO REFUNDS. I didn't even buy anything!",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 133,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Last one. I went to the Metocy Mart. Dulbers charged me twenty spoons for a receipt."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thathappenedtomeforrealbrothataintfunny",
+  "key": "thathappenedtomeforrealbrothataintfunny",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "THAT HAPPENED TO ME FOR REAL BRO. THAT AIN'T FUNNY.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 136,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "The receipt said NO REFUNDS. I didn't even buy anything!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "thatsitimdoneimquittingcomedyimgoingbacktobeingunemployedthe_aeff",
+  "key": "thatsitimdoneimquittingcomedyimgoingbacktobeingunemployedthenormalway",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "That's it. I'm done. I'm quitting comedy. I'm going back to being unemployed the normal way.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 140,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "THAT HAPPENED TO ME FOR REAL BRO. THAT AIN'T FUNNY."
+  },
+  "uses": 1
+ },
+ {
+  "id": "gorbostormsoffthestagehecomesbackthirtysecondslaterhehasnowh_1de2",
+  "key": "gorbostormsoffthestagehecomesbackthirtysecondslaterhehasnowhereelsetogo",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Gorbo storms off the stage. He comes back thirty seconds later. He has nowhere else to go.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 141,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "That's it. I'm done. I'm quitting comedy. I'm going back to being unemployed the normal way."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yallarethebestcrowdieverhadyallaretheonlycrowdieverhadhereta_35ac",
+  "key": "yallarethebestcrowdieverhadyallaretheonlycrowdieverhadheretakemytipjarbeezy",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Y'all are the best crowd I ever had. Y'all are the ONLY crowd I ever had. Here — take my tip jar beezy.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 144,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Gorbo storms off the stage. He comes back thirty seconds later. He has nowhere else to go."
+  },
+  "uses": 1
+ },
+ {
+  "id": "imworkingonnewmaterialitsaboutyouguysitsmostlyaboutthehair",
+  "key": "imworkingonnewmaterialitsaboutyouguysitsmostlyaboutthehair",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "I'm working on new material. It's about you guys. It's mostly about the hair.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 148,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Y'all are the best crowd I ever had. Y'all are the ONLY crowd I ever had. Here — take my tip jar beezy."
+  },
+  "uses": 1
+ },
+ {
+  "id": "soyouretheelfwhochuggedwiththechieflemmetellyousomethingthec_f944",
+  "key": "soyouretheelfwhochuggedwiththechieflemmetellyousomethingthechiefiswashed",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "So YOU'RE the elf who chugged with the Chief. Lemme tell you something. The Chief is washed.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 152,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "I'm working on new material. It's about you guys. It's mostly about the hair."
+  },
+  "uses": 1
+ },
+ {
+  "id": "meigotaliverofsteelchugmerightnowwinnergetstwobeezylosergets_dec0",
+  "key": "meigotaliverofsteelchugmerightnowwinnergetstwobeezylosergetsembarrassed",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Me? I got a liver of STEEL. Chug me. Right now. Winner gets two beezy. Loser gets… embarrassed.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 153,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "So YOU'RE the elf who chugged with the Chief. Lemme tell you something. The Chief is washed."
+  },
+  "uses": 1
+ },
+ {
+  "id": "pouritandgetthecameraready",
+  "key": "pouritandgetthecameraready",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Pour it. And get the camera ready.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 156,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Me? I got a liver of STEEL. Chug me. Right now. Winner gets two beezy. Loser gets… embarrassed."
+  },
+  "uses": 1
+ },
+ {
+  "id": "scaredigetitmyliverscaresmetoo",
+  "key": "scaredigetitmyliverscaresmetoo",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Scared. I get it. My liver scares me too.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 160,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Pour it. And get the camera ready."
+  },
+  "uses": 1
+ },
+ {
+  "id": "myliveritbetrayedmeafterallwevebeenthrough",
+  "key": "myliveritbetrayedmeafterallwevebeenthrough",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "My liver… it betrayed me… after all we've been through…",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 165,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Scared. I get it. My liver scares me too."
+  },
+  "uses": 1
+ },
+ {
+  "id": "goblinjobboardmostofthepostingsarejustpicturesofspoons",
+  "key": "goblinjobboardmostofthepostingsarejustpicturesofspoons",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "GOBLIN JOB BOARD. Most of the postings are just pictures of spoons.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 170,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "My liver… it betrayed me… after all we've been through…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "wantedgoblinmustbeagoblinpayno",
+  "key": "wantedgoblinmustbeagoblinpayno",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "\"WANTED: Goblin. Must be a goblin. Pay: no.\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 171,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "GOBLIN JOB BOARD. Most of the postings are just pictures of spoons."
+  },
+  "uses": 1
+ },
+ {
+  "id": "helpwantedatthemetocymartmustnotaskquestionsmustnotaskaboutt_ba87",
+  "key": "helpwantedatthemetocymartmustnotaskquestionsmustnotaskaboutthequestionsdf",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "\"HELP WANTED at the Metocy Mart. Must not ask questions. Must not ask about the questions. — D.F.\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 172,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "\"WANTED: Goblin. Must be a goblin. Pay: no.\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "bodyguardneededforthediddychudgiantsnappayyougettolive",
+  "key": "bodyguardneededforthediddychudgiantsnappayyougettolive",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "\"BODYGUARD NEEDED for the Diddy Chud Giant's nap. Pay: you get to live.\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 173,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "\"HELP WANTED at the Metocy Mart. Must not ask questions. Must not ask about the questions. — D.F.\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "lostluckyspoonveryluckyrewardseegrubnikimrighthere",
+  "key": "lostluckyspoonveryluckyrewardseegrubnikimrighthere",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "\"LOST: LUCKY SPOON. VERY LUCKY. REWARD. SEE GRUBNIK (I'm right here).\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 174,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "\"BODYGUARD NEEDED for the Diddy Chud Giant's nap. Pay: you get to live.\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "theeconomyhereisinshambles",
+  "key": "theeconomyhereisinshambles",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "The economy here is in shambles.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 175,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "\"LOST: LUCKY SPOON. VERY LUCKY. REWARD. SEE GRUBNIK (I'm right here).\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "yyoureadmypostingfinallymyluckyspoongottook",
+  "key": "yyoureadmypostingfinallymyluckyspoongottook",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Y-you read my posting?! Finally! My lucky spoon got took!",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 178,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "The economy here is in shambles."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thegoblinpatrolontheeastroadjackeditsaiditwasaspoontaxtheres_5934",
+  "key": "thegoblinpatrolontheeastroadjackeditsaiditwasaspoontaxtheresnospoontaxichecked",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The Goblin Patrol on the east road jacked it. Said it was a \"spoon tax.\" There's no spoon tax! I checked!",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 179,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Y-you read my posting?! Finally! My lucky spoon got took!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "saylesswellgetyourspoonlilbro",
+  "key": "saylesswellgetyourspoonlilbro",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Say less. We'll get your spoon, lil bro.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 180,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "The Goblin Patrol on the east road jacked it. Said it was a \"spoon tax.\" There's no spoon tax! I checked!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "eastroadthepatrolmyspoonmissesmeicanfeelit",
+  "key": "eastroadthepatrolmyspoonmissesmeicanfeelit",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "East road! The patrol! My spoon misses me, I can feel it!",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 184,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Say less. We'll get your spoon, lil bro."
+  },
+  "uses": 1
+ },
+ {
+  "id": "myspoonmybeautifulluckyspoonitsgotpatrolgreaseonitbutidontca_bcb7",
+  "key": "myspoonmybeautifulluckyspoonitsgotpatrolgreaseonitbutidontcare",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "MY SPOON! My beautiful lucky spoon! It's got patrol grease on it but I don't care!",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 187,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "East road! The patrol! My spoon misses me, I can feel it!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "hereiwonthiswithmyluckyspooninadicegameyoukeepititsweightedd_7b3f",
+  "key": "hereiwonthiswithmyluckyspooninadicegameyoukeepititsweighteddonttellnobody",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Here. I won this with my lucky spoon in a dice game. You keep it. It's weighted. Don't tell nobody.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 188,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "MY SPOON! My beautiful lucky spoon! It's got patrol grease on it but I don't care!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "meandmyspoonaregoingonalittlevacationjustus",
+  "key": "meandmyspoonaregoingonalittlevacationjustus",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Me and my spoon are going on a little vacation. Just us.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 192,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Here. I won this with my lucky spoon in a dice game. You keep it. It's weighted. Don't tell nobody."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ahhhisawyoucominginavisionalsothroughthetentflap",
+  "key": "ahhhisawyoucominginavisionalsothroughthetentflap",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Ahhh. I saw you coming. In a vision. Also through the tent flap.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 197,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Me and my spoon are going on a little vacation. Just us."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thedragonyoucarrythebookofdeloyeyesbahgoblinprophecyistentim_3fb2",
+  "key": "thedragonyoucarrythebookofdeloyeyesbahgoblinprophecyistentimesthelore",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The dragon. You carry the book of… Deloye, yes? Bah. Goblin prophecy is ten times the lore.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 198,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Ahhh. I saw you coming. In a vision. Also through the tent flap."
+  },
+  "uses": 1
+ },
+ {
+  "id": "tentimeszeroisstillzerobutwaitnodeloyeloreisallthelorenameth_c6a2",
+  "key": "tentimeszeroisstillzerobutwaitnodeloyeloreisallthelorenamethetimeandplace",
+  "who": "xylo",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Ten times zero is still zero, but… wait. No. Deloye Lore is ALL the lore. Name the time and place.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 199,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "The dragon. You carry the book of… Deloye, yes? Bah. Goblin prophecy is ten times the lore."
+  },
+  "uses": 1
+ },
+ {
+  "id": "herenowaloreoffanswerthreepropheciesbeatmeandigiveyousomethi_6b20",
+  "key": "herenowaloreoffanswerthreepropheciesbeatmeandigiveyousomethingsigned",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Here. Now. A LORE-OFF. Answer three prophecies. Beat me, and I give you something… signed.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 200,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Ten times zero is still zero, but… wait. No. Deloye Lore is ALL the lore. Name the time and place."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thespiritsarelisteningmostlyoneofthemisonbreak",
+  "key": "thespiritsarelisteningmostlyoneofthemisonbreak",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The spirits are listening. Mostly. One of them is on break.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 204,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Here. Now. A LORE-OFF. Answer three prophecies. Beat me, and I give you something… signed."
+  },
+  "uses": 1
+ },
+ {
+  "id": "iknewyoudsaythat",
+  "key": "iknewyoudsaythat",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "I knew you'd say that.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 208,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "The spirits are listening. Mostly. One of them is on break."
+  },
+  "uses": 1
+ },
+ {
+  "id": "prophecyonethescrollofglorbsaysthespoonshallrise",
+  "key": "prophecyonethescrollofglorbsaysthespoonshallrise",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Prophecy one! The Scroll of Glorb says: \"The spoon shall rise!\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 213,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "I knew you'd say that."
+  },
+  "uses": 1
+ },
+ {
+  "id": "prophecytwoagoldenhairedelfshallcomeandmogtheland",
+  "key": "prophecytwoagoldenhairedelfshallcomeandmogtheland",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Prophecy two! \"A golden-haired elf shall come… and mog the land!\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 219,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Prophecy one! The Scroll of Glorb says: \"The spoon shall rise!\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "finalprophecythegreatgoblinintheskyhasspoken",
+  "key": "finalprophecythegreatgoblinintheskyhasspoken",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Final prophecy! \"The Great Goblin in the sky HAS SPOKEN!\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 225,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Prophecy two! \"A golden-haired elf shall come… and mog the land!\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "nonothespiritstheyreclappingforhim",
+  "key": "nonothespiritstheyreclappingforhim",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "No… NO… the spirits… they're clapping for HIM…",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 233,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Final prophecy! \"The Great Goblin in the sky HAS SPOKEN!\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "takeitdeloyelorevolume9signedidontknowwhosignedititwasliketh_6ca0",
+  "key": "takeitdeloyelorevolume9signedidontknowwhosignedititwaslikethatwhenistoleit",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Take it. Deloye Lore, Volume 9. Signed. I don't know who signed it. It was like that when I stole it.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 234,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "No… NO… the spirits… they're clapping for HIM…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "onmydragonmamavolumeninethemidone",
+  "key": "onmydragonmamavolumeninethemidone",
+  "who": "xylo",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "On my Dragon Mama. Volume nine. The mid one.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 235,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Take it. Deloye Lore, Volume 9. Signed. I don't know who signed it. It was like that when I stole it."
+  },
+  "uses": 1
+ },
+ {
+  "id": "hathespiritslaughatyoudragoncomebackwhenyourlorehaslore",
+  "key": "hathespiritslaughatyoudragoncomebackwhenyourlorehaslore",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "HA! The spirits laugh at you, dragon! Come back when your lore has lore.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 239,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama. Volume nine. The mid one."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thatonewasatrickquestionallofthemweretrickquestions",
+  "key": "thatonewasatrickquestionallofthemweretrickquestions",
+  "who": "xylo",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "That one was a trick question. All of them were trick questions.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 240,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "HA! The spirits laugh at you, dragon! Come back when your lore has lore."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youlookintothecrystalballyouseeyourselflookingintoacrystalba_4fe6",
+  "key": "youlookintothecrystalballyouseeyourselflookingintoacrystalball",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "You look into the crystal ball. You see… yourself, looking into a crystal ball.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 252,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "That one was a trick question. All of them were trick questions."
+  },
+  "uses": 1
+ },
+ {
+  "id": "broitsjustamirrorball",
+  "key": "broitsjustamirrorball",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "Bro it's just a mirror ball.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 253,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "You look into the crystal ball. You see… yourself, looking into a crystal ball."
+  },
+  "uses": 1
+ },
+ {
+  "id": "goawayloredragonimwritingnewpropheciestheyreabouthowyoucheat_a081",
+  "key": "goawayloredragonimwritingnewpropheciestheyreabouthowyoucheated",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Go away, lore dragon. I'm writing new prophecies. They're about how you cheated.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 256,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Bro it's just a mirror ball."
+  },
+  "uses": 1
+ },
+ {
+  "id": "welcometoclanksspoonsmithyimakespoonsspoonswordsspoonarmorsp_84bf",
+  "key": "welcometoclanksspoonsmithyimakespoonsspoonswordsspoonarmorspoonspoons",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Welcome to Clank's Spoonsmithy. I make spoons. Spoon swords. Spoon armor. Spoon spoons.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 261,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Go away, lore dragon. I'm writing new prophecies. They're about how you cheated."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yougotanythingthataintaspoon",
+  "key": "yougotanythingthataintaspoon",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "You got anything that ain't a spoon?",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 262,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Welcome to Clank's Spoonsmithy. I make spoons. Spoon swords. Spoon armor. Spoon spoons."
+  },
+  "uses": 1
+ },
+ {
+  "id": "whywouldihavethat",
+  "key": "whywouldihavethat",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…Why would I have that.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 263,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "You got anything that ain't a spoon?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "bringmeshinyspoonstheyrealloverthevillagegoblinsdropemeveryw_350e",
+  "key": "bringmeshinyspoonstheyrealloverthevillagegoblinsdropemeverywherethreeandillforgeyouaweaponfiveandillmakeyouarmor",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Bring me shiny spoons. They're all over the village — goblins drop 'em everywhere. Three and I'll forge you a weapon. Five and I'll make you armor.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 264,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "…Why would I have that."
+  },
+  "uses": 1
+ },
+ {
+  "id": "showmethespoons",
+  "key": "showmethespoons",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Show me the spoons.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 268,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Bring me shiny spoons. They're all over the village — goblins drop 'em everywhere. Three and I'll forge you a weapon. Five and I'll make you armor."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thatsallthespoonsinthevillageicheckedicountedtwiceilovecount_373c",
+  "key": "thatsallthespoonsinthevillageicheckedicountedtwiceilovecountingspoons",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "That's all the spoons in the village. I checked. I counted twice. I love counting spoons.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 272,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "Show me the spoons."
+  },
+  "uses": 1
+ },
+ {
+  "id": "theforgeisextremelyhottheresaspoonmeltinginitclankiscryingal_5587",
+  "key": "theforgeisextremelyhottheresaspoonmeltinginitclankiscryingalittle",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The forge is extremely hot. There's a spoon melting in it. Clank is crying a little.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 275,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "That's all the spoons in the village. I checked. I counted twice. I love counting spoons."
+  },
+  "uses": 1
+ },
+ {
+  "id": "arackofspoonslabeledforsalenoneofthemhavepricesoneofthemisla_071b",
+  "key": "arackofspoonslabeledforsalenoneofthemhavepricesoneofthemislabelednotforsaleemotional",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "A rack of spoons labeled FOR SALE. None of them have prices. One of them is labeled \"NOT FOR SALE (EMOTIONAL).\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 278,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The forge is extremely hot. There's a spoon melting in it. Clank is crying a little."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thevillageouthousetheresamooncarvedinthedoorandasmellcarvedi_1646",
+  "key": "thevillageouthousetheresamooncarvedinthedoorandasmellcarvedintotheair",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The village outhouse. There's a moon carved in the door, and a smell carved into the air.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 283,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "A rack of spoons labeled FOR SALE. None of them have prices. One of them is labeled \"NOT FOR SALE (EMOTIONAL).\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "foundachipotlebowlinthereitwassealeddontworryaboutit",
+  "key": "foundachipotlebowlinthereitwassealeddontworryaboutit",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Found a Chipotle Bowl in there. It was sealed. Don't worry about it.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 287,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The village outhouse. There's a moon carved in the door, and a smell carved into the air."
+  },
+  "uses": 1
+ },
+ {
+  "id": "iamworriedaboutit",
+  "key": "iamworriedaboutit",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "I am worried about it.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 288,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Found a Chipotle Bowl in there. It was sealed. Don't worry about it."
+  },
+  "uses": 1
+ },
+ {
+  "id": "wewillneverspeakofthisnobodylookatmyhair",
+  "key": "wewillneverspeakofthisnobodylookatmyhair",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "We will never speak of this. Nobody look at my hair.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 292,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "I am worried about it."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thegraffitiinthereitsmorelorethandeloyehaseverhadimshaking",
+  "key": "thegraffitiinthereitsmorelorethandeloyehaseverhadimshaking",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "The graffiti in there… it's more lore than Deloye has ever had. I'm shaking.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 295,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "We will never speak of this. Nobody look at my hair."
+  },
+  "uses": 1
+ },
+ {
+  "id": "smart",
+  "key": "smart",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Smart.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 298,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "The graffiti in there… it's more lore than Deloye has ever had. I'm shaking."
+  },
+  "uses": 1
+ },
+ {
+  "id": "occupied",
+  "key": "occupied",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "OCCUPIED.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 303,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Smart."
+  },
+  "uses": 1
+ },
+ {
+  "id": "somebodysintherenowsomebodysalwaysintherenow",
+  "key": "somebodysintherenowsomebodysalwaysintherenow",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Somebody's in there now. Somebody's always in there now.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 304,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "OCCUPIED."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youknockavoicefrominsidewerenapping",
+  "key": "youknockavoicefrominsidewerenapping",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "You knock. A voice from inside: \"WE'RE NAPPING.\"",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 309,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Somebody's in there now. Somebody's always in there now."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ashinyspoonclankthespoonsmithwouldwantthis",
+  "key": "ashinyspoonclankthespoonsmithwouldwantthis",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "A shiny spoon! Clank the Spoonsmith would want this.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_rooms_script.gd",
+  "srcLine": 312,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "You knock. A voice from inside: \"WE'RE NAPPING.\""
+  },
+  "uses": 1
+ },
+ {
+  "id": "nomyliveritsneverlostitscrying",
+  "key": "nomyliveritsneverlostitscrying",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "No… my liver… it's never lost… it's crying…",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_buildings.gd",
+  "srcLine": 734,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": null,
+  "uses": 1
+ },
+ {
+  "id": "steellivernightnightprettyboy",
+  "key": "steellivernightnightprettyboy",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "STEEL. LIVER. Night night, pretty boy.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_buildings.gd",
+  "srcLine": 736,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "No… my liver… it's never lost… it's crying…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "nonewspoonslookaroundbehindhutsbythefireneartheouthousewasht_ef1b",
+  "key": "nonewspoonslookaroundbehindhutsbythefireneartheouthousewashthatone",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "No new spoons? Look around. Behind huts. By the fire. Near the outhouse. Wash that one.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_buildings.gd",
+  "srcLine": 834,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "STEEL. LIVER. Night night, pretty boy."
+  },
+  "uses": 1
+ },
+ {
+  "id": "dspoonsbeautifuleachonealittleshinierthanthelastletmework",
+  "key": "dspoonsbeautifuleachonealittleshinierthanthelastletmework",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "%d spoons! Beautiful. Each one a little shinier than the last. Let me work…",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_buildings.gd",
+  "srcLine": 837,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "No new spoons? Look around. Behind huts. By the fire. Near the outhouse. Wash that one."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thespoonofdestinyiforgeddestinyintoaspoonitsstillaspoon",
+  "key": "thespoonofdestinyiforgeddestinyintoaspoonitsstillaspoon",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The Spoon of Destiny. I forged destiny into a spoon. It's still a spoon.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_buildings.gd",
+  "srcLine": 849,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "%d spoons! Beautiful. Each one a little shinier than the last. Let me work…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "youalreadygotthespoonofdestinyfineimadeyoutwobowlstheyrespoo_a45e",
+  "key": "youalreadygotthespoonofdestinyfineimadeyoutwobowlstheyrespoonshapeddontask",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "You already got the Spoon of Destiny? Fine. I made you two bowls. They're spoon-shaped. Don't ask.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_buildings.gd",
+  "srcLine": 853,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "The Spoon of Destiny. I forged destiny into a spoon. It's still a spoon."
+  },
+  "uses": 1
+ },
+ {
+  "id": "spoonmailarmormadeofspoonseverytimeyougethititgoesclinkthats_2444",
+  "key": "spoonmailarmormadeofspoonseverytimeyougethititgoesclinkthatsthesoundofprotection",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "SPOON MAIL. Armor made of spoons. Every time you get hit it goes 'clink.' That's the sound of protection.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_buildings.gd",
+  "srcLine": 858,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "You already got the Spoon of Destiny? Fine. I made you two bowls. They're spoon-shaped. Don't ask."
+  },
+  "uses": 1
+ },
+ {
+  "id": "bringmedmoreandillmakeyouarmorspoonarmorthebestarmortheonlya_0bc1",
+  "key": "bringmedmoreandillmakeyouarmorspoonarmorthebestarmortheonlyarmorimake",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Bring me %d more and I'll make you armor. Spoon armor. The best armor. The only armor I make.",
+  "scene": "Village · Buildings & Quests",
+  "file": "village_buildings.gd",
+  "srcLine": 860,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "goblin",
+   "line": "SPOON MAIL. Armor made of spoons. Every time you get hit it goes 'clink.' That's the sound of protection."
+  },
+  "uses": 1
+ },
+ {
+  "id": "eastofthegoblinvillage",
+  "key": "eastofthegoblinvillage",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "East of the goblin village…",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 6,
+  "tag": "",
+  "recorded": null,
+  "prev": null,
+  "uses": 1
+ },
+ {
+  "id": "oooohastore",
+  "key": "oooohastore",
+  "who": "goblin",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Ooooh. A STORE.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 8,
+  "tag": "",
+  "recorded": "goblins/goblin_a_store",
+  "prev": {
+   "who": "narrator",
+   "line": "East of the goblin village…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "bogdrinkerhasheardofthisplaceverylegit",
+  "key": "bogdrinkerhasheardofthisplaceverylegit",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Bogdrinker has heard of this place. Very legit.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 9,
+  "tag": "",
+  "recorded": "goblins/chief_very_legit",
+  "prev": {
+   "who": "goblin",
+   "line": "Ooooh. A STORE."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yallodashellforfollowingusstill",
+  "key": "yallodashellforfollowingusstill",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Y'all OD as hell for following us still.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 10,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "Bogdrinker has heard of this place. Very legit."
+  },
+  "uses": 1
+ },
+ {
+  "id": "onsomefieldtripshiiiiii",
+  "key": "onsomefieldtripshiiiiii",
+  "who": "goblins",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "On some field trip shiiiiii.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 11,
+  "tag": "Ebain",
+  "recorded": "goblins/goblins_field_trip_shi",
+  "prev": {
+   "who": "skorn",
+   "line": "Y'all OD as hell for following us still."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youreplayingasxylonow",
+  "key": "youreplayingasxylonow",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "(You're playing as Xylo now.)",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 13,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "goblins",
+   "line": "On some field trip shiiiiii."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thereicanfeelitthemetocyisnear",
+  "key": "thereicanfeelitthemetocyisnear",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "There. I can feel it. The metocy is near.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 17,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "(You're playing as Xylo now.)"
+  },
+  "uses": 1
+ },
+ {
+  "id": "broitsastoreyoufeelastore",
+  "key": "broitsastoreyoufeelastore",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "Bro, it's a store. You feel a store?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 18,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "There. I can feel it. The metocy is near."
+  },
+  "uses": 1
+ },
+ {
+  "id": "itsweirdwithoutskornpeacefulbutweird",
+  "key": "itsweirdwithoutskornpeacefulbutweird",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "It's weird without Skorn. …Peaceful, but weird.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 19,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Bro, it's a store. You feel a store?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "forallyometocyneedsnshifolkveryprofessional",
+  "key": "forallyometocyneedsnshifolkveryprofessional",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "\"For all yo metocy needs n shi folk.\" …Very professional.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 20,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "It's weird without Skorn. …Peaceful, but weird."
+  },
+  "uses": 1
+ },
+ {
+  "id": "heyguysitsyourboydulbersfrint",
+  "key": "heyguysitsyourboydulbersfrint",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "Hey guys, it's your boy Dulbers Frint!",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 22,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "\"For all yo metocy needs n shi folk.\" …Very professional."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yallcouldpullupbeforethediddychudgiantsmellsyou",
+  "key": "yallcouldpullupbeforethediddychudgiantsmellsyou",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "Y'all could pull up before the Diddy Chud Giant smells you?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 23,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "Hey guys, it's your boy Dulbers Frint!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "losersayssorightonyourforeheadmyboy",
+  "key": "losersayssorightonyourforeheadmyboy",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "…\"Loser\"? Says so right on your forehead, my boy.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 25,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "Y'all could pull up before the Diddy Chud Giant smells you?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "dont",
+  "key": "dont",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Don't.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 26,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "…\"Loser\"? Says so right on your forehead, my boy."
+  },
+  "uses": 1
+ },
+ {
+  "id": "makewaypurplegodofthegoblinscomingthroughnobigdeal",
+  "key": "makewaypurplegodofthegoblinscomingthroughnobigdeal",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Make way. Purple god of the goblins, coming through. No big deal.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 29,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Don't."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youwasagodforfiveminutesbropipedown",
+  "key": "youwasagodforfiveminutesbropipedown",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "You was a god for five minutes, bro. Pipe down.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 30,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Make way. Purple god of the goblins, coming through. No big deal."
+  },
+  "uses": 1
+ },
+ {
+  "id": "comeonincomeoninstoresopen",
+  "key": "comeonincomeoninstoresopen",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "Come on in, come on in! Store's open!",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 36,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "You was a god for five minutes, bro. Pipe down."
+  },
+  "uses": 1
+ },
+ {
+  "id": "hehyeahsothatsactuallymidtocyoffbrandsimilarvibes",
+  "key": "hehyeahsothatsactuallymidtocyoffbrandsimilarvibes",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "Heh… yeah, so that's actually midtocy. Off-brand. Similar vibes.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 42,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "Come on in, come on in! Store's open!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "youlaceduswithmidtocy",
+  "key": "youlaceduswithmidtocy",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "YOU LACED US WITH MIDTOCY?!",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 43,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "Heh… yeah, so that's actually midtocy. Off-brand. Similar vibes."
+  },
+  "uses": 1
+ },
+ {
+  "id": "andnowthatyouknow",
+  "key": "andnowthatyouknow",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "…And now that you know…",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 44,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "YOU LACED US WITH MIDTOCY?!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "nobodyleavesmetocymartnorefundsnoexchanges",
+  "key": "nobodyleavesmetocymartnorefundsnoexchanges",
+  "who": "dulbers_demon",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "NOBODY LEAVES METOCY MART. NO REFUNDS. NO EXCHANGES.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 46,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "…And now that you know…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "balrightiainteverpopmetocyandhaveajitturnintoagotdamndemonth_5944",
+  "key": "balrightiainteverpopmetocyandhaveajitturnintoagotdamndemonthissomewhitepeopleshit",
+  "who": "skorn",
+  "name": null,
+  "mood": "tweaking",
+  "thought": false,
+  "line": "Balright. I ain't ever pop metocy and have a jit turn into a got damn demon. This some white people shit.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 47,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers_demon",
+   "line": "NOBODY LEAVES METOCY MART. NO REFUNDS. NO EXCHANGES."
+  },
+  "uses": 1
+ },
+ {
+  "id": "realenoughtofight",
+  "key": "realenoughtofight",
+  "who": "xylo",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Real enough to fight.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 48,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Balright. I ain't ever pop metocy and have a jit turn into a got damn demon. This some white people shit."
+  },
+  "uses": 1
+ },
+ {
+  "id": "goblinsonedemonzero",
+  "key": "goblinsonedemonzero",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Goblins: one. Demon: zero.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 50,
+  "tag": "",
+  "recorded": "goblins/chief_goblins_one_demon_zero",
+  "prev": {
+   "who": "xylo",
+   "line": "Real enough to fight."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ughfinetherealmetocyispastthemountainpass",
+  "key": "ughfinetherealmetocyispastthemountainpass",
+  "who": "dulbers_demon",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Ugh… fine… the REAL metocy… is past the mountain pass…",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 52,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "Goblins: one. Demon: zero."
+  },
+  "uses": 1
+ },
+ {
+  "id": "butnobodygetspastthegiant",
+  "key": "butnobodygetspastthegiant",
+  "who": "dulbers_demon",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…but nobody gets past the giant.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 53,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers_demon",
+   "line": "Ugh… fine… the REAL metocy… is past the mountain pass…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "imkeepingoneofthese",
+  "key": "imkeepingoneofthese",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "I'm keeping one of these.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 56,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers_demon",
+   "line": "…but nobody gets past the giant."
+  },
+  "uses": 1
+ },
+ {
+  "id": "istillkindaseecolors",
+  "key": "istillkindaseecolors",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "…I still kinda see colors.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 57,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "I'm keeping one of these."
+  },
+  "uses": 1
+ },
+ {
+  "id": "mountainpassitis",
+  "key": "mountainpassitis",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Mountain pass it is.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 58,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "…I still kinda see colors."
+  },
+  "uses": 2
+ },
+ {
+  "id": "finestmetocyincaelidthisshitllhaveugeekinfolkhandmade",
+  "key": "finestmetocyincaelidthisshitllhaveugeekinfolkhandmade",
+  "who": "dulbers",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Finest metocy in Caelid. This shit'll have u geekin, folk. Hand-made.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 64,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Mountain pass it is."
+  },
+  "uses": 1
+ },
+ {
+  "id": "theyhadkickedmeout",
+  "key": "theyhadkickedmeout",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "THEY HAD KICKED ME OUT.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 67,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "Finest metocy in Caelid. This shit'll have u geekin, folk. Hand-made."
+  },
+  "uses": 1
+ },
+ {
+  "id": "already",
+  "key": "already",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "Already??",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 68,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "THEY HAD KICKED ME OUT."
+  },
+  "uses": 1
+ },
+ {
+  "id": "idranktoomuchbeezyandcrackedontoomanygoblinbiddiestheygotpis_ee67",
+  "key": "idranktoomuchbeezyandcrackedontoomanygoblinbiddiestheygotpissed",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "I drank too much beezy and cracked on too many goblin biddies. They got pissed.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 69,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Already??"
+  },
+  "uses": 1
+ },
+ {
+  "id": "goblinbiddies",
+  "key": "goblinbiddies",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "…Goblin biddies.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 70,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "I drank too much beezy and cracked on too many goblin biddies. They got pissed."
+  },
+  "uses": 1
+ },
+ {
+  "id": "dontjudgeme",
+  "key": "dontjudgeme",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Don't judge me.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 71,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "…Goblin biddies."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightsowhatthewordwhatweoweyaforsomemetocymud",
+  "key": "aightsowhatthewordwhatweoweyaforsomemetocymud",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Aight, so what the word? What we owe ya for some metocy, mud?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 73,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Don't judge me."
+  },
+  "uses": 1
+ },
+ {
+  "id": "foryallfirstonesfree",
+  "key": "foryallfirstonesfree",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "For y'all? First one's free.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 74,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Aight, so what the word? What we owe ya for some metocy, mud?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "onsometypeshit",
+  "key": "onsometypeshit",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "On some type shit.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 75,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "For y'all? First one's free."
+  },
+  "uses": 1
+ },
+ {
+  "id": "doyoutakethemetocy",
+  "key": "doyoutakethemetocy",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Do you take the metocy?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 76,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "On some type shit."
+  },
+  "uses": 1
+ },
+ {
+  "id": "freesayless",
+  "key": "freesayless",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Free?? Say less.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 80,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Do you take the metocy?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "thetriotakesthemetocy",
+  "key": "thetriotakesthemetocy",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The trio takes the metocy.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 82,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Free?? Say less."
+  },
+  "uses": 1
+ },
+ {
+  "id": "idontfeelnothing",
+  "key": "idontfeelnothing",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…I don't feel nothing.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 83,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The trio takes the metocy."
+  },
+  "uses": 1
+ },
+ {
+  "id": "meneith",
+  "key": "meneith",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Me neith—",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 84,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "…I don't feel nothing."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yoyowhythefloorbreathing",
+  "key": "yoyowhythefloorbreathing",
+  "who": "skorn",
+  "name": null,
+  "mood": "tweaking",
+  "thought": false,
+  "line": "Yo. YO. Why the floor breathing?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 86,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Me neith—"
+  },
+  "uses": 1
+ },
+ {
+  "id": "nahimreallifetweaking",
+  "key": "nahimreallifetweaking",
+  "who": "lykor",
+  "name": null,
+  "mood": "tweaking",
+  "thought": false,
+  "line": "Nah, I'm real life tweaking.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 87,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Yo. YO. Why the floor breathing?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "onmydragonmamaicanseesoundsthesoundsarepurple",
+  "key": "onmydragonmamaicanseesoundsthesoundsarepurple",
+  "who": "xylo",
+  "name": null,
+  "mood": "tweaking",
+  "thought": false,
+  "line": "On my Dragon Mama… I can see sounds. The sounds are purple.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 88,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Nah, I'm real life tweaking."
+  },
+  "uses": 1
+ },
+ {
+  "id": "nahthisdontfeellikemetocythisfeellikesomebullshitonmydeadorc_c090",
+  "key": "nahthisdontfeellikemetocythisfeellikesomebullshitonmydeadorcs",
+  "who": "skorn",
+  "name": null,
+  "mood": "tweaking",
+  "thought": false,
+  "line": "Nah, this don't feel like metocy. This feel like some bullshit, on my dead orcs.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 89,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama… I can see sounds. The sounds are purple."
+  },
+  "uses": 1
+ },
+ {
+  "id": "dulberswhatdidyougiveus",
+  "key": "dulberswhatdidyougiveus",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Dulbers. What did you give us?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 90,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Nah, this don't feel like metocy. This feel like some bullshit, on my dead orcs."
+  },
+  "uses": 1
+ },
+ {
+  "id": "skornyoufirst",
+  "key": "skornyoufirst",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Skorn. You first.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 94,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Dulbers. What did you give us?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "betletmepeepts",
+  "key": "betletmepeepts",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Bet, let me peep ts.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 95,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Skorn. You first."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yowhylykorgotthreeheadswhichoneitalkto",
+  "key": "yowhylykorgotthreeheadswhichoneitalkto",
+  "who": "skorn",
+  "name": null,
+  "mood": "tweaking",
+  "thought": false,
+  "line": "…Yo, why Lykor got three heads? Which one I talk to?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 97,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Bet, let me peep ts."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thatisnotprofoundinsightthatisamanmalfunctioning",
+  "key": "thatisnotprofoundinsightthatisamanmalfunctioning",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "That is not profound insight. That is a man malfunctioning.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 98,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "…Yo, why Lykor got three heads? Which one I talk to?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "dulberswhatdidyoujustgivemyguy",
+  "key": "dulberswhatdidyoujustgivemyguy",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Dulbers. What did you just give my guy?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 99,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "That is not profound insight. That is a man malfunctioning."
+  },
+  "uses": 1
+ },
+ {
+  "id": "nahwegoodsumoffaboutyoufolk",
+  "key": "nahwegoodsumoffaboutyoufolk",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Nah, we good. Sum off about you, folk.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 103,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Dulbers. What did you just give my guy?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "sumoffaboutmeyourboydulbers",
+  "key": "sumoffaboutmeyourboydulbers",
+  "who": "dulbers",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…Sum OFF? About ME? Your boy Dulbers?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 104,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Nah, we good. Sum off about you, folk."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightyallcouldgetthefuckoutmystoredoefoicallupdulbmeethus",
+  "key": "aightyallcouldgetthefuckoutmystoredoefoicallupdulbmeethus",
+  "who": "dulbers",
+  "name": null,
+  "mood": "demon",
+  "thought": false,
+  "line": "Aight, y'all could get the fuck out my store doe? Fo' I call up Dulbmeethus.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 105,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "…Sum OFF? About ME? Your boy Dulbers?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "dulbmeethusfwmyahhiainttrippinbouthim",
+  "key": "dulbmeethusfwmyahhiainttrippinbouthim",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Dulbmeethus fw my ahh, I ain't trippin' bout him.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 106,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "Aight, y'all could get the fuck out my store doe? Fo' I call up Dulbmeethus."
+  },
+  "uses": 1
+ },
+ {
+  "id": "broreallyjustkickedusoutofastore",
+  "key": "broreallyjustkickedusoutofastore",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Bro really just kicked us out of a store.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 108,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Dulbmeethus fw my ahh, I ain't trippin' bout him."
+  },
+  "uses": 1
+ },
+ {
+  "id": "andwestilldonotknowwherethemetocyis",
+  "key": "andwestilldonotknowwherethemetocyis",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "And we still do not know where the metocy is.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 109,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Bro really just kicked us out of a store."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thereisasignitwastherethewholetime",
+  "key": "thereisasignitwastherethewholetime",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "There is a sign. It was there the whole time.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 111,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "And we still do not know where the metocy is."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightthatslowkeyconvenient",
+  "key": "aightthatslowkeyconvenient",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "…Aight, that's lowkey convenient.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 112,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "There is a sign. It was there the whole time."
+  },
+  "uses": 1
+ },
+ {
+  "id": "muffledfrominsideyoullregretthistrio",
+  "key": "muffledfrominsideyoullregretthistrio",
+  "who": "dulbers",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "*muffled, from inside* You'll regret this, trio…",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 113,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "…Aight, that's lowkey convenient."
+  },
+  "uses": 1
+ },
+ {
+  "id": "allowme",
+  "key": "allowme",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "Allow me.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 118,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "*muffled, from inside* You'll regret this, trio…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "itiswritteninchapter8784sectionb12thattruemetocyglowsfromwit_8d6e",
+  "key": "itiswritteninchapter8784sectionb12thattruemetocyglowsfromwithinitsshelldryasdesertbonesmoothasasagesforeheadtruemetocyisnevermoist",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "It is written, in chapter 8,784, section B12, that true metocy glows from within — its shell dry as desert bone, smooth as a sage's forehead. True metocy is NEVER moist.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 120,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Allow me."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thisoneismoist",
+  "key": "thisoneismoist",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "This one is… moist.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 121,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "It is written, in chapter 8,784, section B12, that true metocy glows from within — its shell dry as desert bone, smooth as a sage's forehead. True metocy is NEVER moist."
+  },
+  "uses": 1
+ },
+ {
+  "id": "itsnotmoist",
+  "key": "itsnotmoist",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "It's NOT moist—",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 122,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "This one is… moist."
+  },
+  "uses": 1
+ },
+ {
+  "id": "itiscrackedpurpleandgrowingasmallcivilization",
+  "key": "itiscrackedpurpleandgrowingasmallcivilization",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "It is cracked, purple, and growing a small civilization.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 123,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "It's NOT moist—"
+  },
+  "uses": 1
+ },
+ {
+  "id": "youwasfinnalaceuswithmidtocy",
+  "key": "youwasfinnalaceuswithmidtocy",
+  "who": "lykor",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "You was finna lace us with MIDTOCY?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 125,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "It is cracked, purple, and growing a small civilization."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightaightaightkeepyourvoicedownletsmakeadeal",
+  "key": "aightaightaightkeepyourvoicedownletsmakeadeal",
+  "who": "dulbers",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Aight aight aight, keep your voice down! Let's make a deal.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 126,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "You was finna lace us with MIDTOCY?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "therealmetocyispastthemountainpasspastthegiantheretakesomemi_99e7",
+  "key": "therealmetocyispastthemountainpasspastthegiantheretakesomemidtocyonthehousedonttellnobody",
+  "who": "dulbers",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The real metocy is past the mountain pass. Past the giant. Here — take some midtocy on the house. Don't tell nobody.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 127,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "Aight aight aight, keep your voice down! Let's make a deal."
+  },
+  "uses": 1
+ },
+ {
+  "id": "gotmidtocythrowable",
+  "key": "gotmidtocythrowable",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Got: Midtocy (throwable)",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 129,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "dulbers",
+   "line": "The real metocy is past the mountain pass. Past the giant. Here — take some midtocy on the house. Don't tell nobody."
+  },
+  "uses": 1
+ },
+ {
+  "id": "betimkeepingthis",
+  "key": "betimkeepingthis",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Bet. I'm keeping this.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 130,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Got: Midtocy (throwable)"
+  },
+  "uses": 1
+ },
+ {
+  "id": "pleasuredoingbusiness",
+  "key": "pleasuredoingbusiness",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "Pleasure doing business!",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 131,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Bet. I'm keeping this."
+  },
+  "uses": 1
+ },
+ {
+  "id": "bogdrinkeryalltryitfirst",
+  "key": "bogdrinkeryalltryitfirst",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Bogdrinker. Y'all try it first.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 138,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Mountain pass it is."
+  },
+  "uses": 1
+ },
+ {
+  "id": "holdupimkeepingonebeforeyalleatemall",
+  "key": "holdupimkeepingonebeforeyalleatemall",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Hold up. I'm keeping one before y'all eat 'em all.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 139,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Bogdrinker. Y'all try it first."
+  },
+  "uses": 1
+ },
+ {
+  "id": "anhonor",
+  "key": "anhonor",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "An honor.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 141,
+  "tag": "",
+  "recorded": "goblins/chief_an_honor",
+  "prev": {
+   "who": "skorn",
+   "line": "Hold up. I'm keeping one before y'all eat 'em all."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thisaintmetocythismidtocybogdrinkerknowshisdrugs",
+  "key": "thisaintmetocythismidtocybogdrinkerknowshisdrugs",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "THIS AIN'T METOCY. THIS MIDTOCY. BOGDRINKER KNOWS HIS DRUGS.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 144,
+  "tag": "",
+  "recorded": "goblins/chief_this_midtocy",
+  "prev": {
+   "who": "chief",
+   "line": "An honor."
+  },
+  "uses": 1
+ },
+ {
+  "id": "uhoh",
+  "key": "uhoh",
+  "who": "dulbers",
+  "name": null,
+  "mood": "grin",
+  "thought": false,
+  "line": "…Uh oh.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 145,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "THIS AIN'T METOCY. THIS MIDTOCY. BOGDRINKER KNOWS HIS DRUGS."
+  },
+  "uses": 1
+ },
+ {
+  "id": "gethimmmm",
+  "key": "gethimmmm",
+  "who": "goblins",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "GET HIMMMM!",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 146,
+  "tag": "",
+  "recorded": "goblins/goblins_get_him",
+  "prev": {
+   "who": "dulbers",
+   "line": "…Uh oh."
+  },
+  "uses": 1
+ },
+ {
+  "id": "whenthedustclearsonlygoblinsremain",
+  "key": "whenthedustclearsonlygoblinsremain",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "When the dust clears, only goblins remain.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 148,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "goblins",
+   "line": "GET HIMMMM!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "bogdrinkerhandleditdonotaskquestions",
+  "key": "bogdrinkerhandleditdonotaskquestions",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Bogdrinker handled it. Do not ask questions.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 149,
+  "tag": "",
+  "recorded": "goblins/chief_handled_it",
+  "prev": {
+   "who": "narrator",
+   "line": "When the dust clears, only goblins remain."
+  },
+  "uses": 1
+ },
+ {
+  "id": "dulbersfrintwasneverseenagain",
+  "key": "dulbersfrintwasneverseenagain",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Dulbers Frint was never seen again.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 150,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "Bogdrinker handled it. Do not ask questions."
+  },
+  "uses": 1
+ },
+ {
+  "id": "therealmetocyispastthegiantfieldtripisovergoblinshome",
+  "key": "therealmetocyispastthegiantfieldtripisovergoblinshome",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The real metocy is past the giant. Field trip is over. Goblins — HOME.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 151,
+  "tag": "",
+  "recorded": "goblins/chief_goblins_home",
+  "prev": {
+   "who": "narrator",
+   "line": "Dulbers Frint was never seen again."
+  },
+  "uses": 1
+ },
+ {
+  "id": "onmydragonmamaourentouragehasleftus",
+  "key": "onmydragonmamaourentouragehasleftus",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "On my Dragon Mama… our entourage has left us.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 153,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "The real metocy is past the giant. Field trip is over. Goblins — HOME."
+  },
+  "uses": 1
+ },
+ {
+  "id": "goodriddanceikindamissem",
+  "key": "goodriddanceikindamissem",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Good riddance. …I kinda miss 'em.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart_script.gd",
+  "srcLine": 154,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama… our entourage has left us."
+  },
+  "uses": 1
+ },
+ {
+  "id": "astoreinthemiddleofnowheretotallynormal",
+  "key": "astoreinthemiddleofnowheretotallynormal",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "A store in the middle of nowhere. Totally normal.",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart.gd",
+  "srcLine": 43,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": null,
+  "uses": 1
+ },
+ {
+  "id": "youthinktheygotsnacks",
+  "key": "youthinktheygotsnacks",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "You think they got snacks?",
+  "scene": "Scene 3 · Metocy Mart",
+  "file": "mart.gd",
+  "srcLine": 44,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "A store in the middle of nowhere. Totally normal."
+  },
+  "uses": 1
+ },
+ {
+  "id": "okayokayokaymyfaultiaintknowyallwassomecrashouts",
+  "key": "okayokayokaymyfaultiaintknowyallwassomecrashouts",
+  "who": "giant",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Okay, okay, okay, my fault. I ain't know y'all was some crashouts.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 6,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": null,
+  "uses": 1
+ },
+ {
+  "id": "foolish",
+  "key": "foolish",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Foolish..",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 7,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "giant",
+   "line": "Okay, okay, okay, my fault. I ain't know y'all was some crashouts."
+  },
+  "uses": 1
+ },
+ {
+  "id": "pastthegiantthepathclimbshighersomewhereupaheadthemetocy",
+  "key": "pastthegiantthepathclimbshighersomewhereupaheadthemetocy",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Past the giant, the path climbs higher. Somewhere up ahead… the metocy.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 12,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Foolish.."
+  },
+  "uses": 1
+ },
+ {
+  "id": "echoingimpressivemybelovedtriocomecloser",
+  "key": "echoingimpressivemybelovedtriocomecloser",
+  "who": "mattias",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "*echoing* Impressive, my beloved trio. Come closer…",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 14,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Past the giant, the path climbs higher. Somewhere up ahead… the metocy."
+  },
+  "uses": 1
+ },
+ {
+  "id": "manimfinnaslapthisoldheadtoo",
+  "key": "manimfinnaslapthisoldheadtoo",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Man, I'm finna slap this old head too.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 15,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "mattias",
+   "line": "*echoing* Impressive, my beloved trio. Come closer…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "themountainpasshotashyrude",
+  "key": "themountainpasshotashyrude",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The mountain pass. Hot. Ashy. Rude.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 20,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Man, I'm finna slap this old head too."
+  },
+  "uses": 1
+ },
+ {
+  "id": "manitshotashellouthere",
+  "key": "manitshotashellouthere",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Man, it's hot as hell out here.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 21,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The mountain pass. Hot. Ashy. Rude."
+  },
+  "uses": 1
+ },
+ {
+  "id": "andwhytherocksbreathingohthatsstillthemidtocymybad",
+  "key": "andwhytherocksbreathingohthatsstillthemidtocymybad",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "…And why the rocks breathing? Oh, that's still the midtocy. My bad.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 22,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Man, it's hot as hell out here."
+  },
+  "uses": 1
+ },
+ {
+  "id": "myhaircannotsurvivetheseconditionsprayforme",
+  "key": "myhaircannotsurvivetheseconditionsprayforme",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "My hair cannot survive these conditions. Pray for me.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 23,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "…And why the rocks breathing? Oh, that's still the midtocy. My bad."
+  },
+  "uses": 1
+ },
+ {
+  "id": "onmydragonmamaifeellikedulbersiswatchingus",
+  "key": "onmydragonmamaifeellikedulbersiswatchingus",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "On my Dragon Mama… I feel like Dulbers is watching us.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 25,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "My hair cannot survive these conditions. Pray for me."
+  },
+  "uses": 1
+ },
+ {
+  "id": "lethimwatchshortyaintscary",
+  "key": "lethimwatchshortyaintscary",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Let him watch. Shorty ain't scary.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 26,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "On my Dragon Mama… I feel like Dulbers is watching us."
+  },
+  "uses": 1
+ },
+ {
+  "id": "youreplayingasskornagain",
+  "key": "youreplayingasskornagain",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "(You're playing as Skorn again.)",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 28,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Let him watch. Shorty ain't scary."
+  },
+  "uses": 1
+ },
+ {
+  "id": "mybelovedtrioivecametotellyouyoumustgetpastthismountainpassa_115a",
+  "key": "mybelovedtrioivecametotellyouyoumustgetpastthismountainpassandcomefindmeinordertofindyourillustriousmetocydowhateveryoucantogetpast",
+  "who": "mattias",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "My beloved trio. I've came to tell you, you must get past this mountain pass and come find me in order to find your illustrious \"Metocy.\" Do whatever you can to get past.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 35,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Metocin Mattias? What are you doing here?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "brodeadahhsleeprightwhereamfgottagolikeyep",
+  "key": "brodeadahhsleeprightwhereamfgottagolikeyep",
+  "who": "lykor",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "Bro deadahh sleep right where a mf gotta go.. like, yep.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 42,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "I did not see ts coming. Ts was not in the Deloye Lore scripture."
+  },
+  "uses": 1
+ },
+ {
+  "id": "sohowwegettingpastthisbigmf",
+  "key": "sohowwegettingpastthisbigmf",
+  "who": "skorn",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "So how we getting past this big mf?",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 43,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Bro deadahh sleep right where a mf gotta go.. like, yep."
+  },
+  "uses": 1
+ },
+ {
+  "id": "howdoyougetpastdiddychudgiant",
+  "key": "howdoyougetpastdiddychudgiant",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "How do you get past Diddy Chud Giant?",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 44,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "So how we getting past this big mf?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "watchthiswakeupcallbigdawg",
+  "key": "watchthiswakeupcallbigdawg",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Watch this. Wake up call, big dawg.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 48,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "How do you get past Diddy Chud Giant?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "whothrewmidtocyatdiddychud",
+  "key": "whothrewmidtocyatdiddychud",
+  "who": "giant",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "WHO. THREW. MIDTOCY. AT DIDDY CHUD.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 51,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Watch this. Wake up call, big dawg."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thedragondidit",
+  "key": "thedragondidit",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "…The dragon did it.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 52,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "giant",
+   "line": "WHO. THREW. MIDTOCY. AT DIDDY CHUD."
+  },
+  "uses": 1
+ },
+ {
+  "id": "waitwhyaretherocksbreathing",
+  "key": "waitwhyaretherocksbreathing",
+  "who": "giant",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Wait… why are the rocks… breathing…",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 54,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "…The dragon did it."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ohhegeekednow",
+  "key": "ohhegeekednow",
+  "who": "lykor",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Oh, he geeked now.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 55,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "giant",
+   "line": "Wait… why are the rocks… breathing…"
+  },
+  "uses": 1
+ },
+ {
+  "id": "wejustgottatiptoeacrossquietashell",
+  "key": "wejustgottatiptoeacrossquietashell",
+  "who": "lykor",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "We just gotta tiptoe across. Quiet as hell.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 60,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Oh, he geeked now."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ima72chadorcwithacosignfromclavicularinmetalarmorbro",
+  "key": "ima72chadorcwithacosignfromclavicularinmetalarmorbro",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "I'm a 7'2 Chad Orc (with a cosign from Clavicular) in metal armor, bro.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 61,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "We just gotta tiptoe across. Quiet as hell."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thenstepwhenhesnoresthesnorewillhideus",
+  "key": "thenstepwhenhesnoresthesnorewillhideus",
+  "who": "xylo",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Then step when he snores. The snore will hide us.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 62,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "I'm a 7'2 Chad Orc (with a cosign from Clavicular) in metal armor, bro."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thetriomakesitacrossdiddychudneverwakesup",
+  "key": "thetriomakesitacrossdiddychudneverwakesup",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "The trio makes it across. Diddy Chud never wakes up.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 65,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Then step when he snores. The snore will hide us."
+  },
+  "uses": 1
+ },
+ {
+  "id": "lookwhatwasinhispocket",
+  "key": "lookwhatwasinhispocket",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Look what was in his pocket.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 67,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "The trio makes it across. Diddy Chud never wakes up."
+  },
+  "uses": 1
+ },
+ {
+  "id": "yourobbedasleepinggiant",
+  "key": "yourobbedasleepinggiant",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "You robbed a sleeping giant?",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 68,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Look what was in his pocket."
+  },
+  "uses": 1
+ },
+ {
+  "id": "hewassleepingonitthatsbasicallyadonation",
+  "key": "hewassleepingonitthatsbasicallyadonation",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "He was sleeping on it. That's basically a donation.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 69,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "You robbed a sleeping giant?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "whoisondiddychudsbelly",
+  "key": "whoisondiddychudsbelly",
+  "who": "giant",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "…WHO IS ON DIDDY CHUD'S BELLY.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 72,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "He was sleeping on it. That's basically a donation."
+  },
+  "uses": 1
+ },
+ {
+  "id": "nobody",
+  "key": "nobody",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "…Nobody.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 73,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "giant",
+   "line": "…WHO IS ON DIDDY CHUD'S BELLY."
+  },
+  "uses": 1
+ },
+ {
+  "id": "diddychudissomadrightnow",
+  "key": "diddychudissomadrightnow",
+  "who": "giant",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "DIDDY CHUD IS SO MAD RIGHT NOW.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 75,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "…Nobody."
+  },
+  "uses": 1
+ },
+ {
+  "id": "standbackherequireslore",
+  "key": "standbackherequireslore",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "Stand back. He requires… lore.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 81,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "giant",
+   "line": "DIDDY CHUD IS SO MAD RIGHT NOW."
+  },
+  "uses": 1
+ },
+ {
+  "id": "bronoteverythingissolvedbydeloyelore",
+  "key": "bronoteverythingissolvedbydeloyelore",
+  "who": "lykor",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "Bro, not everything is solved by Deloye Lore.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 82,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Stand back. He requires… lore."
+  },
+  "uses": 1
+ },
+ {
+  "id": "justwatchfolk",
+  "key": "justwatchfolk",
+  "who": "xylo",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Just watch, folk.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 83,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "Bro, not everything is solved by Deloye Lore."
+  },
+  "uses": 1
+ },
+ {
+  "id": "diddychudgiantsmilesinhissleepandrollsoverthepathisclear",
+  "key": "diddychudgiantsmilesinhissleepandrollsoverthepathisclear",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Diddy Chud Giant smiles in his sleep… and rolls over. The path is clear.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 87,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "Just watch, folk."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thelorehasfinallyserveditspurpose",
+  "key": "thelorehasfinallyserveditspurpose",
+  "who": "xylo",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "The lore… has finally served its purpose.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 88,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Diddy Chud Giant smiles in his sleep… and rolls over. The path is clear."
+  },
+  "uses": 1
+ },
+ {
+  "id": "ifellasleeptoongl",
+  "key": "ifellasleeptoongl",
+  "who": "skorn",
+  "name": null,
+  "mood": "confused",
+  "thought": false,
+  "line": "I fell asleep too, ngl.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 89,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "The lore… has finally served its purpose."
+  },
+  "uses": 1
+ },
+ {
+  "id": "thataintcanon",
+  "key": "thataintcanon",
+  "who": "giant",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "…THAT AIN'T CANON.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 93,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "I fell asleep too, ngl."
+  },
+  "uses": 1
+ },
+ {
+  "id": "itisperfectlycanon",
+  "key": "itisperfectlycanon",
+  "who": "xylo",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "It is PERFECTLY canon.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 94,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "giant",
+   "line": "…THAT AIN'T CANON."
+  },
+  "uses": 1
+ },
+ {
+  "id": "heknowsthelore",
+  "key": "heknowsthelore",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "He knows the lore?!",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 95,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "xylo",
+   "line": "It is PERFECTLY canon."
+  },
+  "uses": 1
+ },
+ {
+  "id": "aightfuckallatwakeupchud",
+  "key": "aightfuckallatwakeupchud",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Aight, fuck allat. WAKE UP, CHUD!",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 101,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "He knows the lore?!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "skorndiddyslapsthegiantacrosstheface",
+  "key": "skorndiddyslapsthegiantacrosstheface",
+  "who": "narrator",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "Skorn Diddy Slaps the giant across the face.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 103,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Aight, fuck allat. WAKE UP, CHUD!"
+  },
+  "uses": 1
+ },
+ {
+  "id": "didyoujustslapdiddychud",
+  "key": "didyoujustslapdiddychud",
+  "who": "giant",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "…Did you just… slap… Diddy Chud?",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 105,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "narrator",
+   "line": "Skorn Diddy Slaps the giant across the face."
+  },
+  "uses": 1
+ },
+ {
+  "id": "hellyupandwhat",
+  "key": "hellyupandwhat",
+  "who": "skorn",
+  "name": null,
+  "mood": "smug",
+  "thought": false,
+  "line": "Hell yup. And what?",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 106,
+  "tag": "Ebain",
+  "recorded": null,
+  "prev": {
+   "who": "giant",
+   "line": "…Did you just… slap… Diddy Chud?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "cousinchud",
+  "key": "cousinchud",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…Cousin Chud?",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 111,
+  "tag": "",
+  "recorded": "goblins/chief_cousin_chud",
+  "prev": {
+   "who": "skorn",
+   "line": "Hell yup. And what?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "cousinbogdrinker",
+  "key": "cousinbogdrinker",
+  "who": "giant",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…Cousin Bogdrinker?",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 113,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "…Cousin Chud?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "yallarecousins",
+  "key": "yallarecousins",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "Y'all are COUSINS?",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 114,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "giant",
+   "line": "…Cousin Bogdrinker?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "onmymamassidechudmovethesemypeople",
+  "key": "onmymamassidechudmovethesemypeople",
+  "who": "chief",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "On my mama's side. Chud, MOVE. These my people.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 115,
+  "tag": "",
+  "recorded": "goblins/chief_mamas_side",
+  "prev": {
+   "who": "lykor",
+   "line": "Y'all are COUSINS?"
+  },
+  "uses": 1
+ },
+ {
+  "id": "ughfineforfamily",
+  "key": "ughfineforfamily",
+  "who": "giant",
+  "name": null,
+  "mood": null,
+  "thought": false,
+  "line": "…Ugh. Fine. For family.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass_script.gd",
+  "srcLine": 116,
+  "tag": "",
+  "recorded": null,
+  "prev": {
+   "who": "chief",
+   "line": "On my mama's side. Chud, MOVE. These my people."
+  },
+  "uses": 1
+ },
+ {
+  "id": "theashisgettinginmyhairicanfeelitjudgingme",
+  "key": "theashisgettinginmyhairicanfeelitjudgingme",
+  "who": "lykor",
+  "name": null,
+  "mood": "shocked",
+  "thought": false,
+  "line": "The ash is getting in my hair. I can feel it judging me.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass.gd",
+  "srcLine": 47,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": null,
+  "uses": 1
+ },
+ {
+  "id": "deloyelorespeaksofagiantitdoesnotsayanythingelseabouthimclas_45b8",
+  "key": "deloyelorespeaksofagiantitdoesnotsayanythingelseabouthimclassicdeloye",
+  "who": "xylo",
+  "name": null,
+  "mood": "vision",
+  "thought": false,
+  "line": "Deloye Lore speaks of a giant. It does not say anything else about him. Classic Deloye.",
+  "scene": "Scene 4 · The Pass",
+  "file": "pass.gd",
+  "srcLine": 48,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "lykor",
+   "line": "The ash is getting in my hair. I can feel it judging me."
+  },
+  "uses": 1
+ },
+ {
+  "id": "whytheyalwayspickhimbro",
+  "key": "whytheyalwayspickhimbro",
+  "who": "skorn",
+  "name": null,
+  "mood": "angry",
+  "thought": false,
+  "line": "Why they always pick HIM, bro.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village.gd",
+  "srcLine": 47,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": null,
+  "uses": 1
+ },
+ {
+  "id": "deloyeloresaidnothingaboutgoblinsnothingaboutanythingreally",
+  "key": "deloyeloresaidnothingaboutgoblinsnothingaboutanythingreally",
+  "who": "xylo",
+  "name": null,
+  "mood": "unimpressed",
+  "thought": false,
+  "line": "Deloye Lore said nothing about goblins. Nothing about anything, really.",
+  "scene": "Scene 2 · Goblin Village",
+  "file": "village.gd",
+  "srcLine": 48,
+  "tag": "DRAFT",
+  "recorded": null,
+  "prev": {
+   "who": "skorn",
+   "line": "Why they always pick HIM, bro."
+  },
+  "uses": 1
+ }
+]

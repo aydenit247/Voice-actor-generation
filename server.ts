@@ -8,7 +8,24 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const PORT = Number(process.env.PORT) || 3000;
-const ALLOWED_VOICES = new Set(["Fenrir", "Charon", "Puck", "Kore", "Zephyr"]);
+const ALLOWED_VOICES = new Set([
+  "Zephyr", "Puck", "Charon", "Kore", "Fenrir", "Leda", "Orus", "Aoede", "Callirrhoe", "Autonoe", "Enceladus", "Iapetus",
+  "Umbriel", "Algieba", "Despina", "Erinome", "Algenib", "Rasalgethi", "Laomedeia", "Achernar", "Alnilam", "Schedar",
+  "Gacrux", "Pulcherrima", "Achird", "Zubenelgenubi", "Vindemiatrix", "Sadachbia", "Sadaltager", "Sulafat",
+]);
+
+// Gemini can return raw PCM ("audio/L16;codec=pcm;rate=24000"). Browsers and the game need a WAV, so wrap it.
+function pcmToWavBase64(base64: string, mimeType: string): { base64: string; mimeType: string } {
+  if (!/audio\/(l16|pcm)/i.test(mimeType)) return { base64, mimeType };
+  const rate = Number(/rate=(\d+)/i.exec(mimeType)?.[1] || 24000);
+  const pcm = Buffer.from(base64, "base64");
+  const header = Buffer.alloc(44);
+  header.write("RIFF", 0); header.writeUInt32LE(36 + pcm.length, 4); header.write("WAVE", 8);
+  header.write("fmt ", 12); header.writeUInt32LE(16, 16); header.writeUInt16LE(1, 20); header.writeUInt16LE(1, 22);
+  header.writeUInt32LE(rate, 24); header.writeUInt32LE(rate * 2, 28); header.writeUInt16LE(2, 32); header.writeUInt16LE(16, 34);
+  header.write("data", 36); header.writeUInt32LE(pcm.length, 40);
+  return { base64: Buffer.concat([header, pcm]).toString("base64"), mimeType: "audio/wav" };
+}
 const ALLOWED_TTS_MODELS = new Set([
   "gemini-3.8-flash-tts",
   "gemini-3.8-flash-lite-tts",
@@ -122,7 +139,7 @@ async function createServer() {
           ? model
           : "gemini-3.8-flash-tts";
 
-      const rawStyle = typeof style === "string" ? style.trim() : "";
+      const rawStyle = typeof style === "string" ? style.trim().slice(0, 4000) : "";
       const styleDirective = rawStyle
         ? `${rawStyle}. Treat square-bracketed cues such as [angry] or [pause] strictly as acting and timing directions—never pronounce the bracketed words aloud.`
         : "Expressive theatrical character voice acting. Treat square-bracketed cues such as [angry] or [pause] strictly as acting and timing directions—never pronounce the bracketed words aloud.";
@@ -159,8 +176,10 @@ async function createServer() {
       const audioPart = response.candidates?.[0]?.content?.parts?.find(
         (part) => part.inlineData?.data
       );
-      const base64Audio = audioPart?.inlineData?.data;
-      const mimeType = audioPart?.inlineData?.mimeType || "audio/wav";
+      const rawAudio = audioPart?.inlineData?.data;
+      const wav = rawAudio ? pcmToWavBase64(rawAudio, audioPart?.inlineData?.mimeType || "audio/wav") : null;
+      const base64Audio = wav?.base64;
+      const mimeType = wav?.mimeType || "audio/wav";
 
       if (!base64Audio) {
         return res.status(502).json({
