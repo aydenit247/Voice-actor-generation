@@ -34,6 +34,8 @@ export const INTENSITY_LABELS = ["", "subtle", "natural", "expressive", "big", "
 export const HOUSE_STYLE =
   "Acting: mostly exaggerated and cartoonish, with some lines played realistically so the comedy comes from the words. " +
   "Slang is completely natural, the way they always talk (only once in a while slightly forced, if it's funnier). " +
+  "Everyone delivers their slang with a natural Black American (AAVE) cadence and flow, authentic and never exaggerated " +
+  "or mocking, layered on top of their own accent: British characters stay British, the narrator stays New Zealand. " +
   "Swearing gets full delivery, occasionally awkward when that's the funniest choice. " +
   "Act out every action written in asterisks (*gasp*, *hic*, *sobbing*) as a real sound, never read it as words.";
 

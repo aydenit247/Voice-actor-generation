@@ -54,7 +54,20 @@ and open http://localhost:3000.
 
    Give the zip to Claude to put the files in the game.
 
-Your directions and takes are saved in your browser. **More → Save directions to a file** backs up all your voice and
+## Sharing with Asar (Sync)
+
+Press **Sync** to share your work and get the other person's. The first time, it walks you through a one-time setup:
+type your name and paste a GitHub token (a password just for this app, with the `public_repo` box ticked). Asar has
+to be added as a collaborator on this repo first (GitHub → Settings → Collaborators).
+
+- **What's shared:** every character's voice settings, the style, every line's direction, and each line's picked (★)
+  take. Extra takes stay in the browser that made them.
+- **Where it goes:** the `studio-data` branch of this repo (`studio/` folder). `main` stays clean.
+- **If you both edit:** each line keeps whoever edited it last. Lines show "last edited by …" and takes show who made
+  them. Syncing at the same moment is fine; it sorts itself out.
+- The studio syncs on its own when it opens. Press Sync when you finish a session, too.
+
+Your directions and takes are also saved in your browser. **More → Save directions to a file** backs up all your voice and
 delivery settings, and you can load them on another computer or share them with Asar. Takes stay in the browser they
 were made in, so export before switching computers.
 

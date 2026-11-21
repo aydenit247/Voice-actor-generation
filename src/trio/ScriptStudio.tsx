@@ -2,7 +2,7 @@
 // controls, multiple takes, batch generation and a zip export the game can use.
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  AlertCircle, Check, ChevronDown, ChevronRight, Download, Loader2, Mic, Play, Settings2, Square, Star, Trash2, Wand2,
+  AlertCircle, Check, ChevronDown, ChevronRight, Download, Loader2, Mic, Play, Settings2, Square, Star, Trash2, Upload, Wand2,
 } from "lucide-react";
 import linesJson from "../data/trio/lines.json";
 import {
@@ -13,6 +13,8 @@ import {
 } from "./store";
 import { buildDirection, performanceText, slug, variantFor, voicing, type TrioLine } from "./direction";
 import { fetchGameLines, similarity } from "./extract";
+import SyncPanel from "./SyncPanel";
+import { friendlyError, loadSyncConfig, mergeSettings, syncNow, type SyncConfig } from "./sync";
 import { b64ToBytes, download, makeZip } from "./zip";
 
 const BUNDLED = linesJson as TrioLine[];
@@ -47,6 +49,9 @@ export default function ScriptStudio() {
   const [settings, setSettings] = useState<Settings>(loadSettings);
   const [LINES, setLines] = useState<TrioLine[]>(BUNDLED);
   const [sync, setSync] = useState<{ state: "loading" | "live" | "offline"; msg?: string }>({ state: "loading" });
+  const [syncCfg, setSyncCfg] = useState<SyncConfig | null>(loadSyncConfig);
+  const [share, setShare] = useState<{ busy: boolean; msg?: string; last?: number; panel?: boolean }>({ busy: false });
+  const me = syncCfg?.name || "";
   const [takes, setTakes] = useState<Take[]>([]);
   const [who, setWho] = useState<string>("all");
   const [scene, setScene] = useState<string>("all");
@@ -62,7 +67,39 @@ export default function ScriptStudio() {
   const stopRef = useRef(false);
   const fileRef = useRef<HTMLInputElement | null>(null);
 
-  useEffect(() => { allTakes().then(setTakes).catch(() => setError("Couldn't open saved takes (browser storage blocked?)")); }, []);
+  const takesLoaded = useRef(false);
+  useEffect(() => {
+    allTakes().then((t) => { setTakes(t); takesLoaded.current = true; })
+      .catch(() => setError("Couldn't open saved takes (browser storage blocked?)"));
+  }, []);
+
+  // ---------- sharing with the other person (GitHub) ----------
+  const settingsRef = useRef(settings); settingsRef.current = settings;
+  const takesRef = useRef(takes); takesRef.current = takes;
+  const doSync = useCallback(async (cfg = syncCfg) => {
+    if (!cfg) { setShare((x) => ({ ...x, panel: true })); return; }
+    setShare((x) => ({ ...x, busy: true, msg: "Syncing…" }));
+    try {
+      const res = await syncNow(cfg, settingsRef.current, takesRef.current, (m) => setShare((x) => ({ ...x, msg: m })));
+      for (const t of res.downloaded) await putTake(t);
+      if (res.downloaded.length) setTakes((all) => [...all, ...res.downloaded]);
+      setSettings((cur) => mergeSettings(cur, res.settings));
+      const bits = [res.downloaded.length && `got ${res.downloaded.length} take(s)`, res.uploaded && `shared ${res.uploaded} take(s)`,
+        res.changedLines && `${res.changedLines} line(s) updated from the other person`,
+        res.saved && !res.uploaded && "saved your changes"].filter(Boolean);
+      setShare({ busy: false, last: Date.now(), msg: bits.length ? `Synced: ${bits.join(", ")}.` : "Synced. Everything was already up to date." });
+    } catch (e) {
+      setShare((x) => ({ ...x, busy: false, msg: undefined }));
+      setError(friendlyError(e));
+    }
+  }, [syncCfg]);
+  // Sync once when the studio opens (after saved takes have loaded)
+  useEffect(() => {
+    if (!syncCfg) return;
+    const t = setInterval(() => { if (takesLoaded.current) { clearInterval(t); doSync(); } }, 300);
+    return () => clearInterval(t);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   // Pull the current dialogue from the game repo on GitHub; fall back to the copy bundled with the app
   const refreshLines = useCallback(async () => {
@@ -161,12 +198,12 @@ export default function ScriptStudio() {
   // ---------- settings updates ----------
   const setLine = (id: string, patch: Partial<LineDirection>) => {
     const text = LINES.find((l) => l.id === id)?.line;
-    setSettings((s) => ({ ...s, lines: { ...s.lines, [id]: { ...(s.lines[id] || {}), ...patch, ...(text ? { lineText: text } : {}) } } }));
+    setSettings((s) => ({ ...s, lines: { ...s.lines, [id]: { ...(s.lines[id] || {}), ...patch, ...(text ? { lineText: text } : {}), updatedAt: Date.now(), by: me || undefined } } }));
   };
   const setVariantField = (who: string, vid: string, patch: Partial<Variant>) =>
-    setSettings((s) => ({ ...s, variants: { ...(s.variants || {}), [`${who}:${vid}`]: { ...(s.variants?.[`${who}:${vid}`] || {}), ...patch } } }));
+    setSettings((s) => ({ ...s, metaUpdatedAt: Date.now(), variants: { ...(s.variants || {}), [`${who}:${vid}`]: { ...(s.variants?.[`${who}:${vid}`] || {}), ...patch } } }));
   const setCastField = (id: string, patch: Partial<CastMember>) =>
-    setSettings((s) => ({ ...s, cast: { ...s.cast, [id]: { ...(s.cast[id] || {}), ...patch } } }));
+    setSettings((s) => ({ ...s, metaUpdatedAt: Date.now(), cast: { ...s.cast, [id]: { ...(s.cast[id] || {}), ...patch } } }));
 
   // ---------- generation ----------
   const generate = useCallback(async (l: TrioLine): Promise<"ok" | "rate" | "fatal"> => {
@@ -190,7 +227,7 @@ export default function ScriptStudio() {
       const take: Take = {
         id: `${l.id}-${Date.now()}`, lineId: l.id, n: (existing[existing.length - 1]?.n || 0) + 1,
         audioBase64: p.audioBase64, durationSec: await durationOf(p.audioBase64), voice, model: settings.model,
-        prompt, text, createdAt: Date.now(),
+        prompt, text, createdAt: Date.now(), by: me || undefined,
       };
       await putTake(take);
       setTakes((t) => [...t, take]);
@@ -202,7 +239,7 @@ export default function ScriptStudio() {
     } finally {
       setBusy((b) => ({ ...b, [l.id]: false }));
     }
-  }, [cast, castNames, houseStyle, settings.lines, settings.model, takesBy]);
+  }, [cast, castNames, houseStyle, settings.lines, settings.model, takesBy, me]);
 
   const generateMissing = async () => {
     const todo = filtered.filter((l) => !takesBy[l.id]?.length);
@@ -264,7 +301,7 @@ export default function ScriptStudio() {
     try {
       const s = JSON.parse(await f.text());
       if (s.version !== 1) throw new Error("Not a Trio voice settings file.");
-      setSettings({ ...loadSettings(), ...s });
+      setSettings({ ...loadSettings(), ...s, metaUpdatedAt: Date.now() });
     } catch (e) { setError(e instanceof Error ? e.message : "Couldn't read that file."); }
   };
 
@@ -298,6 +335,12 @@ export default function ScriptStudio() {
             <Wand2 size={14} /> Generate missing ({filtered.filter((l) => !takesBy[l.id]?.length).length})
           </button>
         )}
+        <button disabled={share.busy} onClick={() => doSync()}
+          className="flex items-center gap-2 rounded bg-sky-800 px-3 py-1.5 font-semibold text-white hover:bg-sky-700 disabled:opacity-60"
+          title={syncCfg ? `Share your work and get the other person's (signed in as ${syncCfg.name})` : "Set up sharing with Asar"}>
+          {share.busy ? <Loader2 size={14} className="animate-spin" /> : <Upload size={14} />} {syncCfg ? "Sync" : "Set up sharing"}
+        </button>
+        {syncCfg && <button className="text-xs text-stone-400 underline hover:text-white" onClick={() => setShare((x) => ({ ...x, panel: true }))}>sharing settings</button>}
         <button className="flex items-center gap-2 rounded bg-stone-800 px-3 py-1.5 text-stone-100 hover:bg-stone-700" onClick={() => exportZip(true)}
           title="Download the chosen take of every approved line, ready for the game">
           <Download size={14} /> Export approved
@@ -318,6 +361,16 @@ export default function ScriptStudio() {
         </div>
       </div>
 
+      {share.panel && (
+        <SyncPanel current={syncCfg} onClose={() => setShare((x) => ({ ...x, panel: false }))}
+          onSaved={(cfg) => { setSyncCfg(cfg); setShare((x) => ({ ...x, panel: false })); if (cfg) doSync(cfg); }} />
+      )}
+      {share.msg && (
+        <div className="mb-3 flex items-start gap-2 rounded border border-sky-900 bg-sky-950/50 px-3 py-2 text-sky-200">
+          <span className="flex-1">{share.msg}</span>
+          {!share.busy && <button className="text-sky-300 hover:text-white" onClick={() => setShare((x) => ({ ...x, msg: undefined }))}>✕</button>}
+        </div>
+      )}
       {sync.msg && (
         <div className="mb-3 flex items-start gap-2 rounded border border-sky-900 bg-sky-950/50 px-3 py-2 text-sky-200">
           <span className="flex-1">{sync.msg}{removed.length > 0 && <> Old takes for changed lines are under the status filter <b>Removed from game</b>.</>}</span>
@@ -403,7 +456,7 @@ export default function ScriptStudio() {
                       onClick={() => setSettings((s) => {
                         const next = { ...s.cast }; delete next[c.id];
                         const vars = { ...(s.variants || {}) }; Object.keys(vars).forEach((k) => { if (k.startsWith(c.id + ":")) delete vars[k]; });
-                        return { ...s, cast: next, variants: vars };
+                        return { ...s, cast: next, variants: vars, metaUpdatedAt: Date.now() };
                       })}>
                       Reset {c.name} to defaults
                     </button>
@@ -414,10 +467,10 @@ export default function ScriptStudio() {
           })}
           <Label text="Style for every line">
             <textarea className="h-36 w-full rounded bg-stone-900 px-2 py-1 text-xs text-stone-200"
-              value={houseStyle} onChange={(e) => setSettings((s) => ({ ...s, houseStyle: e.target.value }))} />
+              value={houseStyle} onChange={(e) => setSettings((s) => ({ ...s, houseStyle: e.target.value, metaUpdatedAt: Date.now() }))} />
           </Label>
           {settings.houseStyle !== undefined && settings.houseStyle !== HOUSE_STYLE && (
-            <button className="text-xs text-stone-400 underline" onClick={() => setSettings((s) => ({ ...s, houseStyle: undefined }))}>Reset style</button>
+            <button className="text-xs text-stone-400 underline" onClick={() => setSettings((s) => ({ ...s, houseStyle: undefined, metaUpdatedAt: Date.now() }))}>Reset style</button>
           )}
         </aside>
 
@@ -521,6 +574,7 @@ function LineCard(props: {
         {l.thought && <span className="italic">inner thought</span>}
         {l.uses > 1 && <span>used {l.uses}×</span>}
         <span className="text-stone-500">voice: {vo.variant ? vo.variant.label : vo.voice}</span>
+        {d.by && <span className="text-sky-400">last edited by {d.by}</span>}
       </div>
       {d.carriedFrom && (
         <p className="mb-1 rounded bg-sky-950/50 px-2 py-1 text-xs text-sky-300">
@@ -611,7 +665,7 @@ function LineCard(props: {
           return (
             <div key={t.id} className={`flex items-center gap-1 rounded px-1.5 py-1 ${isChosen ? "bg-stone-700" : "bg-stone-950"}`}>
               <button className="flex items-center gap-1 px-1 text-stone-100" onClick={() => props.onPlay(t)} title={t.prompt}>
-                {playing === t.id ? <Square size={12} /> : <Play size={12} />} Take {t.n}
+                {playing === t.id ? <Square size={12} /> : <Play size={12} />} Take {t.n}{t.by ? ` (${t.by})` : ""}
                 <span className="text-stone-500">{t.durationSec ? `${t.durationSec.toFixed(1)}s` : ""}</span>
               </button>
               <button title="Use this take" onClick={() => onChange({ chosenTake: t.id })} className={isChosen ? "text-[#ffcf5a]" : "text-stone-600 hover:text-stone-300"}>

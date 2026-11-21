@@ -13,6 +13,8 @@ export interface LineDirection {
   variant?: string;        // which voice variant (e.g. which goblin voice); empty = automatic
   lineText?: string;       // the line's text when last edited (so directions for removed/reworded lines can be shown)
   carriedFrom?: string;    // text of the old version this direction was carried over from
+  updatedAt?: number;      // for syncing: newest edit wins
+  by?: string;             // who last edited it
 }
 
 export interface Take {
@@ -26,6 +28,7 @@ export interface Take {
   prompt: string;          // the full direction sent to Gemini
   text: string;            // the exact text performed
   createdAt: number;
+  by?: string;             // who made it (shared takes)
 }
 
 export interface Settings {
@@ -36,6 +39,7 @@ export interface Settings {
   model: string;
   globalNote: string;                          // unused since the house style (kept for old settings files)
   houseStyle?: string;                         // style note for every line; undefined = HOUSE_STYLE default
+  metaUpdatedAt?: number;                      // last change to cast / variants / style (for syncing)
 }
 
 const LS_KEY = "trio-voice-studio";
