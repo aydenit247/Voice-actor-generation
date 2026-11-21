@@ -13,6 +13,10 @@ export interface LineDirection {
   variant?: string;        // which voice variant (e.g. which goblin voice); empty = automatic
   lineText?: string;       // the line's text when last edited (so directions for removed/reworded lines can be shown)
   carriedFrom?: string;    // text of the old version this direction was carried over from
+  fxPitch?: number;        // effects overrides for this line (empty = character default)
+  fxMonster?: number;
+  fxSpeed?: number;
+  fxSpace?: string;        // a SpaceId, or empty = automatic
   updatedAt?: number;      // for syncing: newest edit wins
   by?: string;             // who last edited it
 }

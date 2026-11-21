@@ -22,6 +22,7 @@ export interface CastMember {
   accent?: string;
   note?: string;         // shown in the app
   variants?: Variant[];  // alternate voices for the same speaker type (e.g. different goblins)
+  fx?: { pitch?: number; monster?: number; space?: string; speed?: number };  // audio effects after generation (space "" = by scene)
   nameVariant?: Record<string, string>;  // named speaker (the line's "name") → variant id
 }
 
@@ -43,7 +44,7 @@ const GOBLIN_BASE = "A small goblin with a high-pitched, nasal voice. Scrappy, t
 
 export const CAST: CastMember[] = [
   {
-    id: "skorn", name: "Skorn", voice: "Algenib", intensity: 4, pace: "fast",
+    id: "skorn", name: "Skorn", voice: "Algenib", intensity: 4, pace: "fast", fx: { pitch: -1, monster: 0.15 },
     direction: "Skorn, a purple orc. Deep, gravelly, loud: just a big dumb orc. Chaotic, quick to rage, proud, never admits " +
       "he's wrong until he has to. Talks in casual modern slang like a hothead.",
   },
@@ -60,13 +61,13 @@ export const CAST: CastMember[] = [
       "with total seriousness.",
   },
   {
-    id: "narrator", name: "Narrator", voice: "Sadaltager", intensity: 2, pace: "slow", accent: "New Zealand",
+    id: "narrator", name: "Narrator", voice: "Sadaltager", intensity: 2, pace: "slow", accent: "New Zealand", fx: { space: "dry" },
     direction: "The narrator: a kind old man (nothing like Mattias) with a calm, warm, quietly epic voice, like a nature " +
       "documentary narrator in the style of David Attenborough. Not a movie trailer voice. Gentle wonder, " +
       "unhurried, completely sincere even when the words are dumb.",
   },
   {
-    id: "goblin", name: "Goblins", voice: "Puck", intensity: 4, pace: "fast", accent: "British",
+    id: "goblin", name: "Goblins", voice: "Puck", intensity: 4, pace: "fast", accent: "British", fx: { pitch: 2 },
     direction: GOBLIN_BASE,
     note: "Each goblin can use a different voice. Named goblins are assigned below, and any line can switch.",
     variants: [
@@ -89,22 +90,22 @@ export const CAST: CastMember[] = [
     },
   },
   {
-    id: "goblins", name: "Goblins (crowd)", voice: "Sadachbia", intensity: 5, pace: "fast", accent: "British",
+    id: "goblins", name: "Goblins (crowd)", voice: "Sadachbia", intensity: 5, pace: "fast", accent: "British", fx: { pitch: 2 },
     direction: "A rowdy crowd of high-pitched goblins chanting and cheering together, chaotic, like a drunk sports crowd.",
   },
   {
-    id: "chief", name: "Chief Bogdrinker", voice: "Enceladus", intensity: 3, pace: "normal", accent: "British",
+    id: "chief", name: "Chief Bogdrinker", voice: "Enceladus", intensity: 3, pace: "normal", accent: "British", fx: { pitch: 1 },
     direction: "Chief Bogdrinker, the ancient goblin chief. High-pitched but raspy, pompous and ceremonial, talks about " +
       "himself in the third person, slips into casual slang. A little drunk on beezy.",
   },
   {
-    id: "dulbers", name: "Dulbers Frint", voice: "Fenrir", intensity: 5, pace: "very fast",
+    id: "dulbers", name: "Dulbers Frint", voice: "Fenrir", fx: { speed: 1.12 }, intensity: 5, pace: "very fast",
     direction: "Dulbers Frint, a little twerp dweeb. High-pitched, nasal, talks REALLY fast, silly and overexcited, with " +
       "fake-friendly YouTuber energy (\"hey guys, it's your boy\"). The kind of voice that makes you giggle just " +
       "listening to it.",
   },
   {
-    id: "dulbers_demon", name: "Dulbers (Demon)", voice: "Alnilam", intensity: 5, pace: "slow",
+    id: "dulbers_demon", name: "Dulbers (Demon)", voice: "Alnilam", intensity: 5, pace: "slow", fx: { pitch: -5, monster: 0.85 },
     direction: "Dulbers revealed as a shapeshifting demon. Deep, booming, menacing theatrical villain voice that still " +
       "slips into his dweeby shopkeeper catchphrases.",
   },
@@ -115,7 +116,7 @@ export const CAST: CastMember[] = [
       "carries on perfectly composed.",
   },
   {
-    id: "giant", name: "Diddy Chud Giant", voice: "Orus", intensity: 5, pace: "slow",
+    id: "giant", name: "Diddy Chud Giant", voice: "Orus", intensity: 5, pace: "slow", fx: { pitch: -4, monster: 0.55 },
     direction: "Diddy Chud Giant: huge, scary and booming. Deep, thunderous, menacing voice that shakes the mountain.",
   },
 ];

@@ -47,11 +47,20 @@ and open http://localhost:3000.
 3. **Pronunciations (left panel):** a list of words and how to say them ("Lykor → Lie-kor"). Every line's spoken text is
    respelled automatically, and each line shows "Spoken as: …" when a fix applies. Orange entries are guesses to check.
    Shared through Sync like the rest of the settings.
-4. **Generate** makes a take. **New take** makes another. ▶ plays a take, ★ picks the one you want, and **Approve** marks
+4. **Effects** (added after the voice is made, so they can be changed any time without regenerating):
+   - **Room / echo:** studio, outdoors, small room, shop, tavern, big hall, cave, mountain echo, inner-thought echo,
+     magical echo, through a wall (muffled), old radio. "Automatic" picks it from where the scene happens (camp is
+     outdoors, Metocy Mart is a shop, the Pass echoes, inner thoughts echo).
+   - **Pitch:** deeper or higher, same speed. **Speed:** faster or slower, same voice.
+   - **Monster:** layers a deeper copy underneath and adds grit, for demons and giants.
+   - Every take is also cleaned up automatically: silence trimmed and loudness matched so all lines play at the same level.
+   - Set defaults per character in the Cast panel; override per line. The **Effects** checkbox at the top lets you
+     compare with and without. Exports always include the effects.
+5. **Generate** makes a take. **New take** makes another. ▶ plays a take, ★ picks the one you want, and **Approve** marks
    the line as final.
-5. **Generate missing** makes one take for every line in the current view that doesn't have one yet. Filter to one
+6. **Generate missing** makes one take for every line in the current view that doesn't have one yet. Filter to one
    character or scene first. **Stop** pauses it.
-6. **Export approved** downloads a zip containing:
+7. **Export approved** downloads a zip containing:
    - the chosen take of every approved line (WAV)
    - `manifest.json`
    - `voice_lines_snippet.gd` for the game
@@ -93,6 +102,7 @@ If GitHub can't be reached, the studio falls back to the copy bundled with the a
 - `src/trio/ScriptStudio.tsx`: the Trio tab
 - `src/trio/direction.ts`: turns the character settings and line direction into Gemini's acting instructions
 - `src/trio/store.ts`: saving (directions in localStorage, takes in IndexedDB)
+- `src/trio/fx.ts`: effects (WSOLA pitch/speed, monster layering, rooms and echoes, loudness)
 - `src/trio/zip.ts`: the zip export
 - `src/data/trio/cast.ts`: default voices and directions for each character
 - `src/data/trio/lineDirections.json`: suggested starting directions for the main-story lines

@@ -13,7 +13,8 @@ import {
 import {
   allTakes, clearTakes, deleteTake, loadSettings, putTake, saveSettings, type LineDirection, type Settings, type Take,
 } from "./store";
-import { buildDirection, pronunciationsIn, slug, spokenText, variantFor, voicing, type TrioLine } from "./direction";
+import { autoSpace, buildDirection, fxFor, pronunciationsIn, slug, spokenText, variantFor, voicing, type TrioLine } from "./direction";
+import { encodeWav, fxKey, renderFx, SPACES, type Fx } from "./fx";
 import { fetchGameLines, similarity } from "./extract";
 import SyncPanel from "./SyncPanel";
 import { friendlyError, loadSyncConfig, mergeSettings, syncNow, type SyncConfig } from "./sync";
@@ -46,18 +47,31 @@ async function durationOf(b64: string) {
     return buf.duration;
   } catch { return 0; }
 }
-let player: HTMLAudioElement | null = null;
-let playerUrl = "";
-function playB64(b64: string, onEnd: () => void) {
+// Rendered (effects applied) audio, cached per take + effect settings
+const rendered = new Map<string, AudioBuffer>();
+async function processed(t: Take, fx: Fx | null): Promise<AudioBuffer> {
+  const key = `${t.id}|${fx ? fxKey(fx) : "raw"}`;
+  if (!rendered.has(key)) {
+    const bytes = b64ToBytes(t.audioBase64).buffer as ArrayBuffer;
+    if (fx) rendered.set(key, await renderFx(bytes, fx));
+    else { audioCtx = audioCtx || new AudioContext(); rendered.set(key, await audioCtx.decodeAudioData(bytes.slice(0))); }
+  }
+  return rendered.get(key)!;
+}
+let source: AudioBufferSourceNode | null = null;
+async function playTake(t: Take, fx: Fx | null, onEnd: () => void) {
   stopAudio();
-  playerUrl = URL.createObjectURL(new Blob([b64ToBytes(b64)], { type: "audio/wav" }));
-  player = new Audio(playerUrl);
-  player.onended = onEnd;
-  player.play().catch(onEnd);
+  try {
+    const buf = await processed(t, fx);
+    audioCtx = audioCtx || new AudioContext();
+    if (audioCtx.state === "suspended") await audioCtx.resume();
+    const s = audioCtx.createBufferSource();
+    s.buffer = buf; s.connect(audioCtx.destination); s.onended = onEnd; s.start();
+    source = s;
+  } catch { onEnd(); }
 }
 function stopAudio() {
-  if (player) { player.pause(); player = null; }
-  if (playerUrl) { URL.revokeObjectURL(playerUrl); playerUrl = ""; }
+  if (source) { source.onended = null; try { source.stop(); } catch { /* already stopped */ } source = null; }
 }
 
 export default function ScriptStudio() {
@@ -172,6 +186,8 @@ export default function ScriptStudio() {
   const prons = settings.pronunciations ?? PRONUNCIATIONS;
   const setProns = (list: Pronunciation[] | undefined) => setSettings((s) => ({ ...s, pronunciations: list, metaUpdatedAt: Date.now() }));
   const [pronOpen, setPronOpen] = useState(false);
+  const [fxOn, setFxOn] = useState(true);
+  const [exporting, setExporting] = useState<string | null>(null);
   const SCENES = useMemo(() => Array.from(new Set(LINES.map((l) => l.scene))), [LINES]);
   const lineIds = useMemo(() => new Set(LINES.map((l) => l.id)), [LINES]);
   // Takes / directions for lines that are no longer in the game (reworded or deleted)
@@ -284,15 +300,20 @@ export default function ScriptStudio() {
     if (dirOf(t.lineId).chosenTake === t.id) setLine(t.lineId, { chosenTake: undefined });
   };
 
+  const fxOfTake = (t: Take): Fx | null => {
+    const l = lineById.get(t.lineId);
+    return fxOn && l ? fxFor(l, cast[l.who] || cast.narrator, dirOf(l.id)) : null;
+  };
   const play = (t: Take) => {
     if (playing === t.id) { stopAudio(); setPlaying(null); return; }
     setPlaying(t.id);
-    playB64(t.audioBase64, () => setPlaying((p) => (p === t.id ? null : p)));
+    playTake(t, fxOfTake(t), () => setPlaying((p) => (p === t.id ? null : p)));
   };
 
   // ---------- export / import ----------
-  const exportZip = (approvedOnly: boolean) => {
+  const exportZip = async (approvedOnly: boolean) => {
     const files: { name: string; data: Uint8Array | string }[] = [];
+    const jobs: { path: string; t: Take; l: TrioLine }[] = [];
     const manifest: object[] = [];
     const gd: string[] = [];
     const used = new Set<string>();
@@ -305,11 +326,20 @@ export default function ScriptStudio() {
       while (used.has(base)) base += "_2";
       used.add(base);
       const path = `voices/${l.who}/${base}.wav`;
-      files.push({ name: path, data: b64ToBytes(t.audioBase64) });
-      manifest.push({ key: l.key, line: l.line, who: l.who, file: path, voice: t.voice, take: t.n, performed: t.text, direction: t.prompt });
+      jobs.push({ path, t, l });
+      manifest.push({ key: l.key, line: l.line, who: l.who, file: path, voice: t.voice, take: t.n, performed: t.text, direction: t.prompt,
+        effects: fxFor(l, cast[l.who] || cast.narrator, d) });
       gd.push(`\t${JSON.stringify(l.line)}: "${l.who}/${base}",`);
     });
-    if (!files.length) { setError(approvedOnly ? "No approved lines yet. Approve takes (✓) first, or export all takes." : "No takes to export yet."); return; }
+    if (!jobs.length) { setError(approvedOnly ? "No approved lines yet. Approve takes (✓) first, or export all takes." : "No takes to export yet."); return; }
+    // Render every take with its effects (cleaned up, pitched, room/echo) — that's what goes in the game
+    for (let i = 0; i < jobs.length; i++) {
+      setExporting(`Applying effects ${i + 1}/${jobs.length}…`);
+      const { path, t, l } = jobs[i];
+      const buf = await processed(t, fxFor(l, cast[l.who] || cast.narrator, dirOf(l.id)));
+      files.push({ name: path, data: encodeWav(buf) });
+    }
+    setExporting(null);
     files.push({ name: "manifest.json", data: JSON.stringify(manifest, null, 1) });
     files.push({ name: "voice_lines_snippet.gd", data: `# For godot/scripts/voice_lines.gd. Files are WAV; the game expects MP3 in res://assets/voices/<group>/ (convert first, or hand the zip to Claude).\n${gd.join("\n")}\n` });
     files.push({ name: "studio_settings.json", data: JSON.stringify(settings, null, 1) });
@@ -364,6 +394,10 @@ export default function ScriptStudio() {
           title="Download the chosen take of every approved line, ready for the game">
           <Download size={14} /> Export approved
         </button>
+        <label className="flex items-center gap-1.5 text-xs text-stone-300" title="Hear takes with or without effects (exports always include them)">
+          <input type="checkbox" checked={fxOn} onChange={(e) => setFxOn(e.target.checked)} className="accent-[#E86F25]" /> Effects
+        </label>
+        {exporting && <span className="flex items-center gap-1 text-xs text-stone-300"><Loader2 size={12} className="animate-spin" />{exporting}</span>}
         <div className="relative">
           <button className="flex items-center gap-1 rounded bg-stone-800 px-2 py-1.5 text-stone-100 hover:bg-stone-700" onClick={() => setMenu((m) => !m)}>
             <Settings2 size={14} /> More <ChevronDown size={12} />
@@ -450,6 +484,28 @@ export default function ScriptStudio() {
                       <input className="w-full rounded bg-stone-950 px-2 py-1 text-stone-200" placeholder="e.g. Southern, British, Brooklyn"
                         value={c.accent || ""} onChange={(e) => setCastField(c.id, { accent: e.target.value })} />
                     </Label>
+                    <div className="space-y-2 rounded bg-stone-950/60 p-2">
+                      <p className="text-xs font-semibold text-stone-300">Effects (added after the voice is made)</p>
+                      <Label text={`Pitch: ${(c.fx?.pitch ?? 0) > 0 ? "+" : ""}${c.fx?.pitch ?? 0} (lower = deeper)`}>
+                        <input type="range" min={-12} max={12} value={c.fx?.pitch ?? 0} className="w-full accent-[#E86F25]"
+                          onChange={(e) => setCastField(c.id, { fx: { ...(c.fx || {}), pitch: Number(e.target.value) } })} />
+                      </Label>
+                      <Label text={`Monster: ${Math.round((c.fx?.monster ?? 0) * 100)}% (deeper copy underneath + grit)`}>
+                        <input type="range" min={0} max={100} value={Math.round((c.fx?.monster ?? 0) * 100)} className="w-full accent-[#E86F25]"
+                          onChange={(e) => setCastField(c.id, { fx: { ...(c.fx || {}), monster: Number(e.target.value) / 100 } })} />
+                      </Label>
+                      <Label text={`Speed: ${(c.fx?.speed ?? 1).toFixed(2)}x (same voice, faster or slower)`}>
+                        <input type="range" min={60} max={160} step={2} value={Math.round((c.fx?.speed ?? 1) * 100)} className="w-full accent-[#E86F25]"
+                          onChange={(e) => setCastField(c.id, { fx: { ...(c.fx || {}), speed: Number(e.target.value) / 100 } })} />
+                      </Label>
+                      <Label text="Room / echo">
+                        <select className="w-full rounded bg-stone-900 px-2 py-1 text-xs text-stone-200" value={c.fx?.space || ""}
+                          onChange={(e) => setCastField(c.id, { fx: { ...(c.fx || {}), space: e.target.value || undefined } })}>
+                          <option value="">Automatic (where the scene happens)</option>
+                          {SPACES.map((sp) => <option key={sp.id} value={sp.id}>Always: {sp.label}</option>)}
+                        </select>
+                      </Label>
+                    </div>
                     {c.variants && (
                       <div className="space-y-2 rounded bg-stone-950/60 p-2">
                         <p className="text-xs font-semibold text-stone-300">Voices for different {c.name.toLowerCase()}</p>
@@ -672,6 +728,32 @@ function LineCard(props: {
           </Label>
         </div>
       )}
+      {(() => {
+        const fx = fxFor(l, c, d);
+        const auto = SPACES.find((sp) => sp.id === autoSpace(l, c))?.label;
+        return (
+          <div className="mt-2 grid grid-cols-[1.4fr_1fr_1fr_1fr] gap-3">
+            <Label text="Room / echo">
+              <select className="w-full rounded bg-stone-950 px-2 py-1 text-stone-200" value={d.fxSpace || ""} onChange={(e) => onChange({ fxSpace: e.target.value || undefined })}>
+                <option value="">automatic ({auto})</option>
+                {SPACES.map((sp) => <option key={sp.id} value={sp.id}>{sp.label}</option>)}
+              </select>
+            </Label>
+            <Label text={`Pitch: ${fx.pitch > 0 ? "+" : ""}${fx.pitch}${d.fxPitch === undefined ? " (default)" : ""}`}>
+              <input type="range" min={-12} max={12} value={fx.pitch} className="w-full accent-[#E86F25]" onChange={(e) => onChange({ fxPitch: Number(e.target.value) })}
+                onDoubleClick={() => onChange({ fxPitch: undefined })} title="Double-click to reset" />
+            </Label>
+            <Label text={`Speed: ${fx.speed.toFixed(2)}x${d.fxSpeed === undefined ? " (default)" : ""}`}>
+              <input type="range" min={60} max={160} step={2} value={Math.round(fx.speed * 100)} className="w-full accent-[#E86F25]"
+                onChange={(e) => onChange({ fxSpeed: Number(e.target.value) / 100 })} onDoubleClick={() => onChange({ fxSpeed: undefined })} title="Double-click to reset" />
+            </Label>
+            <Label text={`Monster: ${Math.round(fx.monster * 100)}%${d.fxMonster === undefined ? " (default)" : ""}`}>
+              <input type="range" min={0} max={100} value={Math.round(fx.monster * 100)} className="w-full accent-[#E86F25]"
+                onChange={(e) => onChange({ fxMonster: Number(e.target.value) / 100 })} onDoubleClick={() => onChange({ fxMonster: undefined })} title="Double-click to reset" />
+            </Label>
+          </div>
+        );
+      })()}
       <div className="mt-2">
         <Label text="Director's note">
           <input className="w-full rounded bg-stone-950 px-2 py-1 text-stone-200" placeholder="e.g. like he just realized he burned the only map; voice cracks on 'dumb'"

@@ -788,12 +788,16 @@
  "andnowthatyouknow": {
   "emotion": "sinister",
   "intensity": 4,
-  "note": "Voice dropping, getting creepy."
+  "note": "Voice dropping, getting creepy.",
+  "fxPitch": -1,
+  "fxMonster": 0.2
  },
  "nobodyleavesmetocymartnorefundsnoexchanges": {
   "emotion": "menacing",
   "intensity": 5,
-  "note": "Booming, villainous. Each phrase hits harder."
+  "note": "Booming, villainous. Each phrase hits harder.",
+  "fxPitch": -3,
+  "fxMonster": 0.5
  },
  "balrightiainteverpopmetocyandhaveajitturnintoagotdamndemonth_5944": {
   "emotion": "tweaking",
@@ -968,7 +972,9 @@
  "aightyallcouldgetthefuckoutmystoredoefoicallupdulbmeethus": {
   "emotion": "menacing",
   "intensity": 4,
-  "note": "Voice dropping into a threat, still a little dweeby."
+  "note": "Voice dropping into a threat, still a little dweeby.",
+  "fxPitch": -3,
+  "fxMonster": 0.45
  },
  "dulbmeethusfwmyahhiainttrippinbouthim": {
   "emotion": "smug",
@@ -998,7 +1004,8 @@
  "muffledfrominsideyoullregretthistrio": {
   "emotion": "muffled",
   "intensity": 4,
-  "note": "Yelling through a closed door, petty threat."
+  "note": "Yelling through a closed door, petty threat.",
+  "fxSpace": "wall"
  },
  "allowme": {
   "emotion": "confident",
@@ -1143,7 +1150,8 @@
  "echoingimpressivemybelovedtriocomecloser": {
   "emotion": "mysterious",
   "intensity": 3,
-  "note": "Echoing, wise and inviting, a frail old breath between phrases."
+  "note": "Echoing, wise and inviting, a frail old breath between phrases.",
+  "fxSpace": "magic"
  },
  "manimfinnaslapthisoldheadtoo": {
   "emotion": "cocky",
