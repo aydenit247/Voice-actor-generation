@@ -74,7 +74,7 @@ async function withRetry<T>(
   throw lastError;
 }
 
-function formatApiError(err: unknown): { status: number; message: string } {
+function formatApiError(err: unknown): { status: number; message: string; limit?: string } {
   const rawMessage =
     err instanceof Error ? err.message : "Unexpected speech generation error.";
   const status =
@@ -94,10 +94,14 @@ function formatApiError(err: unknown): { status: number; message: string } {
     };
   }
   if (status === 429 || rawMessage.includes("RESOURCE_EXHAUSTED")) {
+    // Daily limits reset at midnight Pacific; per-minute limits clear in under a minute
+    const daily = /per[_ ]?day|PerDay|_per_day|daily/i.test(rawMessage);
     return {
       status: 429,
-      message:
-        "Rate limit reached for Gemini speech generation. Wait a moment and try again.",
+      limit: daily ? "day" : "minute",
+      message: daily
+        ? "Daily limit reached for this voice model. It resets at midnight Pacific time. You can switch to the other model at the top and keep going."
+        : "Too many requests in a minute. Wait a few seconds and try again.",
     };
   }
   return {
@@ -200,7 +204,7 @@ async function createServer() {
     } catch (err) {
       console.error("[/api/tts] Error:", err);
       const formatted = formatApiError(err);
-      return res.status(formatted.status).json({ error: formatted.message });
+      return res.status(formatted.status).json({ error: formatted.message, limit: formatted.limit });
     }
   });
 

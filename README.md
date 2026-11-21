@@ -68,6 +68,13 @@ and open http://localhost:3000.
 
    Give the zip to Claude to put the files in the game.
 
+## Gemini limits (why it sometimes stops)
+
+Google limits how many voice lines you can make **per minute** and **per day**, separately for each model (Flash and
+Flash Lite each have their own daily allowance). Daily limits reset at **midnight Pacific**. The header shows how many
+lines this browser made today and links to Google's own meter (aistudio.google.com/rate-limit). When a model runs out
+for the day, the studio says so and offers to switch to the other model. Plan big batches across a few days.
+
 ## Sharing with Asar (Sync)
 
 Press **Sync** to share your work and get the other person's. The first time, it walks you through a one-time setup:

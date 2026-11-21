@@ -15,6 +15,7 @@ import {
 } from "./store";
 import { autoSpace, buildDirection, fxFor, pronunciationsIn, slug, spokenText, variantFor, voicing, type TrioLine } from "./direction";
 import { encodeWav, fxKey, renderFx, SPACES, type Fx } from "./fx";
+import { loadUsage, RATE_LIMIT_URL, recordRequest, untilReset, type Usage } from "./usage";
 import { fetchGameLines, similarity } from "./extract";
 import SyncPanel from "./SyncPanel";
 import { friendlyError, loadSyncConfig, mergeSettings, syncNow, type SyncConfig } from "./sync";
@@ -187,6 +188,8 @@ export default function ScriptStudio() {
   const setProns = (list: Pronunciation[] | undefined) => setSettings((s) => ({ ...s, pronunciations: list, metaUpdatedAt: Date.now() }));
   const [pronOpen, setPronOpen] = useState(false);
   const [fxOn, setFxOn] = useState(true);
+  const [usage, setUsage] = useState<Usage>(loadUsage);
+  const [limitHit, setLimitHit] = useState<string | null>(null);   // model that hit its daily limit
   const [exporting, setExporting] = useState<string | null>(null);
   const SCENES = useMemo(() => Array.from(new Set(LINES.map((l) => l.scene))), [LINES]);
   const lineIds = useMemo(() => new Set(LINES.map((l) => l.id)), [LINES]);
@@ -241,7 +244,7 @@ export default function ScriptStudio() {
     setSettings((s) => ({ ...s, metaUpdatedAt: Date.now(), cast: { ...s.cast, [id]: { ...(s.cast[id] || {}), ...patch } } }));
 
   // ---------- generation ----------
-  const generate = useCallback(async (l: TrioLine): Promise<"ok" | "rate" | "fatal"> => {
+  const generate = useCallback(async (l: TrioLine): Promise<"ok" | "rate" | "fatal" | "daily"> => {
     const c = cast[l.who] || cast.narrator;
     const d = dirOf(l.id);
     const prompt = buildDirection(l, c, d, houseStyle, castNames);
@@ -253,9 +256,11 @@ export default function ScriptStudio() {
         method: "POST", headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ script: text, style: prompt, voiceName: voice, model: settings.model }),
       });
+      setUsage(recordRequest(settings.model));
       const p = await r.json().catch(() => ({}));
       if (!r.ok || !p.audioBase64) {
         setError(p.error || `Generation failed (${r.status}).`);
+        if (r.status === 429 && p.limit === "day") { setLimitHit(settings.model); return "daily"; }
         return r.status === 429 ? "rate" : r.status === 403 ? "fatal" : "ok";
       }
       const existing = takesBy[l.id] || [];
@@ -287,7 +292,7 @@ export default function ScriptStudio() {
         await new Promise((r) => setTimeout(r, 20000));
         res = await generate(todo[i]);
       }
-      if (res === "fatal" || res === "rate") break;
+      if (res === "fatal" || res === "rate" || res === "daily") break;
       setBatch({ done: i + 1, total: todo.length });
       await new Promise((r) => setTimeout(r, 900));
     }
@@ -374,6 +379,11 @@ export default function ScriptStudio() {
           <option value="gemini-3.8-flash-tts">Flash TTS (best)</option>
           <option value="gemini-3.8-flash-lite-tts">Flash Lite TTS (faster)</option>
         </select>
+        <a href={RATE_LIMIT_URL} target="_blank" rel="noreferrer" className="text-xs leading-tight text-stone-400 hover:text-white"
+          title="Counted in this browser. Google's own numbers (including anything else on your project) are on the rate limit page: click to open.">
+          Today: {usage.byModel["gemini-3.8-flash-tts"] || 0} Flash · {usage.byModel["gemini-3.8-flash-lite-tts"] || 0} Lite
+          <br />resets in {untilReset()} · <span className="underline">Google's meter ↗</span>
+        </a>
         {batch ? (
           <button className="flex items-center gap-2 rounded bg-red-700 px-3 py-1.5 font-semibold text-white" onClick={() => { stopRef.current = true; }}>
             <Square size={14} /> Stop ({batch.done}/{batch.total})
@@ -414,6 +424,19 @@ export default function ScriptStudio() {
         </div>
       </div>
 
+      {limitHit && (
+        <div className="mb-3 flex flex-wrap items-center gap-3 rounded border border-amber-800 bg-amber-950/50 px-3 py-2 text-amber-100">
+          <span className="flex-1">
+            {limitHit.includes("lite") ? "Flash Lite" : "Flash"} hit its daily limit (resets in {untilReset()}, midnight Pacific).
+            Each model has its own limit, so you can keep going on the other one.
+          </span>
+          <button className="rounded bg-amber-600 px-3 py-1 font-semibold text-black hover:bg-amber-500"
+            onClick={() => { setSettings((s) => ({ ...s, model: limitHit.includes("lite") ? "gemini-3.8-flash-tts" : "gemini-3.8-flash-lite-tts" })); setLimitHit(null); setError(null); }}>
+            Switch to {limitHit.includes("lite") ? "Flash" : "Flash Lite"}
+          </button>
+          <button className="text-amber-300 hover:text-white" onClick={() => setLimitHit(null)}>✕</button>
+        </div>
+      )}
       {share.panel && (
         <SyncPanel current={syncCfg} onClose={() => setShare((x) => ({ ...x, panel: false }))}
           onSaved={(cfg) => { setSyncCfg(cfg); setShare((x) => ({ ...x, panel: false })); if (cfg) doSync(cfg); }} />
