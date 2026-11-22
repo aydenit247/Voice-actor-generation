@@ -2,7 +2,7 @@
 // controls, multiple takes, batch generation and a zip export the game can use.
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
-  AlertCircle, Check, ChevronDown, ChevronRight, Download, Loader2, Mic, Play, Settings2, Square, Star, Trash2, Upload, Wand2,
+  AlertCircle, Check, ChevronDown, ChevronRight, Download, FileAudio, Loader2, Mic, Play, Settings2, SlidersHorizontal, Square, Star, Trash2, Upload, Wand2,
 } from "lucide-react";
 import linesJson from "../data/trio/lines.json";
 import defaultsJson from "../data/trio/lineDirections.json";
@@ -11,10 +11,12 @@ import {
   type CastMember, type Pace, type Pronunciation, type Variant,
 } from "../data/trio/cast";
 import {
-  allTakes, clearTakes, deleteTake, loadSettings, putTake, saveSettings, type LineDirection, type Settings, type Take,
+  allTakes, clearTakes, deleteTake, loadSettings, putTake, saveSettings, type LineDirection, type Settings, type Take, type TakeSource,
 } from "./store";
 import { autoSpace, buildDirection, fxFor, pronunciationsIn, slug, spokenText, variantFor, voicing, type TrioLine } from "./direction";
-import { encodeWav, fxKey, renderFx, SPACES, type Fx } from "./fx";
+import { encodeWav, FX_PRESETS, fxKey, renderFx, SPACES, type Fx } from "./fx";
+import { importAudioFile, type DecodedVoiceTake } from "./audioInput";
+import MicRecorderBar from "./MicRecorderBar";
 import { loadUsage, RATE_LIMIT_URL, recordRequest, untilReset, type Usage } from "./usage";
 import { fetchGameLines, similarity } from "./extract";
 import SyncPanel from "./SyncPanel";
@@ -89,7 +91,10 @@ export default function ScriptStudio() {
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
   const [editCast, setEditCast] = useState<string | null>(null);
+  const [castShapingOpen, setCastShapingOpen] = useState<Record<string, boolean>>({});
   const [busy, setBusy] = useState<Record<string, boolean>>({});
+  const [importing, setImporting] = useState<Record<string, boolean>>({});
+  const [recordingLineId, setRecordingLineId] = useState<string | null>(null);
   const [batch, setBatch] = useState<{ done: number; total: number } | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [playing, setPlaying] = useState<string | null>(null);
@@ -234,10 +239,10 @@ export default function ScriptStudio() {
   const withTakes = LINES.filter((l) => takesBy[l.id]?.length).length;
 
   // ---------- settings updates ----------
-  const setLine = (id: string, patch: Partial<LineDirection>) => {
-    const text = LINES.find((l) => l.id === id)?.line;
+  const setLine = useCallback((id: string, patch: Partial<LineDirection>) => {
+    const text = lineById.get(id)?.line;
     setSettings((s) => ({ ...s, lines: { ...s.lines, [id]: { ...(s.lines[id] || {}), ...patch, ...(text ? { lineText: text } : {}), updatedAt: Date.now(), by: me || undefined } } }));
-  };
+  }, [lineById, me]);
   const setVariantField = (who: string, vid: string, patch: Partial<Variant>) =>
     setSettings((s) => ({ ...s, metaUpdatedAt: Date.now(), variants: { ...(s.variants || {}), [`${who}:${vid}`]: { ...(s.variants?.[`${who}:${vid}`] || {}), ...patch } } }));
   const setCastField = (id: string, patch: Partial<CastMember>) =>
@@ -305,15 +310,63 @@ export default function ScriptStudio() {
     if (dirOf(t.lineId).chosenTake === t.id) setLine(t.lineId, { chosenTake: undefined });
   };
 
-  const fxOfTake = (t: Take): Fx | null => {
+  const fxOfTake = useCallback((t: Take): Fx | null => {
     const l = lineById.get(t.lineId);
-    return fxOn && l ? fxFor(l, cast[l.who] || cast.narrator, dirOf(l.id)) : null;
-  };
-  const play = (t: Take) => {
+    return fxOn && l ? fxFor(l, cast[l.who] || cast.narrator, dirOf(l.id), t.source) : null;
+  }, [fxOn, lineById, cast, dirOf]);
+
+  const play = useCallback((t: Take) => {
     if (playing === t.id) { stopAudio(); setPlaying(null); return; }
     setPlaying(t.id);
     playTake(t, fxOfTake(t), () => setPlaying((p) => (p === t.id ? null : p)));
-  };
+  }, [playing, fxOfTake]);
+
+  // Save a recorded or uploaded human voice take (stored dry as 24kHz WAV, modulated non-destructively on playback & export)
+  const saveHumanTake = useCallback(async (
+    l: TrioLine,
+    decoded: DecodedVoiceTake,
+    source: Exclude<TakeSource, "ai">,
+    fileName?: string,
+  ) => {
+    const existing = takesBy[l.id] || [];
+    const d = dirOf(l.id);
+    const take: Take = {
+      id: `${l.id}-${Date.now()}`,
+      lineId: l.id,
+      n: (existing[existing.length - 1]?.n || 0) + 1,
+      audioBase64: decoded.audioBase64,
+      durationSec: decoded.durationSec,
+      voice: source === "mic" ? "My Mic" : (fileName || "Uploaded Audio"),
+      model: source,
+      prompt: source === "mic" ? "Recorded with microphone" : `Uploaded audio (${fileName || "file"})`,
+      text: spokenText(l, d, prons),
+      createdAt: Date.now(),
+      by: me || undefined,
+      source,
+      fileName,
+    };
+    await putTake(take);
+    setTakes((all) => [...all, take]);
+    setLine(l.id, { chosenTake: take.id });
+    setRecordingLineId((cur) => (cur === l.id ? null : cur));
+    setError(null);
+    // Immediately audition the new take with the line's current modulation settings
+    setPlaying(take.id);
+    const fx = fxOn ? fxFor(l, cast[l.who] || cast.narrator, d, source) : null;
+    playTake(take, fx, () => setPlaying((p) => (p === take.id ? null : p)));
+  }, [takesBy, dirOf, prons, me, fxOn, cast, setLine]);
+
+  const uploadAudioForLine = useCallback(async (l: TrioLine, file: File) => {
+    setImporting((m) => ({ ...m, [l.id]: true }));
+    try {
+      const decoded = await importAudioFile(file);
+      await saveHumanTake(l, decoded, "upload", file.name);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : "Could not import that audio file.");
+    } finally {
+      setImporting((m) => ({ ...m, [l.id]: false }));
+    }
+  }, [saveHumanTake]);
 
   // ---------- export / import ----------
   const exportZip = async (approvedOnly: boolean) => {
@@ -332,16 +385,18 @@ export default function ScriptStudio() {
       used.add(base);
       const path = `voices/${l.who}/${base}.wav`;
       jobs.push({ path, t, l });
-      manifest.push({ key: l.key, line: l.line, who: l.who, file: path, voice: t.voice, take: t.n, performed: t.text, direction: t.prompt,
-        effects: fxFor(l, cast[l.who] || cast.narrator, d) });
+      manifest.push({
+        key: l.key, line: l.line, who: l.who, file: path, voice: t.voice, source: t.source || "ai", take: t.n,
+        performed: t.text, direction: t.prompt, effects: fxFor(l, cast[l.who] || cast.narrator, d, t.source),
+      });
       gd.push(`\t${JSON.stringify(l.line)}: "${l.who}/${base}",`);
     });
     if (!jobs.length) { setError(approvedOnly ? "No approved lines yet. Approve takes (✓) first, or export all takes." : "No takes to export yet."); return; }
-    // Render every take with its effects (cleaned up, pitched, room/echo) — that's what goes in the game
+    // Render every take with its effects (cleaned up, pitched, shaped, room/echo) — that's what goes in the game
     for (let i = 0; i < jobs.length; i++) {
       setExporting(`Applying effects ${i + 1}/${jobs.length}…`);
       const { path, t, l } = jobs[i];
-      const buf = await processed(t, fxFor(l, cast[l.who] || cast.narrator, dirOf(l.id)));
+      const buf = await processed(t, fxFor(l, cast[l.who] || cast.narrator, dirOf(l.id), t.source));
       files.push({ name: path, data: encodeWav(buf) });
     }
     setExporting(null);
@@ -508,7 +563,22 @@ export default function ScriptStudio() {
                         value={c.accent || ""} onChange={(e) => setCastField(c.id, { accent: e.target.value })} />
                     </Label>
                     <div className="space-y-2 rounded bg-stone-950/60 p-2">
-                      <p className="text-xs font-semibold text-stone-300">Effects (added after the voice is made)</p>
+                      <div className="flex items-center justify-between gap-2">
+                        <p className="text-xs font-semibold text-stone-300">Effects &amp; voice modulation</p>
+                        <select
+                          aria-label="Apply character FX preset"
+                          className="rounded bg-stone-900 px-1.5 py-0.5 text-[11px] text-stone-300"
+                          value=""
+                          onChange={(e) => {
+                            const preset = FX_PRESETS.find((p) => p.id === e.target.value);
+                            if (!preset) return;
+                            setCastField(c.id, { fx: { ...(c.fx || {}), ...preset.fx } });
+                          }}
+                        >
+                          <option value="">Apply preset…</option>
+                          {FX_PRESETS.map((p) => <option key={p.id} value={p.id}>{p.label}</option>)}
+                        </select>
+                      </div>
                       <Label text={`Pitch: ${(c.fx?.pitch ?? 0) > 0 ? "+" : ""}${c.fx?.pitch ?? 0} (lower = deeper)`}>
                         <input type="range" min={-12} max={12} value={c.fx?.pitch ?? 0} className="w-full accent-[#E86F25]"
                           onChange={(e) => setCastField(c.id, { fx: { ...(c.fx || {}), pitch: Number(e.target.value) } })} />
@@ -528,6 +598,50 @@ export default function ScriptStudio() {
                           {SPACES.map((sp) => <option key={sp.id} value={sp.id}>Always: {sp.label}</option>)}
                         </select>
                       </Label>
+                      <button
+                        type="button"
+                        className="flex w-full items-center justify-between pt-1 text-xs text-stone-400 hover:text-stone-200"
+                        onClick={() => setCastShapingOpen((m) => ({ ...m, [c.id]: !m[c.id] }))}
+                      >
+                        <span className="flex items-center gap-1.5">
+                          <SlidersHorizontal size={12} /> More voice shaping
+                        </span>
+                        {castShapingOpen[c.id] ? <ChevronDown size={13} /> : <ChevronRight size={13} />}
+                      </button>
+                      {castShapingOpen[c.id] && (
+                        <div className="space-y-2 border-t border-stone-800/80 pt-2">
+                          <Label text={`Voice size: ${(c.fx?.formant ?? 0) > 0 ? "+" : ""}${c.fx?.formant ?? 0} (goblin ↔ giant)`}>
+                            <input type="range" min={-100} max={100} step={5} value={c.fx?.formant ?? 0} className="w-full accent-[#E86F25]"
+                              onChange={(e) => setCastField(c.id, { fx: { ...(c.fx || {}), formant: Number(e.target.value) } })} />
+                          </Label>
+                          <Label text={`Tone: ${(c.fx?.tone ?? 0) > 0 ? "+" : ""}${c.fx?.tone ?? 0} (warm ↔ nasal/bright)`}>
+                            <input type="range" min={-100} max={100} step={5} value={c.fx?.tone ?? 0} className="w-full accent-[#E86F25]"
+                              onChange={(e) => setCastField(c.id, { fx: { ...(c.fx || {}), tone: Number(e.target.value) } })} />
+                          </Label>
+                          <Label text={`Grit / gravel: ${Math.round((c.fx?.grit ?? 0) * 100)}%`}>
+                            <input type="range" min={0} max={100} value={Math.round((c.fx?.grit ?? 0) * 100)} className="w-full accent-[#E86F25]"
+                              onChange={(e) => setCastField(c.id, { fx: { ...(c.fx || {}), grit: Number(e.target.value) / 100 } })} />
+                          </Label>
+                          <Label text={`Tremor / wobble: ${Math.round((c.fx?.tremor ?? 0) * 100)}%`}>
+                            <input type="range" min={0} max={100} value={Math.round((c.fx?.tremor ?? 0) * 100)} className="w-full accent-[#E86F25]"
+                              onChange={(e) => setCastField(c.id, { fx: { ...(c.fx || {}), tremor: Number(e.target.value) / 100 } })} />
+                          </Label>
+                          <Label text="Mic noise cleanup">
+                            <select
+                              className="w-full rounded bg-stone-900 px-2 py-1 text-xs text-stone-200"
+                              value={c.fx?.cleanup === undefined ? "auto" : c.fx.cleanup ? "on" : "off"}
+                              onChange={(e) => {
+                                const val = e.target.value === "auto" ? undefined : e.target.value === "on";
+                                setCastField(c.id, { fx: { ...(c.fx || {}), cleanup: val } });
+                              }}
+                            >
+                              <option value="auto">Automatic (on for mic takes)</option>
+                              <option value="on">Always on</option>
+                              <option value="off">Off</option>
+                            </select>
+                          </Label>
+                        </div>
+                      )}
                     </div>
                     {c.variants && (
                       <div className="space-y-2 rounded bg-stone-950/60 p-2">
@@ -645,9 +759,15 @@ export default function ScriptStudio() {
               <>
                 {pageLines.map((l) => (
                   <LineCard key={l.id} l={l} c={cast[l.who] || cast.narrator} d={dirOf(l.id)} takes={takesBy[l.id] || []}
-                    busy={!!busy[l.id]} playing={playing} castNames={castNames} houseStyle={houseStyle}
+                    busy={!!busy[l.id]} importing={!!importing[l.id]} isRecording={recordingLineId === l.id}
+                    playing={playing} castNames={castNames} houseStyle={houseStyle}
                     suggested={!!LINE_DEFAULTS[l.id] && !settings.lines[l.id]} prons={prons}
-                    onChange={(p) => setLine(l.id, p)} onGenerate={() => generate(l)} onPlay={play} onDelete={removeTake} />
+                    onChange={(p) => setLine(l.id, p)} onGenerate={() => generate(l)} onPlay={play} onDelete={removeTake}
+                    onStartRecord={() => { stopAudio(); setPlaying(null); setRecordingLineId(l.id); }}
+                    onStopRecord={() => setRecordingLineId((cur) => (cur === l.id ? null : cur))}
+                    onSaveRecording={(decoded) => saveHumanTake(l, decoded, "mic")}
+                    onUploadAudio={(file) => uploadAudioForLine(l, file)}
+                    onError={setError} />
                 ))}
                 {!pageLines.length && <p className="py-10 text-center text-stone-500">No lines match.</p>}
               </>
@@ -676,14 +796,18 @@ function Label({ text, children }: { text: string; children: React.ReactNode }) 
 
 // ---------- one line ----------
 function LineCard(props: {
-  l: TrioLine; c: CastMember; d: LineDirection; takes: Take[]; busy: boolean; playing: string | null;
-  castNames: Record<string, string>; houseStyle: string; suggested?: boolean; prons: Pronunciation[];
+  l: TrioLine; c: CastMember; d: LineDirection; takes: Take[]; busy: boolean; importing: boolean; isRecording: boolean;
+  playing: string | null; castNames: Record<string, string>; houseStyle: string; suggested?: boolean; prons: Pronunciation[];
   onChange: (p: Partial<LineDirection>) => void; onGenerate: () => void; onPlay: (t: Take) => void; onDelete: (t: Take) => void;
+  onStartRecord: () => void; onStopRecord: () => void; onSaveRecording: (decoded: DecodedVoiceTake) => Promise<void>;
+  onUploadAudio: (file: File) => void; onError: (msg: string) => void;
 }) {
-  const { l, c, d, takes, busy, playing, onChange } = props;
+  const { l, c, d, takes, busy, importing, isRecording, playing, onChange } = props;
   const [showCues, setShowCues] = useState(false);
   const [showPrompt, setShowPrompt] = useState(false);
+  const [showShaping, setShowShaping] = useState(false);
   const perfRef = useRef<HTMLTextAreaElement | null>(null);
+  const uploadRef = useRef<HTMLInputElement | null>(null);
   const chosen = takes.find((t) => t.id === d.chosenTake) || takes[takes.length - 1];
 
   const insertCue = (cue: string) => {
@@ -752,29 +876,132 @@ function LineCard(props: {
         </div>
       )}
       {(() => {
-        const fx = fxFor(l, c, d);
+        const fx = fxFor(l, c, d, chosen?.source);
         const auto = SPACES.find((sp) => sp.id === autoSpace(l, c))?.label;
+        const shapingSummary = [
+          fx.formant ? `Size ${fx.formant > 0 ? "+" : ""}${fx.formant}` : "",
+          fx.tone ? `Tone ${fx.tone > 0 ? "+" : ""}${fx.tone}` : "",
+          fx.grit ? `Grit ${Math.round(fx.grit * 100)}%` : "",
+          fx.tremor ? `Tremor ${Math.round(fx.tremor * 100)}%` : "",
+          d.fxCleanup !== undefined ? `Cleanup ${d.fxCleanup ? "on" : "off"}` : "",
+        ].filter(Boolean);
+        const hasLineShapingOverrides =
+          d.fxFormant !== undefined || d.fxTone !== undefined || d.fxGrit !== undefined || d.fxTremor !== undefined || d.fxCleanup !== undefined;
         return (
-          <div className="mt-2 grid grid-cols-[1.4fr_1fr_1fr_1fr] gap-3">
-            <Label text="Room / echo">
-              <select className="w-full rounded bg-stone-950 px-2 py-1 text-stone-200" value={d.fxSpace || ""} onChange={(e) => onChange({ fxSpace: e.target.value || undefined })}>
-                <option value="">automatic ({auto})</option>
-                {SPACES.map((sp) => <option key={sp.id} value={sp.id}>{sp.label}</option>)}
-              </select>
-            </Label>
-            <Label text={`Pitch: ${fx.pitch > 0 ? "+" : ""}${fx.pitch}${d.fxPitch === undefined ? " (default)" : ""}`}>
-              <input type="range" min={-12} max={12} value={fx.pitch} className="w-full accent-[#E86F25]" onChange={(e) => onChange({ fxPitch: Number(e.target.value) })}
-                onDoubleClick={() => onChange({ fxPitch: undefined })} title="Double-click to reset" />
-            </Label>
-            <Label text={`Speed: ${fx.speed.toFixed(2)}x${d.fxSpeed === undefined ? " (default)" : ""}`}>
-              <input type="range" min={60} max={160} step={2} value={Math.round(fx.speed * 100)} className="w-full accent-[#E86F25]"
-                onChange={(e) => onChange({ fxSpeed: Number(e.target.value) / 100 })} onDoubleClick={() => onChange({ fxSpeed: undefined })} title="Double-click to reset" />
-            </Label>
-            <Label text={`Monster: ${Math.round(fx.monster * 100)}%${d.fxMonster === undefined ? " (default)" : ""}`}>
-              <input type="range" min={0} max={100} value={Math.round(fx.monster * 100)} className="w-full accent-[#E86F25]"
-                onChange={(e) => onChange({ fxMonster: Number(e.target.value) / 100 })} onDoubleClick={() => onChange({ fxMonster: undefined })} title="Double-click to reset" />
-            </Label>
-          </div>
+          <>
+            <div className="mt-2 grid grid-cols-[1.4fr_1fr_1fr_1fr] gap-3">
+              <Label text="Room / echo">
+                <select className="w-full rounded bg-stone-950 px-2 py-1 text-stone-200" value={d.fxSpace || ""} onChange={(e) => onChange({ fxSpace: e.target.value || undefined })}>
+                  <option value="">automatic ({auto})</option>
+                  {SPACES.map((sp) => <option key={sp.id} value={sp.id}>{sp.label}</option>)}
+                </select>
+              </Label>
+              <Label text={`Pitch: ${fx.pitch > 0 ? "+" : ""}${fx.pitch}${d.fxPitch === undefined ? " (default)" : ""}`}>
+                <input type="range" min={-12} max={12} value={fx.pitch} className="w-full accent-[#E86F25]" onChange={(e) => onChange({ fxPitch: Number(e.target.value) })}
+                  onDoubleClick={() => onChange({ fxPitch: undefined })} title="Double-click to reset" />
+              </Label>
+              <Label text={`Speed: ${fx.speed.toFixed(2)}x${d.fxSpeed === undefined ? " (default)" : ""}`}>
+                <input type="range" min={60} max={160} step={2} value={Math.round(fx.speed * 100)} className="w-full accent-[#E86F25]"
+                  onChange={(e) => onChange({ fxSpeed: Number(e.target.value) / 100 })} onDoubleClick={() => onChange({ fxSpeed: undefined })} title="Double-click to reset" />
+              </Label>
+              <Label text={`Monster: ${Math.round(fx.monster * 100)}%${d.fxMonster === undefined ? " (default)" : ""}`}>
+                <input type="range" min={0} max={100} value={Math.round(fx.monster * 100)} className="w-full accent-[#E86F25]"
+                  onChange={(e) => onChange({ fxMonster: Number(e.target.value) / 100 })} onDoubleClick={() => onChange({ fxMonster: undefined })} title="Double-click to reset" />
+              </Label>
+            </div>
+            <div className="mt-2 rounded bg-stone-950/60 px-2.5 py-1.5">
+              <div className="flex flex-wrap items-center gap-2 text-xs">
+                <button
+                  type="button"
+                  className="flex items-center gap-1.5 font-semibold text-stone-300 hover:text-white"
+                  onClick={() => setShowShaping((s) => !s)}
+                >
+                  {showShaping ? <ChevronDown size={13} /> : <ChevronRight size={13} />}
+                  <SlidersHorizontal size={12} />
+                  Voice shaping
+                </button>
+                {shapingSummary.length > 0 && (
+                  <span className="font-mono text-[11px] tabular-nums text-[#ffb27a]">
+                    {shapingSummary.join(" · ")}
+                  </span>
+                )}
+                <div className="ml-auto flex items-center gap-2">
+                  <select
+                    aria-label="Apply voice preset to this line"
+                    className="rounded bg-stone-900 px-2 py-0.5 text-xs text-stone-300"
+                    value=""
+                    onChange={(e) => {
+                      const preset = FX_PRESETS.find((p) => p.id === e.target.value);
+                      if (!preset) return;
+                      onChange({
+                        fxPitch: preset.fx.pitch,
+                        fxSpeed: preset.fx.speed,
+                        fxMonster: preset.fx.monster,
+                        fxFormant: preset.fx.formant,
+                        fxTone: preset.fx.tone,
+                        fxGrit: preset.fx.grit,
+                        fxTremor: preset.fx.tremor,
+                        ...(preset.fx.space ? { fxSpace: preset.fx.space } : {}),
+                      });
+                      setShowShaping(true);
+                    }}
+                  >
+                    <option value="">Apply preset…</option>
+                    {FX_PRESETS.map((p) => <option key={p.id} value={p.id}>{p.label}</option>)}
+                  </select>
+                </div>
+              </div>
+              {showShaping && (
+                <div className="mt-2 space-y-2 border-t border-stone-800/80 pt-2">
+                  <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    <Label text={`Voice size: ${(fx.formant ?? 0) > 0 ? "+" : ""}${fx.formant ?? 0}${d.fxFormant === undefined ? " (default)" : ""}`}>
+                      <input type="range" min={-100} max={100} step={5} value={fx.formant ?? 0} className="w-full accent-[#E86F25]"
+                        onChange={(e) => onChange({ fxFormant: Number(e.target.value) })}
+                        onDoubleClick={() => onChange({ fxFormant: undefined })} title="Negative = smaller/goblin, positive = larger/giant. Double-click to reset" />
+                    </Label>
+                    <Label text={`Tone: ${(fx.tone ?? 0) > 0 ? "+" : ""}${fx.tone ?? 0}${d.fxTone === undefined ? " (default)" : ""}`}>
+                      <input type="range" min={-100} max={100} step={5} value={fx.tone ?? 0} className="w-full accent-[#E86F25]"
+                        onChange={(e) => onChange({ fxTone: Number(e.target.value) })}
+                        onDoubleClick={() => onChange({ fxTone: undefined })} title="Negative = warm/dark, positive = bright/nasal. Double-click to reset" />
+                    </Label>
+                    <Label text={`Grit: ${Math.round((fx.grit ?? 0) * 100)}%${d.fxGrit === undefined ? " (default)" : ""}`}>
+                      <input type="range" min={0} max={100} value={Math.round((fx.grit ?? 0) * 100)} className="w-full accent-[#E86F25]"
+                        onChange={(e) => onChange({ fxGrit: Number(e.target.value) / 100 })}
+                        onDoubleClick={() => onChange({ fxGrit: undefined })} title="Adds gravelly rasp without monster octaves. Double-click to reset" />
+                    </Label>
+                    <Label text={`Tremor: ${Math.round((fx.tremor ?? 0) * 100)}%${d.fxTremor === undefined ? " (default)" : ""}`}>
+                      <input type="range" min={0} max={100} value={Math.round((fx.tremor ?? 0) * 100)} className="w-full accent-[#E86F25]"
+                        onChange={(e) => onChange({ fxTremor: Number(e.target.value) / 100 })}
+                        onDoubleClick={() => onChange({ fxTremor: undefined })} title="Adds shaky/frail voice wobble. Double-click to reset" />
+                    </Label>
+                  </div>
+                  <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
+                    <label className="flex items-center gap-2 text-stone-400">
+                      <span>Mic noise cleanup:</span>
+                      <select
+                        className="rounded bg-stone-900 px-2 py-0.5 text-xs text-stone-200"
+                        value={d.fxCleanup === undefined ? "auto" : d.fxCleanup ? "on" : "off"}
+                        onChange={(e) => onChange({ fxCleanup: e.target.value === "auto" ? undefined : e.target.value === "on" })}
+                      >
+                        <option value="auto">Automatic ({c.fx?.cleanup === undefined ? "on for mic takes" : c.fx.cleanup ? "character on" : "character off"})</option>
+                        <option value="on">On (cut rumble &amp; room hiss)</option>
+                        <option value="off">Off</option>
+                      </select>
+                    </label>
+                    {hasLineShapingOverrides && (
+                      <button
+                        type="button"
+                        className="text-stone-400 underline hover:text-white"
+                        onClick={() => onChange({ fxFormant: undefined, fxTone: undefined, fxGrit: undefined, fxTremor: undefined, fxCleanup: undefined })}
+                      >
+                        Reset shaping to character defaults
+                      </button>
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          </>
         );
       })()}
       <div className="mt-2">
@@ -830,31 +1057,79 @@ function LineCard(props: {
       )}
 
       {/* Takes */}
-      <div className="mt-3 flex flex-wrap items-center gap-2 border-t border-stone-800 pt-3">
-        <button disabled={busy} onClick={props.onGenerate}
-          className="flex items-center gap-1.5 rounded bg-[#E86F25] px-3 py-1.5 font-semibold text-black hover:bg-[#ff8a3d] disabled:opacity-60">
-          {busy ? <Loader2 size={14} className="animate-spin" /> : <Mic size={14} />} {takes.length ? "New take" : "Generate"}
-        </button>
-        {takes.map((t) => {
-          const isChosen = chosen?.id === t.id;
-          return (
-            <div key={t.id} className={`flex items-center gap-1 rounded px-1.5 py-1 ${isChosen ? "bg-stone-700" : "bg-stone-950"}`}>
-              <button className="flex items-center gap-1 px-1 text-stone-100" onClick={() => props.onPlay(t)} title={t.prompt}>
-                {playing === t.id ? <Square size={12} /> : <Play size={12} />} Take {t.n}{t.by ? ` (${t.by})` : ""}
-                <span className="text-stone-500">{t.durationSec ? `${t.durationSec.toFixed(1)}s` : ""}</span>
-              </button>
-              <button title="Use this take" onClick={() => onChange({ chosenTake: t.id })} className={isChosen ? "text-[#ffcf5a]" : "text-stone-600 hover:text-stone-300"}>
-                <Star size={13} fill={isChosen ? "currentColor" : "none"} />
-              </button>
-              <button title="Delete take" onClick={() => props.onDelete(t)} className="text-stone-600 hover:text-red-400"><Trash2 size={12} /></button>
-            </div>
-          );
-        })}
-        {takes.length > 0 && (
-          <button onClick={() => onChange({ approved: !d.approved, chosenTake: d.chosenTake || chosen?.id })}
-            className={`ml-auto flex items-center gap-1 rounded px-3 py-1.5 font-semibold ${d.approved ? "bg-emerald-600 text-white" : "bg-stone-800 text-stone-300 hover:bg-stone-700"}`}>
-            <Check size={14} /> {d.approved ? "Approved" : "Approve"}
+      <div className="mt-3 border-t border-stone-800 pt-3">
+        <div className="flex flex-wrap items-center gap-2">
+          <button disabled={busy} onClick={props.onGenerate}
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded bg-[#E86F25] px-3 py-1.5 font-semibold text-black hover:bg-[#ff8a3d] disabled:opacity-60">
+            {busy ? <Loader2 size={14} className="animate-spin" /> : <Wand2 size={14} />} {takes.length ? "New take" : "Generate"}
           </button>
+          <button
+            type="button"
+            onClick={() => (isRecording ? props.onStopRecord() : props.onStartRecord())}
+            className={`flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded px-2.5 py-1.5 font-semibold ${
+              isRecording
+                ? "bg-red-700 text-white hover:bg-red-600"
+                : "bg-stone-800 text-stone-100 hover:bg-stone-700"
+            }`}
+            title="Record your own voice with your microphone and modulate it with all effects"
+          >
+            <Mic size={14} /> {isRecording ? "Recording…" : "Record"}
+          </button>
+          <button
+            type="button"
+            disabled={importing}
+            onClick={() => uploadRef.current?.click()}
+            className="flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded bg-stone-800 px-2.5 py-1.5 text-stone-200 hover:bg-stone-700 disabled:opacity-60"
+            title="Upload a WAV, MP3, M4A, OGG, or WebM voice recording"
+          >
+            {importing ? <Loader2 size={14} className="animate-spin" /> : <Upload size={14} />} Upload
+          </button>
+          <input
+            ref={uploadRef}
+            type="file"
+            accept="audio/*,.wav,.mp3,.m4a,.ogg,.webm,.flac"
+            className="hidden"
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) props.onUploadAudio(file);
+              e.target.value = "";
+            }}
+          />
+          {takes.map((t) => {
+            const isChosen = chosen?.id === t.id;
+            const sourceTitle =
+              t.source === "mic" ? "Recorded with microphone"
+                : t.source === "upload" ? `Uploaded audio: ${t.fileName || t.voice}`
+                  : t.prompt;
+            return (
+              <div key={t.id} className={`flex items-center gap-1 rounded px-1.5 py-1 ${isChosen ? "bg-stone-700" : "bg-stone-950"}`}>
+                <button className="flex items-center gap-1 px-1 text-stone-100" onClick={() => props.onPlay(t)} title={sourceTitle}>
+                  {playing === t.id ? <Square size={12} /> : <Play size={12} />}
+                  {t.source === "mic" && <Mic size={11} className="text-red-300" aria-label="Mic recording" />}
+                  {t.source === "upload" && <FileAudio size={11} className="text-sky-300" aria-label="Uploaded audio" />}
+                  <span>Take {t.n}{t.by ? ` (${t.by})` : ""}</span>
+                  <span className="font-mono text-xs tabular-nums text-stone-500">{t.durationSec ? `${t.durationSec.toFixed(1)}s` : ""}</span>
+                </button>
+                <button title="Use this take" onClick={() => onChange({ chosenTake: t.id })} className={isChosen ? "text-[#ffcf5a]" : "text-stone-600 hover:text-stone-300"}>
+                  <Star size={13} fill={isChosen ? "currentColor" : "none"} />
+                </button>
+                <button title="Delete take" onClick={() => props.onDelete(t)} className="text-stone-600 hover:text-red-400"><Trash2 size={12} /></button>
+              </div>
+            );
+          })}
+          {takes.length > 0 && (
+            <button onClick={() => onChange({ approved: !d.approved, chosenTake: d.chosenTake || chosen?.id })}
+              className={`ml-auto flex shrink-0 items-center gap-1 whitespace-nowrap rounded px-3 py-1.5 font-semibold ${d.approved ? "bg-emerald-600 text-white" : "bg-stone-800 text-stone-300 hover:bg-stone-700"}`}>
+              <Check size={14} /> {d.approved ? "Approved" : "Approve"}
+            </button>
+          )}
+        </div>
+        {isRecording && (
+          <MicRecorderBar
+            onSaved={props.onSaveRecording}
+            onCancel={props.onStopRecord}
+            onError={props.onError}
+          />
         )}
       </div>
     </div>

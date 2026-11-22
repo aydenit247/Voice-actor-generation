@@ -1,6 +1,6 @@
 {
   "name": "Emberstage",
   "description": "Dramatic fantasy character voice studio powered by Gemini Text-to-Speech, featuring custom persona direction, expressive vocal cues, campfire ambience mixing, and interactive waveform playback.",
-  "requestFramePermissions": [],
+  "requestFramePermissions": ["microphone"],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

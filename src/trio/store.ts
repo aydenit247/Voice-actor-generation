@@ -17,22 +17,31 @@ export interface LineDirection {
   fxMonster?: number;
   fxSpeed?: number;
   fxSpace?: string;        // a SpaceId, or empty = automatic
+  fxFormant?: number;      // -100..+100 vocal-tract size
+  fxTone?: number;         // -100..+100 dark/warm to bright/nasal
+  fxGrit?: number;         // 0..1 throat rasp / gravel
+  fxTremor?: number;       // 0..1 voice wobble / vibrato
+  fxCleanup?: boolean;     // mic rumble cut + soft noise gate
   updatedAt?: number;      // for syncing: newest edit wins
   by?: string;             // who last edited it
 }
+
+export type TakeSource = "ai" | "mic" | "upload";
 
 export interface Take {
   id: string;
   lineId: string;
   n: number;
-  audioBase64: string;     // WAV
+  audioBase64: string;     // 24kHz mono 16-bit WAV
   durationSec: number;
   voice: string;
   model: string;
-  prompt: string;          // the full direction sent to Gemini
+  prompt: string;          // the full direction sent to Gemini (or capture description for human takes)
   text: string;            // the exact text performed
   createdAt: number;
   by?: string;             // who made it (shared takes)
+  source?: TakeSource;     // undefined / "ai" = Gemini TTS, "mic" = recorded, "upload" = imported file
+  fileName?: string;       // original filename for uploaded takes
 }
 
 export interface Settings {

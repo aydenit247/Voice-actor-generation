@@ -22,7 +22,17 @@ export interface CastMember {
   accent?: string;
   note?: string;         // shown in the app
   variants?: Variant[];  // alternate voices for the same speaker type (e.g. different goblins)
-  fx?: { pitch?: number; monster?: number; space?: string; speed?: number };  // audio effects after generation (space "" = by scene)
+  fx?: {
+    pitch?: number;
+    monster?: number;
+    space?: string;
+    speed?: number;
+    formant?: number;
+    tone?: number;
+    grit?: number;
+    tremor?: number;
+    cleanup?: boolean;
+  };  // audio effects after generation/recording (space "" = by scene)
   nameVariant?: Record<string, string>;  // named speaker (the line's "name") → variant id
 }
 

@@ -1,6 +1,6 @@
 // Turns a character's settings + a line's direction into the acting instructions sent to Gemini.
 import { INTENSITY_LABELS, type CastMember, type Pace, type Pronunciation, type Variant } from "../data/trio/cast";
-import type { LineDirection } from "./store";
+import type { LineDirection, TakeSource } from "./store";
 import { SCENE_SPACE, type Fx, type SpaceId } from "./fx";
 
 export interface TrioLine {
@@ -87,9 +87,19 @@ export function slug(s: string, max = 40) {
 }
 
 // Effects for a line: the line's own pick, else the character's, else the space where the scene happens
-export function fxFor(l: TrioLine, c: CastMember, d: LineDirection): Fx {
+export function fxFor(l: TrioLine, c: CastMember, d: LineDirection, takeSource?: TakeSource): Fx {
   const space = (d.fxSpace || c.fx?.space || (l.thought ? "thought" : SCENE_SPACE[l.scene]) || "dry") as SpaceId;
-  return { pitch: d.fxPitch ?? c.fx?.pitch ?? 0, monster: d.fxMonster ?? c.fx?.monster ?? 0, space, speed: d.fxSpeed ?? c.fx?.speed ?? 1 };
+  return {
+    pitch: d.fxPitch ?? c.fx?.pitch ?? 0,
+    monster: d.fxMonster ?? c.fx?.monster ?? 0,
+    space,
+    speed: d.fxSpeed ?? c.fx?.speed ?? 1,
+    formant: d.fxFormant ?? c.fx?.formant ?? 0,
+    tone: d.fxTone ?? c.fx?.tone ?? 0,
+    grit: d.fxGrit ?? c.fx?.grit ?? 0,
+    tremor: d.fxTremor ?? c.fx?.tremor ?? 0,
+    cleanup: d.fxCleanup ?? c.fx?.cleanup ?? (takeSource === "mic"),
+  };
 }
 export function autoSpace(l: TrioLine, c: CastMember): SpaceId {
   return (c.fx?.space || (l.thought ? "thought" : SCENE_SPACE[l.scene]) || "dry") as SpaceId;
