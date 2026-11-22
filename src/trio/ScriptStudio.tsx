@@ -18,7 +18,7 @@ import { encodeWav, FX_PRESETS, fxKey, renderFx, SPACES, type Fx } from "./fx";
 import { importAudioFile, type DecodedVoiceTake } from "./audioInput";
 import MicRecorderBar from "./MicRecorderBar";
 import { loadUsage, RATE_LIMIT_URL, recordRequest, untilReset, type Usage } from "./usage";
-import { fetchGameLines, similarity } from "./extract";
+import { fetchGameLines, similarity, GAME_RAW } from "./extract";
 import SyncPanel from "./SyncPanel";
 import { friendlyError, loadSyncConfig, mergeSettings, syncNow, type SyncConfig } from "./sync";
 import { b64ToBytes, download, makeZip } from "./zip";
@@ -39,7 +39,7 @@ function defaultDirection(l: TrioLine | undefined): LineDirection {
 }
 const PAGE = 30;
 const SEEN_KEY = "trio-voice-seen-lines";
-type Status = "all" | "todo" | "takes" | "approved" | "removed";
+type Status = "open" | "all" | "todo" | "takes" | "approved" | "ingame" | "removed";
 
 // ---------- small audio helpers ----------
 let audioCtx: AudioContext | null = null;
@@ -87,7 +87,16 @@ export default function ScriptStudio() {
   const [takes, setTakes] = useState<Take[]>([]);
   const [who, setWho] = useState<string>("all");
   const [scene, setScene] = useState<string>("all");
-  const [status, setStatus] = useState<Status>("all");
+  const [status, setStatus] = useState<Status>("open");
+  // Lines that already have a voice file in the game (read live from voice_index.gd on GitHub). They're tucked away
+  // under "In the game" so the list only shows what's left to do.
+  const [inGame, setInGame] = useState<Set<string>>(new Set());
+  useEffect(() => {
+    fetch(GAME_RAW + `voice_index.gd?t=${Date.now()}`, { cache: "no-store" })
+      .then((r) => (r.ok ? r.text() : ""))
+      .then((t) => setInGame(new Set(Array.from(t.matchAll(/^\s*"([a-z0-9]+)":/gm), (m) => m[1]))))
+      .catch(() => {});
+  }, []);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(0);
   const [editCast, setEditCast] = useState<string | null>(null);
@@ -213,16 +222,17 @@ export default function ScriptStudio() {
   }, [takes]);
   const lineById = useMemo(() => new Map(LINES.map((l) => [l.id, l])), [LINES]);
   const dirOf = useCallback((id: string): LineDirection => ({ ...defaultDirection(lineById.get(id)), ...(settings.lines[id] || {}) }), [settings.lines, lineById]);
-  const statusOf = useCallback((l: TrioLine): Exclude<Status, "all" | "removed"> => {
+  const statusOf = useCallback((l: TrioLine): Exclude<Status, "open" | "all" | "removed"> => {
+    if (inGame.has(l.key)) return "ingame";
     if (dirOf(l.id).approved) return "approved";
     if (takesBy[l.id]?.length) return "takes";
     return "todo";
-  }, [dirOf, takesBy]);
+  }, [dirOf, takesBy, inGame]);
 
   const filtered = useMemo(() => LINES.filter((l) =>
     (who === "all" || l.who === who) &&
     (scene === "all" || l.scene === scene) &&
-    (status === "all" ? true : statusOf(l) === status) &&
+    (status === "all" ? true : status === "open" ? statusOf(l) !== "ingame" : statusOf(l) === status) &&
     (!search.trim() || l.line.toLowerCase().includes(search.toLowerCase()) || (l.name || "").toLowerCase().includes(search.toLowerCase()))),
   [LINES, who, scene, status, search, statusOf]);
   const pageLines = filtered.slice(page * PAGE, page * PAGE + PAGE);
@@ -231,7 +241,7 @@ export default function ScriptStudio() {
     LINES.forEach((l) => {
       const x = (c[l.who] = c[l.who] || { total: 0, done: 0 });
       x.total += 1;
-      if (statusOf(l) === "approved") x.done += 1;
+      if (statusOf(l) === "approved" || statusOf(l) === "ingame") x.done += 1;
     });
     return c;
   }, [LINES, statusOf]);
@@ -728,10 +738,12 @@ export default function ScriptStudio() {
               {SCENES.map((s) => <option key={s}>{s}</option>)}
             </select>
             <select className="rounded bg-stone-900 px-2 py-1.5 text-stone-200" value={status} onChange={(e) => setStatus(e.target.value as Status)}>
+              <option value="open">Still to do (hides lines in the game)</option>
               <option value="all">Any status</option>
               <option value="todo">Needs a take</option>
               <option value="takes">Has takes, not approved</option>
-              <option value="approved">Approved</option>
+              <option value="approved">Approved, not in the game yet</option>
+              <option value="ingame">✓ In the game ({inGame.size})</option>
               <option value="removed">Removed from game ({removed.length})</option>
             </select>
             <input className="min-w-[220px] flex-1 rounded bg-stone-900 px-3 py-1.5 text-stone-200" placeholder="Search lines…"
