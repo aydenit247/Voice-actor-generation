@@ -28,7 +28,7 @@ export const SCENE_SPACE: Record<string, SpaceId> = {
   "Scene 2 · Goblin Village": "outdoors",
   "Village · Buildings & Quests": "tavern",
   "Scene 3 · Metocy Mart": "shop",
-  "Scene 4 · The Pass": "mountain",
+  "Scene 4 · The Pass": "dry",   // Ebain 2026-11-22: studio, no echo
   "Combat · Banter": "dry",
 };
 
